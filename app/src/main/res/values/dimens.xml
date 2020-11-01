@@ -1,0 +1,72 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="popup_dialoug_width">220dip</dimen>
+
+
+    <dimen name="arrow_back_margin_top">7dp</dimen>
+    <dimen name="arrow_back_margin_left">8dp</dimen>
+
+
+    <dimen name="text_center_margin_top">8dp</dimen>
+
+    <dimen name="text_right_padding">5dp</dimen>
+    <dimen name="text_right_margin_top">5dp</dimen>
+    <dimen name="text_right_margin_right">7dp</dimen>
+
+    <dimen name="spacing">2.4dp</dimen>
+    <dimen name="spacingBottomPanel">60dp</dimen>
+
+    <dimen name="spacingLiveAvail">10dp</dimen>
+    <dimen name="splash_mirgin">70dp</dimen>
+
+
+    <dimen name="tut_stars_w">220dip</dimen>
+    <dimen name="tut_stars_h">340dp</dimen>
+
+    <dimen name="tut_iphone_w">250dp</dimen>
+    <dimen name="tut_iphone_h">400dp</dimen>
+
+
+    <dimen name="tut_work1_double_image_w">200dp</dimen>
+    <dimen name="tut_work1_double_image_h">400dp</dimen>
+
+    <dimen name="tut_work1_book_now_w">175dp</dimen>
+    <dimen name="tut_work1_book_now_h">400dp</dimen>
+    <dimen name="tut_work1_book_now_top">100dp</dimen>
+
+    <dimen name="tut_stars_bottom">0dip</dimen>
+    <dimen name="tut_stars_right">15dp</dimen>
+
+
+    <dimen name="tut_work2_group1_h">180dp</dimen>
+    <dimen name="tut_work2_group1_left_right">20dip</dimen>
+    <dimen name="tut_work2_group2_bottom">-45dp</dimen>
+    <dimen name="tut_work2_group2_top">70dp</dimen>
+
+    <dimen name="tut_work2_group2_h">160dp</dimen>
+
+    <dimen name="tut_work2_group2_left_right">50dp</dimen>
+
+
+    <dimen name="tut_work3_group3_left_right">20dp</dimen>
+
+    <dimen name="tut_work3_group3_bottom">-63dp</dimen>
+
+    <dimen name="tut_work3_group1_width">115dp</dimen>
+
+    <dimen name="tut_work_3_top">60dp</dimen>
+
+    <dimen name="tut_work_4_top">60dp</dimen>
+    <dimen name="tut_work_4_bottom">-55dp</dimen>
+
+    <dimen name="tut_work4_group1_left">20dp</dimen>
+    <dimen name="tut_work4_group1_right">40dp</dimen>
+
+
+    <dimen name="tut_work4_group2_left">80dp</dimen>
+    <dimen name="tut_work5_group1_left">40dp</dimen>
+
+
+</resources>

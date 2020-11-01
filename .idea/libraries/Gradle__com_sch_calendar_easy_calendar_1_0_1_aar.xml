@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.sch.calendar:easy-calendar:1.0.1@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d94c7762152d54c427715b3f88cfcfd2/jetified-easy-calendar-1.0.1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d94c7762152d54c427715b3f88cfcfd2/jetified-easy-calendar-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d94c7762152d54c427715b3f88cfcfd2/jetified-easy-calendar-1.0.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sch.calendar/easy-calendar/1.0.1/f029a0d7e730b7c684b55f7f981628a7045795fb/easy-calendar-1.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sch.calendar/easy-calendar/1.0.1/678b4d61da4cd366cb8a0742646affbb753474d8/easy-calendar-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

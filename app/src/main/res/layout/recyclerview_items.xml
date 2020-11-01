@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FFF7F7F7"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingPrefix">
+
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:background="#FFF7F7F7"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+        <ImageView
+            android:id="@+id/iv_roller"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@mipmap/slidergreen" />
+        <LinearLayout
+            android:id="@+id/ll_background_rec"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-6dp"
+            android:background="@mipmap/upcoming_rec_blue"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.85"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_service_name"
+                    fontPath="fonts/sf_ui_text_regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:singleLine="true"
+                    android:text="Hair Cut"
+                    android:textColor="#FF1D1D26"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:id="@+id/iv_disable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#B3ffffff"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:id="@+id/time_icon"
+                        android:layout_width="15sp"
+                        android:layout_height="15dp"
+                        android:src="@mipmap/home_time_icon" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        fontPath="fonts/sf_ui_text_regular.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dip"
+                        android:alpha="0.5"
+                        android:text="08:00 - 10:00"
+                        android:textColor="#FF31363B"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        fontPath="fonts/sf_ui_text_regular.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:alpha="0.5"
+                        android:text="w/"
+                        android:textColor="#FF31363B"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_client_name"
+                        fontPath="fonts/sf_ui_text_regular.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:singleLine="true"
+                        android:text="Soho"
+                        android:textColor="@color/light_blue_home"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.15"
+                android:gravity="center|right"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/buttoncalenderdot" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_layout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/dp10"
+        android:layout_marginBottom="7dp"
+        android:layout_marginTop="7dp"
+        android:src="@mipmap/linebackhome" />
+
+
+</RelativeLayout>

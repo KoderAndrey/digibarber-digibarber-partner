@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xenione.libs.swipemaker.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/foregroundView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/ll_dates1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_date"
+                fontPath="fonts/SF-UI-Text-Medium.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.75"
+                android:gravity="left"
+                android:visibility="visible"
+                android:text="WednedDaydd"
+                android:textColor="#FFE17072"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_today"
+                fontPath="fonts/SF-UI-Text-Medium.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:alpha="0.4"
+                android:visibility="gone"
+                android:text="(today)" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@color/colorWhite"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_roller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-2.5dp"
+                android:background="@mipmap/slidergreen" />
+
+            <LinearLayout
+                android:id="@+id/ll_background_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/upcoming_rec_blue"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/tv_service_name"
+                            android:layout_width="0dp"
+                            fontPath="fonts/sf_ui_text_regular.otf"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.55"
+                            android:singleLine="true"
+                            android:layout_marginTop="12dp"
+                            android:text="Hair Cut"
+                            android:textColor="#FF1D1D26"
+                            android:textSize="17sp" />
+
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.45">
+
+                            <ImageView
+                                android:id="@+id/tv_start_close_booking"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_alignParentRight="true"
+                                android:src="@mipmap/start_bookibg"
+                                android:gravity="center"
+                                />
+
+
+                            <ImageView
+                                android:id="@+id/iv_reschdule_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:layout_alignParentRight="true"
+                                android:src="@mipmap/reschdule_icon"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/time_icon"
+                            android:layout_width="18dp"
+                            android:layout_height="20dp"
+                            android:src="@mipmap/home_time_icon" />
+
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dip"
+                            fontPath="fonts/sf_ui_text_regular.otf"
+                            android:text="08:00 - 10:00"
+                            android:alpha="0.5"
+                            android:textColor="#FF31363B"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            fontPath="fonts/sf_ui_text_regular.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dip"
+                            android:text="w/"
+                            android:alpha="0.5"
+                            android:textColor="#FF31363B"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tv_client_name"
+                            fontPath="fonts/sf_ui_text_regular.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="Soho"
+                            android:textColor="@color/light_blue_home"
+                            android:textSize="16sp" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end">
+
+                            <ImageView
+                                android:id="@+id/address_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dip"
+                                android:layout_marginRight="10dip"
+                                android:src="@mipmap/address" />
+
+                            <TextView
+                                android:id="@+id/tv_postcode"
+                                fontPath="fonts/sf_ui_text_regular.otf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="25dp"
+                                android:singleLine="true"
+                                android:text="151551"
+                                android:textColor="#FF0080FF"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</com.xenione.libs.swipemaker.SwipeLayout>
+
+
+
+

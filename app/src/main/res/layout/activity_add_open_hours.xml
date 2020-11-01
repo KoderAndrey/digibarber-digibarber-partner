@@ -1,0 +1,2513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.digibarber.app.activities.AddOpenHoursActivity"
+    tools:ignore="MissingPrefix">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="@dimen/arrow_back_margin_left"
+                android:layout_marginTop="@dimen/arrow_back_margin_top"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:src="@mipmap/back" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:layout_marginTop="@dimen/arrow_back_margin_top"
+
+                android:src="@mipmap/your_openhours" />
+
+            <ImageView
+                android:id="@+id/tv_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/text_right_margin_right"
+                android:layout_marginTop="@dimen/arrow_back_margin_top"
+                android:padding="@dimen/arrow_back_padding"
+
+                android:src="@mipmap/next" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@mipmap/openhourstoback"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:src="@mipmap/set_timeswhen" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_every_day_same"
+                    fontPath="fonts/sf_ui_text_regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/blue_border_rounded_button"
+                    android:gravity="center"
+                    android:text="Everyday the same"
+                    android:textColor="@color/signupButtonColor"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_clear_all"
+                    fontPath="fonts/sf_ui_text_regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/blue_rounded_button"
+                    android:gravity="center"
+                    android:paddingBottom="2dp"
+                    android:text="Clear all"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="13sp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_monday1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Mon"
+                        android:textColor="@color/day_color"
+                        android:textSize="18sp" />
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_mon1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_mon1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_open_mon1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_mon1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_mon1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_mon1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_mon1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_mon1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_mon1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_close_mon1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_mon1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_mon1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_mon1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_mon1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_add_mon1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/add_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_monday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Mon"
+                        android:textColor="@color/headingColor"
+                        android:textSize="16sp"
+                        android:visibility="invisible" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_mon2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_mon2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_open_mon2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_mon2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_mon2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_mon2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_mon2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_mon2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_mon2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_close_mon2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_mon2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_mon2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_mon2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_mon2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_cancel_mon2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/cancel_image" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_tuesday1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Tue"
+                        android:textColor="@color/day_color"
+                        android:textSize="18sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_tues1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_tues1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_open_tues1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_tues1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_tues1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_tues1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_tues1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_tues1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_tues1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_close_tues1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_tues1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_tues1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_tues1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_tues1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_add_tues1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/add_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_tuesday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Mon"
+                        android:textColor="@color/headingColor"
+                        android:textSize="16sp"
+                        android:visibility="invisible" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_tues2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_tues2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_open_tues2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_tues2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_tues2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_tues2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_tues2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_tues2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_tues2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_close_tues2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_tues2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_tues2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_tues2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_tues2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_cancel_tues2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/cancel_image" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_wednesday1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Wed"
+                        android:textColor="@color/day_color"
+                        android:textSize="18sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_wed1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_wed1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_open_wed1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_wed1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_wed1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_wed1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_wed1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_wed1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_wed1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_close_wed1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_wed1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_wed1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_wed1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_wed1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_add_wed1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/add_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_wednesday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Mon"
+                        android:textColor="@color/headingColor"
+                        android:textSize="16sp"
+                        android:visibility="invisible" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_wed2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_wed2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_open_wed2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_wed2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_wed2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_wed2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_wed2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_wed2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_wed2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_close_wed2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_wed2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_wed2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_wed2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_wed2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_cancel_wed2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/cancel_image" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_thusrday1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Thu"
+                        android:textColor="@color/day_color"
+                        android:textSize="18sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_thus1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_thus1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_open_thus1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_thus1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_thus1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_thus1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_thus1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_thus1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_thus1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_close_thus1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_thus1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_thus1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_thus1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_thus1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_add_thus1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/add_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_thursday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="thu"
+                        android:textColor="@color/headingColor"
+                        android:textSize="16sp"
+                        android:visibility="invisible" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_thus2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_thus2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_open_thus2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_thus2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_thus2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_thus2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_thus2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_thus2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_thus2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_close_thus2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_thus2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_thus2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_thus2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_thus2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_cancel_thus2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/cancel_image" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_friday1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Fri"
+                        android:textColor="@color/day_color"
+                        android:textSize="18sp" />
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_fri1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_fri1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_open_fri1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_fri1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+
+                        <TextView
+                            android:id="@+id/tv_open_fri1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_fri1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_fri1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_fri1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_fri1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_close_fri1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_fri1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_fri1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_fri1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_fri1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_add_fri1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/add_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_friday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Fri"
+                        android:textColor="@color/headingColor"
+                        android:textSize="16sp"
+                        android:visibility="invisible" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_fri2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_fri2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_open_fri2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_fri2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_fri2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_fri2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_fri2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_fri2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_fri2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_close_fri2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_fri2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_fri2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_fri2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_fri2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_cancel_fri2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/cancel_image" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_saturday1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Sat"
+                        android:textColor="@color/day_color"
+                        android:textSize="18sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_sat1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_sat1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_open_sat1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_sat1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_sat1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_sat1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_sat1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_sat1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_sat1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_close_sat1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_sat1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_sat1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_sat1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_sat1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_add_sat1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/add_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_saturday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        fontPath="fonts/avenir_font.ttf"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="sat"
+                        android:textColor="@color/headingColor"
+                        android:textSize="16sp"
+                        android:visibility="invisible" />
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_sat2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_sat2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_open_sat2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_sat2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_sat2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_sat2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_sat2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_sat2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_sat2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_close_sat2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_sat2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_sat2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_sat2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_sat2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_cancel_sat2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/cancel_image" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_sunday1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Sun"
+                        android:textColor="@color/day_color"
+                        android:textSize="18sp" />
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_open_sun1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_sun1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_open_sun1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_open_sun1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_sun1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_sun1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_sun1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_sun1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_sun1"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_close_sun1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_sun1"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_sun1"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_sun1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_sun1"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_add_sun1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/add_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_sunday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.15"
+                        android:gravity="center"
+                        android:text="Sun"
+                        android:textColor="@color/headingColor"
+                        android:textSize="16sp"
+                        android:visibility="invisible" />
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_opne_sun2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_open_sun2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/line_open_sun2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_opne_sun2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_open_sun2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_open_sun2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_open_sun2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="1dip"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.05"
+                        android:background="@color/connectColor"></View>
+
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.34">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_close_sun2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_close_sun2"
+                                fontPath="fonts/Avenir-Medium.ttf"
+                                android:layout_width="match_parent"
+                                android:layout_height="25dp"
+                                android:alpha="0.5"
+                                android:background="@null"
+                                android:cursorVisible="true"
+                                android:editable="false"
+                                android:focusableInTouchMode="false"
+                                android:hint="CLOSED"
+                                android:textColor="#FF31363B"
+                                android:textColorHint="@color/hint_closed_color"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/line_close_sun2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_close_sun2"
+                            android:src="@mipmap/open_hours_line_back" />
+
+                        <TextView
+                            android:id="@+id/tv_close_sun2"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line_close_sun2"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Cannot be blank"
+                            android:textColor="@color/red"
+                            android:textSize="10sp"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_clear_close_sun2"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:src="@mipmap/icon_cross"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/iv_cancel_sun2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="0.10"
+                        android:src="@mipmap/cancel_image" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+</RelativeLayout>

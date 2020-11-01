@@ -1,0 +1,163 @@
+{
+  "project_info": {
+    "project_number": "109339325416",
+    "firebase_url": "https://digibarberhd-prod.firebaseio.com",
+    "project_id": "digibarberhd-prod",
+    "storage_bucket": "digibarberhd-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109339325416:android:b5e5b07fba937b83edaa5d",
+        "android_client_info": {
+          "package_name": "com.digibarber.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109339325416-cvbd422r6uu1oi3v5h0cpvr23etl351a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digibarber.app",
+            "certificate_hash": "eb3d7dd6dd7f25df7818a0c954904cf27309201b"
+          }
+        },
+        {
+          "client_id": "109339325416-03bc8e28pio7f8aj9iu587tns2pbv4is.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digibarber.app",
+            "certificate_hash": "2e519bd6220af307577bd24bfda6b47437076163"
+          }
+        },
+        {
+          "client_id": "109339325416-33ivfigkari756v8fkj57hoqrnmdkt7o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digibarber.app",
+            "certificate_hash": "10c9d0b0fc8cbcf788881dda3d793a40ff485fe4"
+          }
+        },
+        {
+          "client_id": "109339325416-le4g03q3ifk7a7tvvk0hd0qnjjsii431.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digibarber.app",
+            "certificate_hash": "6a5136436eee5c795b0b1fd56747ebf3163cbf22"
+          }
+        },
+        {
+          "client_id": "109339325416-esu37tc88fnieq08ovf7nle6o1d17qr8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digibarber.app",
+            "certificate_hash": "09d57737e2f8695e536160663f7ee39932240857"
+          }
+        },
+        {
+          "client_id": "109339325416-6fpb3rsjcej9vepgap0pcqugajla3p59.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digibarber.app",
+            "certificate_hash": "a5503c603f36f807b4fd56d8f419dcc6b3863a3a"
+          }
+        },
+        {
+          "client_id": "109339325416-en5c0n3u87j64cplhe6mhjvfojlhvscq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg1Sj8o9enbL2EmjlU-0xwCzFgT9GX2Dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109339325416-pga9brk9gknbft87si2b4qq307l12704.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "109339325416-j7p5bh1jv0rphd0925rk0j2h40qmpegu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.webastral.DIGIPARTNER"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109339325416:android:3a16254ebba6c72dedaa5d",
+        "android_client_info": {
+          "package_name": "com.digipartner.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109339325416-nkinep7j23jnin7147ji2j133tr8t8gv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digipartner.app",
+            "certificate_hash": "10c9d0b0fc8cbcf788881dda3d793a40ff485fe4"
+          }
+        },
+        {
+          "client_id": "109339325416-74elvcfe7r1iabq95t6crnk1i87htss7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digipartner.app",
+            "certificate_hash": "6a5136436eee5c795b0b1fd56747ebf3163cbf22"
+          }
+        },
+        {
+          "client_id": "109339325416-eo6pl9aqfjlgvtq3a8bfpu7l5k4qae1b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digipartner.app",
+            "certificate_hash": "09d57737e2f8695e536160663f7ee39932240857"
+          }
+        },
+        {
+          "client_id": "109339325416-5kabkougmkn5clt6khfa4fgu4pmeqgm6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digipartner.app",
+            "certificate_hash": "08da5aaee821da65e9dc1d7a3ce2b30e2171ace0"
+          }
+        },
+        {
+          "client_id": "109339325416-en5c0n3u87j64cplhe6mhjvfojlhvscq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg1Sj8o9enbL2EmjlU-0xwCzFgT9GX2Dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109339325416-pga9brk9gknbft87si2b4qq307l12704.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "109339325416-j7p5bh1jv0rphd0925rk0j2h40qmpegu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.webastral.DIGIPARTNER"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

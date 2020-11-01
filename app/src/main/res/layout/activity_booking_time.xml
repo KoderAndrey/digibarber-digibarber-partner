@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:orientation="horizontal"
+            android:paddingLeft="8dip"
+            android:paddingRight="8dip">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"                  android:src="@mipmap/back" />
+
+            <TextView
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Booking time"
+                android:textColor="@color/search_heading_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_next"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:text="Next"
+                android:textColor="@color/doneTextColor"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            fontPath="fonts/sf_ui_text_light.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_marginTop="10dip"
+            android:text="Service"
+            android:textSize="12sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip">
+
+                <TextView
+                    android:id="@+id/tv_service_name"
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hair Cut  Shave"
+                    android:textColor="@color/search_heading_color"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="3dip"
+                    android:layout_toLeftOf="@+id/iv_disclosure"
+                    android:text="$ 35.0"
+                    android:textColor="@color/red"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/iv_disclosure"
+                    android:layout_width="18dip"
+                    android:layout_height="18dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dip"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/disclosure_indicator" />
+
+
+                <View
+                    android:id="@+id/viewV"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_alignRight="@+id/tv_price"
+                    android:layout_below="@+id/iv_disclosure"
+                    android:layout_marginTop="5dip"
+                    android:background="@color/colorGrey" />
+
+                <TextView
+                    android:id="@+id/tv_month_year"
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewV"
+                    android:layout_marginTop="20dip"
+                    android:text="March 2017"
+                    android:textSize="22sp" />
+
+                <org.lucasr.twowayview.TwoWayView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/tow_way_list"
+                    style="@style/TwoWayView"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dip"
+                    android:layout_below="@+id/tv_month_year"
+                    android:layout_marginRight="15dip"
+                    android:drawSelectorOnTop="false"
+                    tools:context=".MainActivity" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:gravity="center"
+                    android:layout_marginTop="20dip"
+                    android:orientation="vertical"
+                   >
+
+
+                    <Button
+                        android:id="@+id/next_solon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dip"
+                        android:layout_gravity="center|center_vertical"
+                        android:layout_weight="1"
+                        android:textSize="13sp"
+                        android:paddingLeft="20dip"
+                        android:paddingRight="20dip"
+                        android:background="@mipmap/unselected_filter_service"
+                        android:text="Next 5 available times \n at Soho Salon"
+                        android:textAllCaps="false"
+                        android:textColor="@color/headingColor"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="7dip"
+                        android:orientation="horizontal"
+                        android:layout_centerInParent="true">
+
+                        <View
+                            android:layout_width="50dip"
+                            android:layout_height="1dip"
+                            android:background="@color/colorGrey" />
+
+                        <TextView
+                            fontPath="fonts/sf_ui_text_light.otf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/viewV"
+                            android:layout_marginLeft="5dip"
+                            android:layout_marginRight="5dip"
+                            android:gravity="center"
+                            android:text="or"
+                            android:textSize="18sp" />
+                        <View
+                            android:layout_width="50dip"
+                            android:layout_height="1dip"
+                            android:background="@color/colorGrey" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:orientation="horizontal">
+
+
+                        <TextView
+                            android:id="@+id/tv_pick_time_with"
+                            fontPath="fonts/sf_ui_text_light.otf"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dip"
+                            android:textColor="@color/reviewsStaticColor"
+                            android:gravity="center"
+                            android:text="Pick a time with Fernandez"
+                            android:textSize="18sp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_below="@+id/tv_pick_time_with"
+                        android:layout_marginLeft="42dip"
+                        android:layout_marginTop="8dip"
+                        android:layout_marginRight="42dip"
+                        android:background="@color/colorGrey" />
+
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_timing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="42dip"
+                    android:layout_marginRight="42dip"
+                    android:layout_marginTop="8dip"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"></androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+
+</RelativeLayout>

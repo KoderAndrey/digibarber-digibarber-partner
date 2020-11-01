@@ -1,0 +1,20 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="popup_dialoug_width">220dip</dimen>
+
+    <dimen name="tut_stars_w">220dip</dimen>
+    <dimen name="tut_stars_h">340dp</dimen>
+
+    <dimen name="tut_iphone_w">250dp</dimen>
+    <dimen name="tut_iphone_h">400dp</dimen>
+    <dimen name="bannersize">152dp</dimen>
+    <dimen name="bannersize_">146dp</dimen>
+    <dimen name="arrow_back_padding">9dp</dimen>
+
+    <dimen name="splash_mirgin">100dp</dimen>
+    <dimen name="spacingBottomPanel">80dp</dimen>
+    <dimen name="x53">50dp</dimen>
+    <dimen name="x20dp">19dp</dimen>
+</resources>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.digibarber.app">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+
+    <application
+        android:name="com.digibarber.app.CustomClasses.AppController"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/app_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:targetApi="q">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+        <activity
+            android:name="com.digibarber.app.activities.SplashActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan">
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+        </activity>
+
+        <!-- Branch init -->
+        <meta-data
+            android:name="io.branch.sdk.BranchKey"
+            android:value="key_live_maRlj4qK32b7Y9KDoVb1Secpyzma5Bkv" />
+        <meta-data
+            android:name="io.branch.sdk.BranchKey.test"
+            android:value="key_test_dnGogZuG2Wi81YPxaTnZPcnbCref1zmo" />
+        <meta-data
+            android:name="io.branch.sdk.TestMode"
+            android:value="true" /> <!-- Set to true to use Branch_Test_Key -->
+
+        <activity
+            android:name="com.digibarber.app.activities.PickServiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.BookingDetailsActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            tools:replace="android:theme" />
+        <activity
+            android:name="com.digibarber.app.activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan" />
+
+        <activity
+            android:name=".CustomMediaPicker.CMediaPicker"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan">
+
+        </activity>
+        <activity
+            android:name="com.digibarber.app.activities.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan" />
+        <activity
+            android:name="com.digibarber.app.activities.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize|adjustPan" />
+
+        <!--<meta-data
+            android:name="com.google.froji.messaging.default_notification_icon"
+            android:resource="@mipmap/app_launcher" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/froji" />-->
+
+        <service
+            android:name="com.digibarber.app.activities.MyFirebaseMessagingService"
+            android:exported="true"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.digibarber.app.activities.MyFirebaseInstanceIDService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAwJ5PqfhX6sshtYTF0Pwc3H7004rwSEsE" />
+
+        <activity
+            android:name="com.digibarber.app.activities.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.EditProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.ChangePrivateInformationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.digibarber.app.activities.ReviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.ChangePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.CallSignupActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.digibarber.app.activities.SplashLandingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.EnableNotficationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.AddWorkPlaceLocationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.digibarber.app.activities.LocationOnMapActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.EnableLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.AddOpenHoursActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.AddServicePriceTimeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.digibarber.app.activities.ServiceListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.ServiceDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.EditServiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.CustomCameraGalleryActivity"
+            android:screenOrientation="portrait">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.digibarber.app.activities.AddGalleryImagesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.CustomCameraLargePreviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.AddServiceDescriptionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.digibarber.app.activities.BoookingApprovalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.CalenderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.WalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.ViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.UnconfermedBookingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.LiveAvailabilityActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.BarberProfileImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.WalletPreviousSubListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.digibarber.app.activities.HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.PrivacyPolicyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.TermConditionActiivty"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.VerificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.VerificationForgotPassActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.digibarber.app.activities.SocailLoginDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.digibarber.app.activities.ResetPassword" />
+        <activity android:name="com.digibarber.app.activities.SocialVerificationActivity"></activity>
+        <activity android:name="com.digibarber.app.activities.StripeConnectActivity"></activity>
+        <activity android:name="com.digibarber.app.activities.StripeDashboardActivity"></activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

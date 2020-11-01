@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:elevation="7dip"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <ImageView
+                    android:id="@+id/menu_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/arrow_back_margin_left"
+                    android:layout_marginTop="@dimen/arrow_back_margin_top"
+                    android:padding="@dimen/arrow_back_padding"
+                    android:src="@mipmap/home_menu_icon" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/text_center_margin_top"
+                    android:src="@mipmap/logowithtext" />
+
+                <ImageView
+                    android:id="@+id/calender_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/text_right_margin_right"
+                    android:layout_marginTop="@dimen/text_right_margin_top"
+                    android:clickable="true"
+                    android:gravity="right"
+                    android:padding="@dimen/text_right_padding"
+                    android:src="@mipmap/calender" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/rl_second_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dip"
+                    android:layout_weight="0.64"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        fontPath="fonts/sf_ui_display_semibold.otf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dip"
+                        android:text="Sunday 22 Jun"
+                        android:textAllCaps="true"
+                        android:textColor="#FF7F7F7F"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        fontPath="fonts/SF-UI-Display-Bold.otf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dip"
+                        android:text="Hello"
+                        android:textColor="#FF212121"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_unconfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_you_have"
+                            fontPath="fonts/sf_ui_text_regular.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.8"
+                            android:text="You have"
+                            android:textColor="#FF1D1D26"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_notification_text"
+                            fontPath="fonts/sf_ui_text_regular.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:alpha="0.8"
+
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text=" 0 unconfirmed booking"
+                            android:textColor="@color/doneTextColor"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.36"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="146dp">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="25dip"
+                            android:layout_marginRight="7dp">
+
+                            <ImageView
+                                android:layout_width="116dp"
+                                android:layout_height="116dp"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/thick_search_default_pic" />
+
+                            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/barber_profile_image"
+                                android:layout_width="102dp"
+                                android:layout_height="102dp"
+                                android:layout_gravity="center"
+                                android:layout_marginBottom="5dip"
+                                android:src="@color/colorGrey" />
+                        </FrameLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_below="@+id/ll_header">
+
+            <uk.co.imallan.jellyrefresh.JellyRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/objJellyRefreshLayoutScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/your_loading_text"
+                android:textColor="#FFFFFF"
+                app:headerHeight="56dp"
+                app:jellyColor="#FF118FEB"
+                app:pullHeight="128dp"
+                app:triggerHeight="96dp">
+
+
+                <ScrollView
+                    android:id="@+id/ll_Empty_Message"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorWhite"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/iv_image1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:src="@mipmap/left_side" />
+
+                        <ImageView
+                            android:id="@+id/iv_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_image1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:src="@mipmap/bubble_hairdrak_plue" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginRight="50dp"
+                            android:layout_marginTop="8dp"
+                            android:src="@mipmap/all_yourupcoming_bo" />
+                    </RelativeLayout>
+                </ScrollView>
+
+
+            </uk.co.imallan.jellyrefresh.JellyRefreshLayout>
+
+            <uk.co.imallan.jellyrefresh.JellyRefreshLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/objJellyRefreshLayoutRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll_header"
+                android:text="@string/your_loading_text"
+                android:textColor="#FFFFFF"
+                app:headerHeight="56dp"
+                app:jellyColor="#FF118FEB"
+                app:pullHeight="128dp"
+                app:triggerHeight="96dp">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_booking_List"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="60dp"
+                    android:gravity="center_horizontal"
+                    android:visibility="visible">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </uk.co.imallan.jellyrefresh.JellyRefreshLayout>
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+
+        app:behavior_hideable="false"
+        app:layout_behavior="com.digibarber.app.activities.CustomBottomSheetBehavior">
+
+        <RelativeLayout
+            android:id="@+id/ll_back_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/transaprent">
+
+            <RelativeLayout
+                android:id="@+id/fl_back_container1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transaprent"
+                android:orientation="vertical"
+
+                android:visibility="visible">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_touch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/fl_back_container"
+                    android:layout_marginTop="-14dp"
+                    android:background="@color/colorWhite"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:paddingTop="1dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_notification"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/transaprent"
+                        android:focusable="true"
+
+                        android:focusableInTouchMode="true">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fl_back_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transaprent">
+
+                    <RelativeLayout
+                        android:id="@+id/container_ofbanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@color/transaprent">
+
+                        <RelativeLayout
+                            android:id="@+id/fl_back"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/bannersize"
+                            android:background="@android:color/transparent">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/shadow_155350">
+
+
+                                <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                    android:id="@+id/iv_image_expanded"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_centerInParent="true"
+
+
+                                    android:scaleType="fitXY"
+                                    android:visibility="gone" />
+
+                                <RelativeLayout
+                                    android:id="@+id/outterContainer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentBottom="true"
+
+                                    android:background="@android:color/transparent">
+
+                                    <RelativeLayout
+                                        android:id="@+id/innerContainer"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/dp20"
+
+                                        android:background="@color/transaprent">
+
+
+                                        <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:id="@+id/iv_image_collapsed"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+
+                                            android:layout_centerInParent="true"
+
+                                            android:background="@color/transaprent"
+                                            android:scaleType="fitXY"
+                                            android:visibility="gone" />
+                                    </RelativeLayout>
+
+                                    <com.joooonho.SelectableRoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        android:id="@+id/logo_img"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_centerInParent="true"
+                                        android:background="@color/colorWhite"
+                                        android:scaleType="fitXY"
+                                        android:visibility="visible" />
+
+                                    <TextView
+                                        android:id="@+id/flashmsg"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:maxLines="3"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="18sp" />
+
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/ll_touch"
+                    android:background="@drawable/up_coming_top_panel"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_notification_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/back_notification"
+                android:elevation="7dip"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/colorWhite"
+                android:textSize="22sp" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/expandedimg_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/expanded_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/colorWhite"
+            android:scaleType="fitXY"></ImageView>
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

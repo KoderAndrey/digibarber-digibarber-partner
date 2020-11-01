@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white"
+    tools:ignore="MissingPrefix">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/arrow_back_margin_left"
+            android:layout_marginTop="@dimen/arrow_back_margin_top"
+            android:clickable="true"
+            android:padding="@dimen/arrow_back_padding"
+            android:src="@mipmap/back" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/text_center_margin_top"
+            android:src="@mipmap/live_availability" />
+
+
+        <ImageView
+            android:id="@+id/iv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/text_right_margin_right"
+            android:layout_marginTop="@dimen/text_right_margin_top"
+            android:clickable="true"
+            android:padding="@dimen/text_right_padding"
+            android:visibility="gone"
+            android:src="@mipmap/done" />
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_header"
+        android:layout_marginTop="8dp"
+        android:background="@mipmap/group_live2" />
+
+
+    <!--    <LinearLayout
+            android:id="@+id/top_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_header"
+            android:background="@color/searchBackgroundColor"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_marginTop="14dp"
+                android:text="@string/live_availability_text"
+                android:textAlignment="center"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                fontPath="fonts/avenir_font.ttf"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="@string/live_availability_text2"
+                android:textAlignment="center"
+                android:textSize="12dp" />
+
+        </LinearLayout>-->
+
+
+    <RelativeLayout
+        android:id="@+id/show_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv"
+        android:layout_marginTop="11dp"
+        android:background="@color/off_white">
+
+        <ImageView
+            android:id="@+id/live_avail_timer"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/timer" />
+
+        <TextView
+            android:id="@+id/selected_date"
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/live_avail_timer"
+            android:text="26 October 2017"
+            android:textAlignment="center"
+            android:textColor="#FF3C4F5E"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/show_date">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="23dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_num_index"
+                    android:layout_width="62dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/off_white"
+                    android:nestedScrollingEnabled="false">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/live_avility_item_RecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/off_white"
+                    android:nestedScrollingEnabled="false">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/ll_closd_mesage_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_image_closed"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/shop_is_closed" />
+
+            <TextView
+                fontPath="fonts/avenir_light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_image_closed"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="56dp"
+                android:text="Your shop is closed today"
+                android:textColor="#FF31363B"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

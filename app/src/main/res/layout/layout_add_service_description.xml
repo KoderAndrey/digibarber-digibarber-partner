@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:elevation="5dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="@dimen/arrow_back_margin_left"
+                android:layout_marginTop="@dimen/arrow_back_margin_top"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:src="@mipmap/close_review" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/text_center_margin_top"
+                android:src="@mipmap/your_services" />
+
+            <ImageView
+                android:id="@+id/tv_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/text_right_margin_right"
+                android:layout_marginTop="@dimen/text_right_margin_top"
+                android:padding="@dimen/text_right_padding"
+                android:src="@mipmap/done" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:id="@+id/edit_story"
+                fontPath="fonts/avenir_light.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginTop="57dp"
+                android:background="@drawable/background_desc"
+                android:cursorVisible="false"
+                android:gravity="top"
+                android:hint="Tell us more about the service.."
+                android:imeOptions="actionNone"
+                android:inputType="textMultiLine|textNoSuggestions|textCapSentences|text"
+                android:lineSpacingExtra="5dp"
+                android:lines="5"
+                android:maxLength="140"
+                android:maxLines="6"
+                android:paddingBottom="25dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="25dp"
+                android:singleLine="false"
+                android:textColor="#1D1D26"
+                android:alpha="0.5"
+                android:textColorHint="#FF31363B"
+                android:textSize="19sp" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_max"
+            fontPath="fonts/HelveticaNeue.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:alpha="0.5"
+            android:text="Max 140 characters"
+            android:textColor="#FF3C4F5E"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/dialog_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/base"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="21dp"
+                android:src="@mipmap/need_toreschedule" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginTop="12dp"
+                android:src="@mipmap/choose_analternativ" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/colorGrey" />
+
+        <TextView
+            android:id="@+id/tv_time_first"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="7dip"
+            android:text="Time 1"
+            android:textColor="#FF118FEB"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorGrey" />
+
+        <TextView
+            android:id="@+id/tv_time_second"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="7dip"
+            android:text="Time2"
+            android:textColor="#FF118FEB"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorGrey" />
+
+        <TextView
+            android:id="@+id/tv_time_third"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="7dip"
+            android:text="Time3"
+            android:textColor="#FF118FEB"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/colorGrey" />
+
+
+        <TextView
+            android:id="@+id/tv_back"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="7dip"
+            android:text="Back"
+            android:textColor="#FFF94444"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

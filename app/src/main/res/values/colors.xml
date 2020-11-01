@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="off_white">#ffffff</color>
+    <color name="blue">#3F51B5</color>
+    <color name="froji">#46bae4</color>
+    <color name="redLight">#e77a6f</color>
+    <color name="black">#000</color>
+    <color name="calender_date_text">#E69192</color>
+
+    <color name="datecurrent">#F94444</color>
+    <color name="light_blue_home">#88C7F5</color>
+
+
+    <color name="grey">#eae8e8</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#4D31353A</color>
+    <color name="colorWhiteMixed">#99FFFFFF</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey">#ccc</color>
+    <color name="loginTextColor">#8031353A</color>
+    <color name="lightheadingColor">#8031363B</color>
+    <color name="forgotPasswordColor">#118FEB</color>
+    <color name="lineColor">#CDCED2</color>
+    <color name="connectColor">#060606</color>
+    <color name="reviewLineColor">#BF060606</color>
+    <color name="signupButtonColor">#118FEB</color>
+    <color name="locationColor">#282828</color>
+    <color name="headingColor">#31363B</color>
+    <color name="day_color">#FF3C4F5E</color>
+
+    <color name="settingsColor">#030303</color>
+    <color name="editProfile1">#80000000</color>
+    <color name="editProfile2">#31353A</color>
+    <color name="bottonOutlineColor">#979797</color>
+    <color name="doneTextColor">#118FEB</color>
+    <color name="side_menu_background">#0080FF</color>
+
+    <color name="barberProfileColor">#3C4F5E</color>
+    <color name="transparentProfileColor">#803C4F5E</color> <!-- 50% opacity -->
+    <color name="workplaceColor">#6C7B8A</color>
+    <color name="reviewsStaticColor">#323B46</color>
+    <color name="search_heading_color">#31363B</color>
+
+    <color name="bue">#118FEB</color>
+
+    <color name="login_text_color">#FF31353A</color>
+
+    <color name="lessRoundedGrey">#50CDCED2</color>
+    <color name="searchBackgroundColor">#F7F7F7</color>
+    <color name="favoritesBackgroundColor">#E3E5EB</color>
+    <color name="forgot_password_text">#8C8C8C</color>
+    <color name="barberProfileBarColor">#F8F8F8</color>
+
+    <color name="transparentWhite">#80FFFFFF</color> <!-- 50% opacity -->
+    <color name="lessTransparentWhite">#CCFFFFFF</color> <!-- 80% opacity -->
+    <color name="tansWhiteColor">#99FFFFFF</color>      <!-- 60% opacity -->
+    <color name="barberAddressColor">#801D1D26</color>
+    <color name="searchBarColor">#7A797B</color>
+
+    <color name="listingLineColor">#CDCED2</color>
+    <color name="seekbarTextColor">#9099A7</color>
+    <color name="seekbarColor">#62BDFF</color>
+    <color name="seekbarWhiteColor">#F7F8FB</color>
+
+    <color name="updateProfileTextColor">#0080FF</color>
+    <color name="red_light">#bdfc270c</color>
+
+    <color name="red_error_signup_text">#FFF94444</color>
+
+    <color name="red">#FFED444F</color>
+    <color name="transaprent">#00FFFFFF</color>
+
+
+    <color name="color_red_text_error">#F94444</color>
+
+    <color name="light_yellow">#FFF1CE41</color>
+    <color name="colur_green">#8af141</color>
+    <color name="colur_green_not">#67cf1e</color>
+    <color name="green_color">#4CD321</color>
+    <color name="green_success">#4CD321</color>
+
+
+    <color name="location_hintcolor">#565A5C</color>
+
+    <color name="shadow_color">#afafaf</color>
+
+    <color name="service_detail_black">#FF1D1D26</color>
+
+    <color name="service_detail_grey">#FF1D1D26</color>
+
+    <color name="service_time_color">#FF3C4F5E</color>
+    <color name="not_Ava">#8031363B</color>
+    <color name="hint_closed_color">#FF31363B</color>
+    <color name="top_panal_color">#F8F8F8</color>
+    <color name="black_tras_shadow_color">#aacdced2</color>
+<color name="review_item_color">#F8F8F8</color>
+</resources>

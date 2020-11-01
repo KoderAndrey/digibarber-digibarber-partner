@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aigestudio="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context="com.digibarber.app.activities.AddWorkPlaceLocationActivity"
+    tools:ignore="MissingPrefix">
+
+
+    <RelativeLayout
+
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/arrow_back_margin_left"
+            android:layout_marginTop="@dimen/arrow_back_margin_top"
+            android:clickable="true"
+
+            android:onClick="backClick"
+            android:padding="@dimen/arrow_back_padding"
+            android:src="@mipmap/back" />
+
+
+        <ImageView
+            android:id="@+id/tv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/arrow_back_margin_top"
+            android:layout_marginRight="@dimen/text_right_margin_right"
+            android:clickable="true"
+            android:padding="@dimen/arrow_back_padding"
+
+            android:src="@mipmap/next" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_header"
+        android:fillViewport="true"
+        android:scrollbars="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:src="@mipmap/plug_image" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:src="@mipmap/place_of_work" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_place_work"
+                    fontPath="fonts/avenir_light.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/icon_address"
+                    android:cursorVisible="false"
+                    android:gravity="center"
+                    android:hint="e.g... Danny's Barber Shop"
+                    android:inputType="textCapWords"
+                    android:singleLine="true"
+                    android:textColor="#31363B"
+                    android:textColorHint="#6A6E71"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_please_enter_shop_name"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/password"
+                    android:layout_marginLeft="5dp"
+                    android:text="Please enter barber shop name"
+                    android:textColor="@color/color_red_text_error"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:src="@mipmap/where_you_find_text" />
+
+            <LinearLayout
+                android:id="@+id/ll_postcode_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@mipmap/icon_address"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:paddingBottom="-5dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.0"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <EditText
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:hint="Please enter your shops"
+                        android:inputType="number"
+                        android:paddingLeft="2dp"
+                        android:paddingTop="7dip"
+                        android:paddingRight="2dp"
+                        android:paddingBottom="7dip"
+                        android:singleLine="true"
+                        android:textColor="#31363B"
+                        android:textColorHint="#6A6E71"
+                        android:textSize="14sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dip"
+                    android:layout_height="match_parent"
+                    android:background="@color/location_hintcolor"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/et_post_code"
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/transaprent"
+                        android:cursorVisible="false"
+                        android:gravity="center"
+                        android:hint="Postcode"
+
+                        android:inputType="textCapCharacters"
+
+
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="#31363B"
+                        android:textColorHint="#6A6E71"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_please_enter_post_code"
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/password"
+                android:layout_marginLeft="5dp"
+                android:text="Please enter postcode of your barber shop"
+                android:textColor="@color/color_red_text_error"
+                android:textSize="11sp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:src="@mipmap/pick_address" />
+
+            <EditText
+                android:id="@+id/et_text_selected"
+                fontPath="fonts/avenir_light.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@mipmap/location_text"
+                android:editable="false"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="#31363B"
+                android:textColorHint="#31363B"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_please_enter_address"
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/password"
+                android:layout_marginLeft="5dp"
+                android:text="Please enter address"
+                android:textColor="@color/color_red_text_error"
+                android:textSize="11sp"
+                android:visibility="gone" />
+            <!-- <com.aigestudio.wheelpicker.WheelPicker
+                 android:id="@+id/wv_picker"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_marginLeft="15dp"
+                 android:layout_marginRight="15dp"
+                 android:background="@color/colorWhite"
+                 aigestudio:wheel_atmospheric="true"
+                 android:visibility="gone"
+                 aigestudio:wheel_curved="false"
+                 aigestudio:wheel_cyclic="false"
+                 aigestudio:wheel_indicator_size="0dp"
+                 aigestudio:wheel_item_align="center"
+                 aigestudio:wheel_item_space="0dp"
+                 aigestudio:wheel_item_text_color="@color/lightheadingColor"
+                 aigestudio:wheel_item_text_size="13sp"
+                 aigestudio:wheel_selected_item_text_color="#31363B"
+                 aigestudio:wheel_visible_item_count="4" />-->
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

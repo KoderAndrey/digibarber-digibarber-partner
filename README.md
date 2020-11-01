@@ -1,0 +1,2 @@
+# Digibarber Frontend ANDROID Partner
+

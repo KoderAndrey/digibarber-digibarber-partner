@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF7F7F7"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:ignore="MissingPrefix">
+
+        <LinearLayout
+            android:id="@+id/calendar_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF7F7F7"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/arrow_back_margin_left"
+                    android:clickable="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/arrow_back_padding"
+                    android:src="@mipmap/back" />
+
+                <TextView
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+
+android:layout_centerVertical="true"
+                    android:text="Calendar"
+                    android:padding="@dimen/arrow_back_padding"
+                    android:textColor="@color/search_heading_color"
+                    android:textSize="20sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/month_year_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/show_month"
+                    fontPath="fonts/sf_ui_display_light.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="20dp"
+                    android:text="October"
+                    android:textColor="#FF31363B"
+                    android:textSize="31sp" />
+
+                <TextView
+                    android:id="@+id/show_year"
+                    fontPath="fonts/sf_ui_display_light.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/show_month"
+                    android:alpha="0.3"
+                    android:paddingLeft="5dp"
+                    android:text="2017"
+                    android:textColor="#FF31363B"
+                    android:textSize="31sp" />
+
+                <LinearLayout
+                    android:id="@+id/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/previous_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:padding="10dp"
+                        android:src="@drawable/calendar_left_arrow" />
+
+                    <ImageView
+                        android:id="@+id/next_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:padding="10dp"
+                        android:src="@drawable/calendar_right_arrow" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bookings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/you_have"
+                    fontPath="fonts/sf_ui_text_regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:alpha="0.8"
+                    android:text="You have"
+                    android:textColor="#FF1D1D26"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/confirm_booking"
+                    fontPath="fonts/sf_ui_text_regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/you_have"
+                    android:alpha="0.8"
+                    android:text="0 unconfirmed bookings"
+                    android:textColor="@color/doneTextColor"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/main_calander"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/calendar_header"
+            android:layout_marginTop="4dp"
+            android:background="#FFFFFFFF"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--      <ImageView
+                      android:layout_width="wrap_content"
+                      android:src="@mipmap/linebackhome"
+                      android:layout_height="wrap_content" />-->
+            <com.digibarber.app.materialcalendarview.MaterialCalendarView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/calendar_header"
+                android:background="@color/colorWhite"
+                android:elevation="5dp"
+                app:mcv_tileHeight="35dp"
+                tools:layout_editor_absoluteX="-10dp"
+                tools:layout_editor_absoluteY="0dp"
+    
+    
+    
+                app:mcv_showOtherDates="all"
+                app:mcv_headerTextAppearance="?android:attr/textAppearanceMedium"
+                app:mcv_dateTextAppearance="@style/CustomTextAppearance"
+                app:mcv_weekDayTextAppearance="?android:attr/textAppearanceMedium"
+                app:mcv_calendarMode="month"
+                app:mcv_titleAnimationOrientation="vertical"
+
+
+
+
+
+                />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/linebackhome" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/availables"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/main_calander"
+            android:layout_marginLeft="7dp"
+            android:background="#FFF7F7F7">
+
+            <TextView
+                android:id="@+id/currentDate"
+                fontPath="fonts/sf_ui_text_semibold.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:alpha="0.75"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="27 Septem..."
+                android:textColor="#FFE17072"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/available_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+
+                <FrameLayout
+                    android:id="@+id/live_available"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/live_avail_blue" />
+
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:id="@+id/fl_avail_unavail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="12dp">
+
+                    <ImageView
+                        android:id="@+id/iv_available_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/availa_black" />
+
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <!-- <in.srain.cube.views.ptr.PtrFrameLayout xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/store_house_ptr_frame"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_below="@+id/availables"
+             android:background="#FFF7F7F7"
+             cube_ptr:ptr_duration_to_close="300"
+             cube_ptr:ptr_duration_to_close_header="2000"
+             cube_ptr:ptr_keep_header_when_refresh="true"
+             cube_ptr:ptr_pull_to_fresh="true"
+             cube_ptr:ptr_ratio_of_header_height_to_refresh="1.2"
+             cube_ptr:ptr_resistance="3.7">-->
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/availables"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Calendar_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </RelativeLayout>
+        <!--   </in.srain.cube.views.ptr.PtrFrameLayout>-->
+
+    </RelativeLayout>
+    <!--app:layout_behavior="android.support.design.widget.BottomSheetBehavior"-->
+    <RelativeLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#63000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:id="@+id/rl_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                fontPath="fonts/roboto_medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bottomd"
+                android:gravity="center"
+                android:text="CONFIRM"
+                android:textColor="#FF2196F3"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-3dp"
+                android:alpha="0.30"
+                android:src="@mipmap/path" />
+
+            <TextView
+                android:id="@+id/tv_reschdule"
+                fontPath="fonts/roboto_medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bottomd"
+                android:gravity="center"
+                android:text="RESCHEDULE"
+                android:textColor="#FF2196F3"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-3dp"
+                android:alpha="0.30"
+                android:src="@mipmap/path" />
+
+            <TextView
+                android:id="@+id/tv_delete"
+                fontPath="fonts/roboto_medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="19dp"
+                android:layout_marginTop="-1dp"
+                android:background="@mipmap/bottomd"
+                android:gravity="center"
+                android:text="DELETE"
+                android:textColor="#FFF94444"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tv_back"
+                fontPath="fonts/roboto_medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="19dp"
+                android:background="@mipmap/bottomd"
+                android:gravity="center"
+                android:text="BACK"
+                android:textColor="#FF2196F3"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

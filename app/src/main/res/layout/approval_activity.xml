@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    tools:ignore="MissingPrefix">
+
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:background="#FFFFFFFF"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/arrow_back_margin_left"
+            android:layout_marginTop="@dimen/arrow_back_margin_top"
+            android:clickable="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/arrow_back_padding"
+            android:src="@mipmap/back" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/text_center_margin_top"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/booking_approval"
+            android:text="Booking approval" />
+
+        <ImageView
+            android:id="@+id/tv_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/text_right_margin_right"
+            android:layout_marginTop="@dimen/text_right_margin_top"
+            android:clickable="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/arrow_back_padding"
+            android:src="@mipmap/done"
+
+            />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/img"
+        android:layout_below="@+id/rl"
+        android:background="#FFFFFFFF"
+        android:orientation="vertical">
+
+        <TextView
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:lineSpacingExtra="2dp"
+            android:text="During my shop opening hours, all bookings \nmade:"
+            android:textColor="#FF31353A"
+            android:textSize="16sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginTop="18dp"
+            android:background="#FFFFFFFF"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:id="@+id/ll_first"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/circle_booking_selected"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_firstno_hours"
+                    fontPath="fonts/SF-UI-Text-Medium.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_firsth1no_hours"
+                    fontPath="fonts/SF-UI-Text-Medium.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hours"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_second"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:background="@mipmap/circle_booking_unselect"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_secondno_hours"
+                    fontPath="fonts/SF-UI-Text-Medium.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textColor="#118FEB"
+                    android:textSize="17sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_firsth2no_hours"
+                    fontPath="fonts/SF-UI-Text-Medium.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hours"
+                    android:textColor="#118FEB"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_third"
+                fontPath="fonts/SF-UI-Text-Medium.otf"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:background="@mipmap/circle_booking_unselect"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_thirdno_hours"
+                    fontPath="fonts/SF-UI-Text-Medium.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8"
+                    android:textColor="#118FEB"
+                    android:textSize="17sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_firsth3no_hours"
+                    fontPath="fonts/SF-UI-Text-Medium.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hours"
+                    android:textColor="#118FEB"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dp"
+
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_fourth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@mipmap/circle_booking_unselect"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_firsth4no_hours"
+                        fontPath="fonts/SF-UI-Text-Medium.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="hours"
+                        android:textColor="#118FEB"
+                        android:textSize="17sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/infinte"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/infinite" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="31dp"
+            android:text="in advance will need to be confirmed by me."
+            android:textColor="#FF31353A"
+            android:textSize="16sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="57dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:src="@mipmap/your_customerswill" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rlbottom"
+        android:background="@mipmap/line_bookking_aproval" />
+
+    <RelativeLayout
+
+        android:id="@+id/rlbottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFFFF"
+        android:gravity="center">
+
+
+        <ImageView
+
+            android:id="@+id/tv1"
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="10dp"
+            android:alpha="0.63"
+            android:gravity="center"
+            android:src="@mipmap/note_you_will_have" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

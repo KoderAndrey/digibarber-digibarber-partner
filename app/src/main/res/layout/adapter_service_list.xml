@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:background="@color/off_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:background="@color/off_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_service_name"
+                fontPath="fonts/sf_ui_text_regular.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="7dp"
+                android:text="Service Name"
+                android:textColor="@color/doneTextColor"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                fontPath="fonts/sf_ui_text_regular.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_service_name"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="3dp"
+                android:text="price"
+                android:textColor="@color/red_light"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/tv_des"
+                fontPath="fonts/sf_ui_text_regular.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_price"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="3dp"
+                android:text="des"
+                android:textColor="@color/workplaceColor"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="5dp"
+                android:padding="7dp"
+                android:layout_toLeftOf="@+id/iv_cross"
+                android:src="@mipmap/edit_service_list" />
+
+            <ImageView
+
+                android:id="@+id/iv_cross"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="6dp"
+                android:padding="7dp"
+                android:layout_marginRight="9dp"
+                android:src="@mipmap/remove_service" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_des"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/line">
+
+            </ImageView>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

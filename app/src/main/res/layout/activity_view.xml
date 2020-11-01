@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_shadow"
+                    android:orientation="vertical">
+
+                    <!--<android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:contentInsetStart="0dp"
+                        app:popupTheme="@style/AppTheme.PopupOverlay">-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/back_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/arrow_back_margin_left"
+                            android:layout_marginTop="@dimen/arrow_back_margin_top"
+                            android:clickable="true"
+                            android:onClick="backClick"
+                            android:padding="@dimen/arrow_back_padding"
+                            android:src="@mipmap/back" />
+
+                        <ImageView
+                            android:id="@+id/share_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/arrow_back_margin_left"
+                            android:clickable="true"
+                            android:onClick="shareClick"
+                            android:padding="@dimen/arrow_back_padding"
+                            android:src="@drawable/link_share" />
+
+                        <TextView
+                            android:id="@+id/review_text"
+                            fontPath="fonts/sf_ui_text_regular.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/back_icon"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="@dimen/arrow_back_margin_left"
+                            android:layout_marginTop="19dp"
+                            android:alpha="0.72"
+                            android:clickable="true"
+                            android:padding="@dimen/arrow_back_padding"
+                            android:text="0 Review"
+                            android:textColor="#FF249DFA"
+                            android:textSize="15sp" />
+
+
+                        <TextView
+                            android:id="@+id/photos_text"
+                            fontPath="fonts/sf_ui_text_regular.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@+id/back_icon"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginRight="@dimen/text_right_margin_right"
+                            android:layout_marginTop="19dp"
+                            android:alpha="0.72"
+                            android:clickable="true"
+                            android:padding="@dimen/text_right_padding"
+                            android:text="0 Photos"
+                            android:textColor="#FF249DFA"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_back"
+                        android:src="@mipmap/viewprofile_line" />
+                    <!-- </android.support.v7.widget.Toolbar>-->
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/imageLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/home_default_profile_pic" />
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/barber_profile_image"
+                    android:layout_width="133dp"
+                    android:layout_height="133dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="4dp"
+                    android:src="@color/colorGrey" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/middleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageLayout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    fontPath="fonts/sf_ui_display_regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:text="Stefan Molinex"
+                    android:textColor="#FF3C4F5E"
+                    android:textSize="22sp" />
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="-5dp">
+
+                    <RatingBar
+                        android:id="@+id/rating_stars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="-12dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="-10dp"
+                        android:focusableInTouchMode="false"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:rating="0.0"
+                        android:scaleX="0.4"
+                        android:scaleY="0.4"
+                        android:stepSize="1.0" />
+
+
+                    <TextView
+                        android:id="@+id/text_total_ratings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-80dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_toRightOf="@+id/rating_stars"
+                        android:alpha="0.5"
+                        android:text="0.0"
+                        android:textColor="#FF3C4F5E"
+                        android:textSize="11sp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/workplaceName"
+                    fontPath="fonts/sf_ui_text_semibold.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="-5dp"
+                    android:text="Soho Hair Salon,"
+                    android:textColor="#FF6C7B8A"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/address"
+                    fontPath="fonts/sf_ui_text_regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Address"
+                    android:textAlignment="center"
+                    android:textColor="#FF6C7B8A"
+                    android:textSize="15sp" />
+
+                <RelativeLayout
+                    android:id="@+id/time_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/time_icon"
+                        android:layout_width="18sp"
+                        android:layout_height="20sp"
+                        android:src="@mipmap/home_time_icon"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/timing_text"
+                        fontPath="fonts/sf_ui_text_regular.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/time_icon"
+                        android:text="08:00 - 10:00"
+                        android:textColor="#FF6C7B8A"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/book_button"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/blue_rounded_button"
+                    android:clickable="true"
+                    android:text="Book Now"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_grid_linear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="75dp">
+
+                    <com.digibarber.app.CustomClasses.GridViewCustomHeight
+                        android:id="@+id/gallery_grid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:horizontalSpacing="2dp"
+                        android:numColumns="3"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="2dp">
+
+                    </com.digibarber.app.CustomClasses.GridViewCustomHeight>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/middleLayout"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="14dp">
+
+                    <TextView
+                        android:id="@+id/reviews_text"
+                        fontPath="fonts/sf_ui_display_regular.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Reviews"
+                        android:textColor="#FF323B46"
+                        android:textSize="23sp" /><!--forgotPasswordColor-->
+
+                    <TextView
+                        android:id="@+id/total_reviews_value"
+                        fontPath="fonts/HelveticaNeue.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/reviews_text"
+                        android:text="(view all 0 reviews)"
+                        android:textColor="#FF118FEB"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/review_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="#F8F8F8"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:scrollbars="vertical">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

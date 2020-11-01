@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativ_side_back"
+    android:layout_width="250dp"
+    android:layout_height="match_parent"
+    android:background="@mipmap/slider_back"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="9dp">
+
+                <ImageView
+                    android:id="@+id/outercircle"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/thick_search_default_pic" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/babrber_slider_profile_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dip"
+                    android:src="@color/colorGrey" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_user_name_menu"
+                fontPath="fonts/sf_ui_display_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/rl_image"
+                android:text="Priya"
+                android:textColor="@color/lessTransparentWhite"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/tv_edit_profile_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_image"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="3dp"
+            android:clickable="true"
+            android:padding="7dp"
+            android:src="@mipmap/my_account" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@mipmap/line_copy7" />
+
+        <ImageView
+            android:id="@+id/tv_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="26dp"
+            android:padding="7dp"
+            android:src="@mipmap/home_text_slider" />
+
+        <ImageView
+            android:id="@+id/tv_calender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="26dp"
+            android:clickable="true"
+            android:padding="7dp"
+            android:src="@mipmap/calendar" />
+
+
+        <ImageView
+            android:id="@+id/iv_review"
+            fontPath="fonts/sf_ui_display_light.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="26dp"
+            android:padding="7dp"
+            android:src="@mipmap/reviews" />
+
+
+        <ImageView
+            android:id="@+id/tv_wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="26dp"
+            android:clickable="true"
+            android:padding="7dp"
+            android:src="@mipmap/wallet_text_" />
+
+        <ImageView
+            android:id="@+id/tv_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="26dp"
+            android:clickable="true"
+            android:padding="7dp"
+            android:src="@mipmap/settings" />
+
+        <ImageView
+            android:id="@+id/tv_promote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="26dp"
+            android:clickable="true"
+            android:padding="7dp"
+            android:src="@mipmap/promote" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/tv_sign_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="23dp"
+        android:src="@mipmap/sign_out" />
+
+
+</RelativeLayout>

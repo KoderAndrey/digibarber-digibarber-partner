@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:id="@+id/dialog_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/base"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_message"
+                fontPath="fonts/roboto_medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="21dp"
+                android:gravity="left"
+                android:text="This booking was cancelled"
+                android:textColor="#4D4D4E"
+                android:textSize="18sp" />
+
+
+            <TextView
+                fontPath="fonts/roboto_medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dip"
+                android:gravity="left"
+                android:text="Please tell us the reason you\n cancelled this booking"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:src="@mipmap/lineaddress" />
+
+        <TextView
+            android:id="@+id/tv_unable_offer_service_time"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="I am unable to offer service time"
+            android:textColor="#FF118FEB"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/lineaddress" />
+
+        <TextView
+            android:id="@+id/tv_cust_no_shop"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Customer no show"
+            android:textColor="#FF118FEB"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/lineaddress" />
+
+        <TextView
+            android:id="@+id/tv_barber_busy"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Barber was busy"
+            android:textColor="#FF118FEB"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/lineaddress" />
+
+        <TextView
+            android:id="@+id/tv_cust_made_error"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Customer made error with booking"
+            android:textColor="@color/side_menu_background"
+            android:textSize="15sp" />
+
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/lineaddress" />
+
+        <TextView
+            android:id="@+id/tv_other"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Other"
+            android:textColor="#FF118FEB"
+            android:textSize="16sp" />
+
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/lineaddress" />
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Cancel"
+            android:textColor="#FFF94444"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

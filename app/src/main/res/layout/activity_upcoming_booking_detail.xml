@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.digibarber.app.activities.BookingDetailsActivity"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:orientation="horizontal"
+            android:paddingLeft="8dip"
+            android:paddingRight="8dip">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:clickable="true"
+                android:padding="5dip"
+                android:src="@mipmap/back" />
+
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:padding="5dip"
+                android:text="Cancel"
+                android:textColor="@color/loginTextColor"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="167dp"
+                    android:background="@color/lessRoundedGrey"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/booking_detail"
+                        fontPath="fonts/avenir_font.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dip"
+                        android:gravity="center"
+                        android:text="Booking Details"
+                        android:textColor="@color/headingColor"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tv_service_name"
+                        fontPath="fonts/avenir_font.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/booking_detail"
+                        android:layout_marginTop="10dip"
+                        android:gravity="center"
+                        android:text="Hair Cut &amp; Shave"
+                        android:textColor="@color/headingColor"
+                        android:textSize="15sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.37"
+                            android:gravity="right"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="120dp"
+                                android:layout_height="120dp">
+
+                                <FrameLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginBottom="25dip"
+                                    android:layout_marginRight="7dp">
+
+                                    <ImageView
+                                        android:layout_width="90dp"
+                                        android:layout_height="90dp"
+                                        android:layout_gravity="center"
+                                        android:src="@mipmap/thick_search_default_pic" />
+
+                                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        android:id="@+id/barber_profile_image"
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginBottom="5dip"
+                                        android:src="@color/colorGrey" />
+                                </FrameLayout>
+
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.63"
+                            android:gravity="left"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_with"
+                                fontPath="fonts/avenir_font.ttf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_service_name"
+                                android:layout_marginLeft="30dip"
+                                android:layout_marginTop="15dip"
+                                android:gravity="center"
+                                android:text="with"
+                                android:textColor="@color/headingColor"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_barber_name"
+                                fontPath="fonts/sf_ui_display_light.otf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_with"
+                                android:layout_marginTop="15dip"
+                                android:gravity="center"
+                                android:text="Barber Name"
+                                android:textColor="@color/headingColor"
+                                android:textSize="17sp" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_weight="0.70"
+                    android:layout_height="70dip"
+                    android:layout_marginLeft="20dip"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        fontPath="fonts/avenir_font.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:text="Date"
+                        android:textColor="@color/loginTextColor"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        fontPath="fonts/avenir_font.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="5dp"
+                        android:clickable="true"
+                        android:text="Tuesday, February 16,2015"
+                        android:textColor="@color/headingColor"
+                        android:textSize="17sp" />
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_weight="0.30"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="40dip"
+                            android:src="@drawable/calender_up_detail"
+                            android:layout_height="40dip" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/loginTextColor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_weight="0.70"
+                    android:layout_height="70dip"
+                    android:layout_marginLeft="20dip"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        fontPath="fonts/avenir_font.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:text="Time"
+                        android:textColor="@color/loginTextColor"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        fontPath="fonts/avenir_font.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="5dp"
+                        android:clickable="true"
+                        android:text="9:00 AM"
+                        android:textColor="@color/headingColor"
+                        android:textSize="17sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_weight="0.30"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="40dip"
+                        android:src="@drawable/clock_detail_up"
+                        android:layout_height="40dip" />
+
+                </LinearLayout>
+            </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/loginTextColor" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_weight="0.70"
+                    android:layout_height="70dip"
+                    android:layout_marginLeft="20dip"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        fontPath="fonts/avenir_font.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:text="Location"
+                        android:textColor="@color/loginTextColor"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        fontPath="fonts/avenir_font.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="5dp"
+                        android:clickable="true"
+                        android:text="Soho Hair Salon"
+                        android:textColor="@color/headingColor"
+                        android:textSize="17sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_weight="0.30"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="40dip"
+                        android:src="@drawable/location_up_detail"
+                        android:layout_height="40dip" />
+
+                </LinearLayout>
+            </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/loginTextColor" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginRight="20dip"
+                    android:layout_marginTop="10dip"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+
+
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rl_premium"
+                        android:layout_marginTop="4dip">
+
+                        <TextView
+                            fontPath="fonts/avenir_font.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:text="Premium"
+                            android:textColor="@color/light_yellow"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_premium"
+                            fontPath="fonts/avenir_font.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:text="5.00"
+                            android:textColor="@color/light_yellow"
+                            android:textSize="14sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dip">
+
+                        <TextView
+                            fontPath="fonts/avenir_font.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:text="Total"
+                            android:textColor="@color/loginTextColor"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            fontPath="fonts/avenir_font.otf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_total"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:clickable="true"
+                            android:text="5.00"
+                            android:textColor="@color/headingColor"
+                            android:textSize="17sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/loginTextColor" />
+
+
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

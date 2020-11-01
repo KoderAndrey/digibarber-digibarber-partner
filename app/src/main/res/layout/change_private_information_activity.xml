@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <!--lightheadingColor -->
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/arrow_back_margin_left"
+            android:layout_marginTop="@dimen/arrow_back_margin_top"
+            android:clickable="true"
+            android:onClick="backClick"
+            android:padding="@dimen/arrow_back_padding"
+            android:src="@mipmap/cancel" />
+
+        <ImageView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/private_information_heading" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/text_right_margin_right"
+            android:clickable="true"
+            android:onClick="doneClick"
+            android:padding="@dimen/arrow_back_padding"
+            android:src="@mipmap/done" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/ImageLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/outercircle"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@mipmap/thick_search_default_pic" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/client_profile_image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerInParent="true"
+                    android:src="@color/colorGrey" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/updateProfilePicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:clickable="true"
+                android:src="@mipmap/change_profilepictu" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.10"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/name_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/name" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.90">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="26dp"
+                                android:layout_weight=".50"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/fname"
+                                        fontPath="fonts/sf_ui_text_regular.otf"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="21dp"
+                                        android:layout_weight="1"
+                                        android:background="@null"
+                                        android:clickable="false"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:hint="First Name"
+                                        android:imeOptions="actionUnspecified"
+                                        android:inputType="text"
+                                        android:maxLength="30"
+                                        android:maxLines="1"
+                                        android:singleLine="true"
+                                        android:textColor="#FF31363B"
+                                        android:textSize="15sp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <ImageView
+                                    android:id="@+id/iv_line_f_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:src="@mipmap/first_name_line" />
+
+                                <TextView
+                                    android:id="@+id/tv_text_error_f_name"
+                                    fontPath="fonts/avenir_font.ttf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/iv_line_f_name"
+                                    android:layout_alignLeft="@+id/iv_line_f_name"
+                                    android:text="Enter first name"
+                                    android:textColor="@color/red_error_signup_text"
+                                    android:textSize="12sp"
+                                    android:visibility="invisible" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".50"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/lname"
+                                        fontPath="fonts/sf_ui_text_regular.otf"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="21dp"
+                                        android:layout_weight="1"
+                                        android:background="@null"
+                                        android:clickable="false"
+                                        android:editable="false"
+                                        android:focusable="false"
+                                        android:focusableInTouchMode="false"
+                                        android:hint="Surname"
+                                        android:imeOptions="actionUnspecified"
+                                        android:inputType="text"
+                                        android:maxLength="30"
+                                        android:maxLines="1"
+                                        android:singleLine="true"
+                                        android:textColor="#FF31363B"
+                                        android:textSize="15sp" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <ImageView
+                                    android:id="@+id/iv_line_su_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@mipmap/first_name_line" />
+
+                                <TextView
+                                    android:id="@+id/tv_text_error_sur_name"
+                                    fontPath="fonts/avenir_font.ttf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/iv_line_f_name"
+                                    android:layout_alignLeft="@+id/iv_line_f_name"
+                                    android:text="Enter surname"
+                                    android:textColor="@color/red_error_signup_text"
+                                    android:textSize="12sp"
+                                    android:visibility="invisible" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.10"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/email_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/email" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.90">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/input_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/iv_cross1">
+
+                            <EditText
+                                android:id="@+id/email"
+                                fontPath="fonts/sf_ui_text_regular.otf"
+                                android:layout_width="match_parent"
+                                android:layout_height="21dp"
+                                android:background="@null"
+                                android:hint="@string/prompt_email"
+                                android:imeOptions="actionUnspecified"
+                                android:inputType="textEmailAddress"
+                                android:maxLength="100"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textColor="#FF31363B"
+                                android:textSize="15sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_line_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/input_text"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="5dp"
+                            android:background="@mipmap/line_signup_grey" />
+
+                        <TextView
+                            android:id="@+id/tv_text_error_email"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_line_email"
+                            android:text="Please use a valid email address"
+                            android:textColor="@color/red_error_signup_text"
+                            android:textSize="12sp"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/iv_cross1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:padding="2dp"
+                            android:src="@mipmap/icon_cross_private_info" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.10"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/phone_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/phone" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.90">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/iv_cross2">
+
+<!--                           <LinearLayout-->
+<!--                               android:layout_width="match_parent"-->
+<!--                               android:layout_height="wrap_content"-->
+<!--                               android:orientation="horizontal">-->
+
+<!--                               <TextView-->
+
+<!--                                   fontPath="fonts/sf_ui_text_regular.otf"-->
+<!--                                   android:id="@+id/tv_country_code"-->
+<!--                                   android:layout_width="wrap_content"-->
+<!--                                   android:layout_height="32dp"-->
+<!--                                   android:gravity="bottom"-->
+<!--                                   android:text="@string/uk_code"-->
+<!--                                   android:textColor="#FF31363B"-->
+<!--                                   android:textSize="15sp" />-->
+<!--                               -->
+<!--                           </LinearLayout>-->
+                            <EditText
+                                android:id="@+id/phone"
+                                fontPath="fonts/sf_ui_text_regular.otf"
+                                android:layout_width="match_parent"
+                                android:layout_height="21dp"
+                                android:background="@null"
+                                android:hint="@string/prompt_phone"
+                                android:imeOptions="actionUnspecified"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:text="+44"
+                                android:singleLine="true"
+                                android:textColor="#FF31363B"
+                                android:textSize="15sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/iv_line_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_phone"
+                            android:layout_marginTop="5dp"
+                            android:background="@mipmap/line_signup_grey" />
+
+                        <TextView
+                            android:id="@+id/tv_text_error_phone"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_line_phone"
+                            android:text="Please use a valid mobile number"
+                            android:textColor="@color/red_error_signup_text"
+                            android:textSize="12sp"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/iv_cross2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:padding="2dp"
+                            android:src="@mipmap/icon_cross_private_info" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="20dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.10"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/workplace_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@mipmap/home" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.90">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_workplace"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/iv_cross3">
+
+                            <EditText
+                                android:id="@+id/workplace"
+                                fontPath="fonts/sf_ui_text_regular.otf"
+                                android:layout_width="match_parent"
+                                android:layout_height="21dp"
+                                android:background="@null"
+                                android:hint="Workplace"
+                                android:imeOptions="actionUnspecified"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textColor="#FF31363B"
+                                android:textSize="15sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <ImageView
+                            android:id="@+id/iv_line_workplace"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_workplace"
+                            android:layout_marginTop="5dp"
+                            android:background="@mipmap/line_signup_grey" />
+
+                        <TextView
+                            android:id="@+id/tv_text_error_workplace"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_line_workplace"
+                            android:text="Please enter name of place of work!"
+                            android:textColor="@color/red_error_signup_text"
+                            android:textSize="12sp"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/iv_cross3"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:padding="2dp"
+                            android:src="@mipmap/icon_cross_private_info" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.10"
+                        android:gravity="center">
+                        <ImageView
+                            android:id="@+id/address_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/address" />
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.90">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/tv_next_address">
+                            <EditText
+                                android:id="@+id/address"
+                                fontPath="fonts/sf_ui_text_regular.otf"
+                                android:layout_width="match_parent"
+                                android:layout_height="21dp"
+                                android:background="@null"
+                                android:editable="false"
+                                android:hint="Address"
+                                android:imeOptions="actionUnspecified"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textColor="#FF31363B"
+                                android:textSize="15sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:id="@+id/iv_line_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_address"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_toLeftOf="@+id/tv_next_address"
+                            android:background="@mipmap/line_signup_grey" />
+                        <TextView
+                            android:id="@+id/tv_text_error_address"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_line_address"
+                            android:text="Please enter the address of your place of work"
+                            android:textColor="@color/red_error_signup_text"
+                            android:textSize="12sp"
+                            android:visibility="invisible" />
+                        <ImageView
+                            android:id="@+id/tv_next_address"
+                            android:layout_width="25dip"
+                            android:layout_height="25dip"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:padding="5dp"
+                            android:src="@mipmap/settings_arrow" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_connect_stripe"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.10"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/upload_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/upload_center" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:paddingTop="@dimen/dp5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.90">
+                        <TextView
+                            android:textSize="16sp"
+                            android:id="@+id/view_dashboard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Connect to Stripe" />
+                        <LinearLayout
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp"
+                                android:textColor="@color/green_success"
+                                android:visibility="gone"
+                                android:id="@+id/textConnected"
+                                android:text="Connected"/>
+                            <ImageView
+                                android:id="@+id/iv_next_upload_center"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:padding="5dip"
+                                android:src="@mipmap/settings_arrow" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_marginRight="24dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/barberAddressColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

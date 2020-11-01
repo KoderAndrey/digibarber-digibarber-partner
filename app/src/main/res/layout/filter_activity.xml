@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rsb="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/searchBackgroundColor"
+    tools:context="com.digibarber.app.activities.FilterActivity"
+    tools:ignore="MissingPrefix">
+
+    <!--Header Code-->
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_add_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:background="@color/colorWhite"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_close_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:padding="@dimen/arrow_back_padding"
+                    android:src="@mipmap/close_icon" />
+
+                <TextView
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Filter"
+                    android:textColor="@color/search_heading_color"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_done"
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/arrow_back_padding"
+
+                    android:layout_marginRight="20sp"
+                    android:clickable="true"
+                    android:text="Done"
+                    android:textColor="@color/doneTextColor"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <!--Layout after header-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar_add_contacts">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/iv_reset_button"
+                android:layout_width="300dip"
+                android:layout_height="50dip"
+                android:layout_marginTop="10dip"
+                android:src="@drawable/reset_button" />
+
+
+            <TextView
+                android:id="@+id/pick_service_text"
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Pick Your Services"
+                android:textColor="@color/search_heading_color"
+                android:textSize="20sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dip"
+                android:layout_marginRight="7dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/back_filter_shadow">
+
+                <LinearLayout
+                    android:id="@+id/serviceLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <Button
+                        android:id="@+id/haircut_button"
+                        fontPath="fonts/sf_ui_display_light.otf"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center|center_vertical"
+                        android:layout_weight="1"
+                        android:background="@mipmap/unselected_filter_service"
+                        android:text="Hair Cut"
+                        android:textAllCaps="false"
+                        android:textColor="@color/headingColor"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/beard_button"
+                        fontPath="fonts/sf_ui_display_light.otf"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center|center_vertical"
+                        android:layout_weight="1"
+                        android:background="@mipmap/unselected_filter_service"
+                        android:text="Beard\nServices"
+                        android:textAllCaps="false"
+                        android:textColor="@color/headingColor"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/pamper_button"
+                        fontPath="fonts/sf_ui_display_light.otf"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center|center_vertical"
+                        android:layout_weight="1"
+                        android:background="@mipmap/unselected_filter_service"
+                        android:text="Pamper\nTreatment"
+                        android:textAllCaps="false"
+                        android:textColor="@color/headingColor"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/misc_button"
+                        fontPath="fonts/sf_ui_display_light.otf"
+                        android:layout_width="0dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center|center_vertical"
+                        android:layout_weight="1"
+                        android:background="@mipmap/unselected_filter_service"
+                        android:text="Misc"
+                        android:textAllCaps="false"
+                        android:textColor="@color/headingColor"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/serviceLayout"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none"></androidx.recyclerview.widget.RecyclerView>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/availability_text"
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginTop="10dp"
+                android:padding="10sp"
+                android:text="Availability"
+                android:textColor="@color/search_heading_color"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/availLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dip"
+                android:layout_marginRight="7dip"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/back_filter_shadow"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <!-- Avenir font -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <LinearLayout
+
+                        android:id="@+id/ll_24"
+                        android:layout_width="85dip"
+                        android:layout_height="85dip"
+                        android:background="@drawable/availability_circle_selected"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="7dip">
+
+                        <TextView
+                            android:id="@+id/tv_24"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="24"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_time24"
+                            android:layout_width="28dip"
+                            android:layout_height="28dip"
+                            android:padding="3dip"
+                            android:src="@drawable/clock_white" />
+
+                        <TextView
+                            android:id="@+id/tv_24_hours"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dip"
+                            android:text="Hours"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:id="@+id/ll_48"
+                        android:layout_width="85dip"
+                        android:layout_height="85dip"
+                        android:background="@drawable/availablity_circle_unselected"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="7dip">
+
+                        <TextView
+                            android:id="@+id/tv_48"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="48"
+                            android:textColor="@color/search_heading_color"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_time48"
+                            android:layout_width="28dip"
+                            android:layout_height="28dip"
+                            android:padding="3dip"
+                            android:src="@drawable/clock_black"
+                            android:textAllCaps="false"
+                            android:textColor="@color/headingColor" />
+
+                        <TextView
+                            android:id="@+id/tv_48_hours"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dip"
+                            android:text="Hours"
+                            android:textColor="@color/search_heading_color"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+
+                        android:id="@+id/ll_72"
+                        android:layout_width="85dip"
+                        android:layout_height="85dip"
+                        android:background="@drawable/availablity_circle_unselected"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="7dip">
+
+                        <TextView
+                            android:id="@+id/tv_72"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="72"
+                            android:textColor="@color/search_heading_color"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_time72"
+                            android:layout_width="28dip"
+                            android:layout_height="28dip"
+                            android:padding="3dip"
+                            android:src="@drawable/clock_black"
+                            android:textAllCaps="false"
+                            android:textColor="@color/headingColor" />
+
+                        <TextView
+                            android:id="@+id/tv_72_hours"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dip"
+                            android:text="Hours"
+                            android:textColor="@color/search_heading_color"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+
+                        android:id="@+id/ll_any"
+                        android:layout_width="85dip"
+                        android:layout_height="85dip"
+                        android:background="@drawable/availablity_circle_unselected"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="7dip">
+
+                        <TextView
+                            android:id="@+id/tv_any"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Any"
+                            android:textColor="@color/search_heading_color"
+                            android:textSize="13sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_time_any"
+                            android:layout_width="28dip"
+                            android:layout_height="28dip"
+                            android:padding="3dip"
+                            android:src="@drawable/clock_black"
+                            android:textAllCaps="false"
+                            android:textColor="@color/headingColor" />
+
+                        <TextView
+                            android:id="@+id/tv_any_hours"
+                            fontPath="fonts/avenir_font.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dip"
+                            android:text="Time"
+                            android:textColor="@color/search_heading_color"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <com.digibarber.app.CustomClasses.CustomAvenirTextView
+                android:id="@+id/price_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginTop="10dp"
+                android:padding="10sp"
+                android:text="Price"
+                android:textColor="@color/headingColor"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:layout_marginLeft="7dip"
+                android:layout_marginRight="7dip"
+                android:background="@drawable/back_filter_shadow"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginRight="23dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:gravity="left"
+                        android:text="0"
+                        android:textSize="15sp"
+                        android:textColor="@color/editProfile1"
+                        android:id="@+id/tv_min_price"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.50" />
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:text="200"
+                        android:textSize="15sp"
+                        android:textColor="@color/editProfile1"
+                        android:id="@+id/tv_max_price"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.50" />
+
+                </LinearLayout>
+
+                <org.florescu.android.rangeseekbar.RangeSeekBar
+                    android:id="@+id/rangeSeekbar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    app:activateOnDefaultValues="false"
+                    app:activeColor="@color/seekbarColor"
+                    app:barHeight="5dp"
+                    app:defaultColor="@color/seekbarWhiteColor"
+                    app:showLabels="false"
+                    app:textAboveThumbsColor="@color/seekbarTextColor"
+                    app:thumbDisabled="@drawable/rounded_seekbar_thumb"
+                    app:thumbNormal="@drawable/rounded_seekbar_thumb"
+                    app:thumbPressed="@drawable/rounded_seekbar_thumb"
+                    app:valuesAboveThumbs="false"
+                    rsb:activeColor="@color/seekbarColor"
+                    rsb:defaultColor="@color/colorWhite"
+                    rsb:thumbShadowColor="@color/seekbarColor" />
+
+            </LinearLayout>
+
+            <com.digibarber.app.CustomClasses.CustomAvenirTextView
+                android:id="@+id/hair_type_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginTop="10dp"
+                android:padding="10sp"
+                android:text="Hair Type"
+                android:textColor="@color/headingColor"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dip"
+                android:layout_marginRight="7dip"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/back_filter_shadow"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/ll_afro"
+                    android:layout_width="85dip"
+                    android:layout_height="85dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginRight="20dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/availability_circle_selected"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/iv_afro"
+                        android:layout_width="45dip"
+                        android:layout_height="45dip"
+                        android:padding="5dip"
+                        android:src="@drawable/afro_hair"
+                        android:textAllCaps="false"
+                        android:textColor="@color/headingColor" />
+
+                    <TextView
+                        android:id="@+id/tv_Afro"
+                        fontPath="fonts/avenir_font.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Afro"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_euro"
+                    android:layout_width="85dip"
+                    android:layout_height="85dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginRight="20dip"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/availablity_circle_unselected"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/iv_euro"
+                        android:layout_width="45dip"
+                        android:layout_height="45dip"
+                        android:padding="5dip"
+                        android:src="@drawable/euro_hair"
+                        android:textAllCaps="false"
+                        android:textColor="@color/headingColor" />
+
+                    <TextView
+                        android:id="@+id/tv_euro"
+                        fontPath="fonts/avenir_font.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Euro"
+                        android:textColor="@color/headingColor"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.digibarber.app.CustomClasses.CustomAvenirTextView
+                android:id="@+id/distance_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginTop="10dp"
+                android:padding="10sp"
+                android:text="Distance"
+                android:textColor="@color/headingColor"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:layout_marginBottom="20dip"
+                android:layout_marginLeft="7dip"
+                android:layout_marginRight="7dip"
+                android:background="@drawable/back_filter_shadow"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginRight="23dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:gravity="left"
+                        android:text="0"
+                        android:textColor="@color/editProfile1"
+                        android:textSize="15sp"
+                        android:id="@+id/tv_min_dis"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.50" />
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:text="300"
+                        android:textSize="15sp"
+                        android:id="@+id/tv_max_dis"
+                        android:textColor="@color/editProfile1"
+                        android:gravity="right"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.50" />
+
+                </LinearLayout>
+
+                <org.florescu.android.rangeseekbar.RangeSeekBar
+                    android:id="@+id/rangeSeekbar1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    app:activeColor="@color/seekbarColor"
+                    app:barHeight="5dp"
+                    app:defaultColor="@color/seekbarWhiteColor"
+                    app:showLabels="false"
+                    app:textAboveThumbsColor="@color/seekbarTextColor"
+                    app:thumbDisabled="@drawable/rounded_seekbar_thumb"
+                    app:thumbNormal="@drawable/rounded_seekbar_thumb"
+                    app:thumbPressed="@drawable/rounded_seekbar_thumb"
+
+                    app:valuesAboveThumbs="false"
+                    rsb:activeColor="@color/seekbarColor"
+                    rsb:defaultColor="@color/colorWhite"
+                    rsb:thumbShadowColor="@color/seekbarColor" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

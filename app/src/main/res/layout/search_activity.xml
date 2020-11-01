@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ >
+
+
+    <RelativeLayout
+        android:id="@+id/rl_header_search"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorWhite"
+        android:elevation="7dip">
+
+        <ImageView
+            android:id="@+id/menu_button"
+            android:layout_width="45dip"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:padding="10dip"
+            android:src="@mipmap/home_menu_icon" />
+
+        <com.digibarber.app.CustomClasses.CustomAvenirTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Search"
+            android:textColor="@color/search_heading_color"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/map_icon"
+            android:layout_width="45dip"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:gravity="right"
+            android:padding="13dip"
+            android:src="@mipmap/map_location_icon" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_header_search"
+        android:background="@color/searchBackgroundColor">
+
+        <AutoCompleteTextView
+            android:id="@+id/search_edit"
+            android:layout_width="match_parent"
+            android:layout_height="35sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/less_rounded_layout"
+            android:drawableLeft="@mipmap/home_search_icon"
+            android:drawablePadding="10sp"
+            android:gravity="left"
+            android:hint="Search by barber name or shop?"
+            android:imeOptions="actionSearch"
+            android:padding="10sp"
+            android:textColor="@color/searchBarColor"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/search_edit"
+            android:layout_marginTop="10dp"
+            android:background="@color/lineColor" />
+
+
+        <RelativeLayout
+            android:id="@+id/sortLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginTop="10dp">
+
+            <com.digibarber.app.CustomClasses.CustomSfTextTextView
+                android:id="@+id/sorting_layout"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:drawableRight="@mipmap/down_arrow"
+                android:text="SORT BARBERS BY"
+                android:textColor="@color/editProfile1"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/filter_icon"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:gravity="right"
+                android:src="@mipmap/filter_icon" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sortLayout"
+            android:layout_marginLeft="20sp"
+            android:layout_marginRight="20sp"
+            android:layout_marginTop="15sp"
+            android:paddingBottom="10dp"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/rating_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/line_black_button"
+                android:text="Rating"
+                android:textAllCaps="false"
+                android:textColor="@color/headingColor"
+                android:textSize="16sp" />
+            <!--rounded_custom_black_button-->
+
+            <Button
+                android:id="@+id/distance_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/line_black_button"
+                android:text="Distance"
+                android:textAllCaps="false"
+                android:textColor="@color/headingColor"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/buttonLayout"
+            android:background="@color/lineColor" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topLayout"
+        android:background="@color/colorWhite"></androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

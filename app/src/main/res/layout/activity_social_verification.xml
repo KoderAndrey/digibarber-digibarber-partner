@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_verfication_main"
+    android:background="@mipmap/verfication_back"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/ll_click_popup"
+        android:clickable="true"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/verification_popup_back"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_phone"
+                fontPath="fonts/Avenir-Medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="29dp"
+                android:inputType="number"
+                android:text="077471016712"
+                android:textColor="#FF31353A"
+                android:textSize="16sp" />
+
+            <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_marginTop="5dip"-->
+            <!--android:src="@mipmap/sent_code"-->
+            <!--android:layout_height="35dip" />-->
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                fontPath="fonts/avenir_light.ttf"
+                android:layout_marginTop="11dip"
+                android:gravity="center"
+                android:text="We’ve sent you a code to verify your mobile\n number"
+                android:textColor="#FF454545"
+                android:textSize="16sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dip"
+                android:layout_marginRight="18dip"
+                android:layout_marginTop="20dip"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/et1"
+                        fontPath="fonts/SF-UI-Display-Medium.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@mipmap/edit_verfi_grey"
+                        android:gravity="center"
+                        android:hint="X"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:singleLine="true"
+                        android:textColor="#FF31353A"
+                        android:textColorHint="#B9BBBC"
+                        android:textSize="50sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/et2"
+                        fontPath="fonts/SF-UI-Display-Medium.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@mipmap/edit_verfi_grey"
+                        android:gravity="center"
+                        android:hint="X"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:singleLine="true"
+                        android:textColor="#FF31353A"
+                        android:textColorHint="#B9BBBC"
+                        android:textSize="50sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/et3"
+                        fontPath="fonts/SF-UI-Display-Medium.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@mipmap/edit_verfi_grey"
+                        android:gravity="center"
+                        android:hint="X"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:singleLine="true"
+                        android:textColor="#FF31353A"
+                        android:textColorHint="#B9BBBC"
+                        android:textSize="50sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/et4"
+                        fontPath="fonts/SF-UI-Display-Medium.otf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@mipmap/edit_verfi_grey"
+                        android:gravity="center"
+                        android:hint="X"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:singleLine="true"
+                        android:textColor="#FF31353A"
+                        android:textColorHint="#B9BBBC"
+                        android:textSize="50sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dip"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/re_send" />
+
+            <ImageView
+                android:id="@+id/iv_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitCenter"
+                android:src="@mipmap/call_instead" />
+
+            <ImageView
+                android:id="@+id/iv_sad_face"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dip"
+                android:src="@mipmap/sad_face"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dip"
+                android:src="@mipmap/tick_success"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dip"
+                android:src="@mipmap/success"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_cross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:src="@mipmap/close_avail" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

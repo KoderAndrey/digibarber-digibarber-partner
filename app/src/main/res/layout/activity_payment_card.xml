@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.digibarber.app.activities.PaymentCardActivity"
+    tools:ignore="MissingPrefix">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:orientation="horizontal"
+            android:paddingLeft="8dip"
+            android:paddingRight="8dip">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:clickable="true"
+
+                android:padding="@dimen/arrow_back_padding"
+                android:src="@mipmap/back" />
+
+            <TextView
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Payment"
+                android:textColor="@color/search_heading_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:text="Cancel"
+                android:textColor="@color/loginTextColor"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_name_on_card"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="30dip"
+            android:singleLine="true"
+            android:layout_marginRight="30dip"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/paymenteditback"
+            android:hint="Name on card"
+            android:paddingLeft="8dip"
+            android:textSize="15sp" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/paymenteditback"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_card_number"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:background="@null"
+                android:maxLength="19"
+                android:inputType="number"
+                android:singleLine="true"
+                android:hint="Card Number"
+                android:paddingLeft="8dip"
+                android:textSize="15sp"
+
+                />
+
+            <ImageView
+                android:layout_width="40dip"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dip"
+                android:id="@+id/iv_card_type"
+                />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:id="@+id/rl_scan_card"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip">
+
+            <ImageView
+                android:id="@+id/iv_scan_card"
+                android:layout_width="30dip"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dip"
+                android:src="@drawable/scan_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_scan_card"
+                android:text="Scan your card"
+                android:textColor="@color/lightheadingColor"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dip"
+                android:layout_weight="0.6"
+                android:src="@drawable/poweredbymangopay" />
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dip"
+                android:layout_weight="0.2"
+                android:src="@drawable/verified_visa" />
+
+            <ImageView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:src="@drawable/master_secure_card" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

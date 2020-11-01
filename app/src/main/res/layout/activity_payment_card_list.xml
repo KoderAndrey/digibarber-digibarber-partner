@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.digibarber.app.activities.PaymentCardListActivity"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:orientation="horizontal"
+            android:paddingLeft="8dip"
+            android:paddingRight="8dip">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:clickable="true"
+
+                android:padding="@dimen/arrow_back_padding"
+                android:src="@mipmap/back" />
+
+            <TextView
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Update payment"
+                android:padding="@dimen/arrow_back_padding"
+android:layout_centerVertical="true"
+                android:textColor="@color/search_heading_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_done"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:text="Done"
+                android:textColor="@color/doneTextColor"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dip">
+
+            <TextView
+                android:id="@+id/tv_payment"
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Methods"
+                android:textSize="15sp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_card_detail1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/selected_card_bg"
+                android:orientation="horizontal"
+                android:padding="10dip">
+
+                <ImageView
+                    android:id="@+id/iv_icon_card1"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip"
+                    android:src="@drawable/visa_card" />
+
+
+                <TextView
+                    android:id="@+id/tv_card_number1"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@+id/iv_icon_card1"
+                    android:password="true"
+                    android:text="4154"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_card_number_hidden2"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tv_card_number1"
+                    android:password="true"
+                    android:text="4154"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_card_number_hidden3"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tv_card_number_hidden2"
+                    android:password="true"
+                    android:text="4154"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_card_number_show1"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tv_card_number_hidden3"
+                    android:text="4154"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/iv_card_next1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dip"
+                    android:src="@mipmap/btn_bg_next_month" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_card_detail2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/payement_unselected"
+                android:orientation="horizontal"
+                android:padding="10dip">
+
+                <ImageView
+                    android:id="@+id/iv_icon_card2"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip"
+                    android:src="@drawable/master_card" />
+
+
+                <TextView
+                    android:id="@+id/tv_card_number11"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dip"
+                    android:layout_toRightOf="@+id/iv_icon_card2"
+                    android:password="true"
+                    android:text="4154"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_card_number_hidden12"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tv_card_number11"
+                    android:password="true"
+                    android:text="4154"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_card_number_hidden13"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tv_card_number_hidden12"
+                    android:password="true"
+                    android:text="4154"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tv_card_number_show2"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tv_card_number_hidden13"
+                    android:text="4154"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/iv_card_next2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dip"
+                    android:src="@mipmap/btn_bg_next_month" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_add_payment_method"
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:padding="5dip"
+                android:text="Add Payment Method"
+                android:textColor="@color/doneTextColor"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="40dip"
+            android:background="@color/colorGrey" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dip">
+
+            <TextView
+                android:id="@+id/tv_promotions"
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Promotions"
+                android:textSize="15sp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_promotions"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/payement_unselected"
+                android:orientation="horizontal"
+                android:padding="10dip">
+
+                <ImageView
+                    android:id="@+id/tv_icon_promotion"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/logo_promotion" />
+
+
+                <TextView
+                    android:id="@+id/tv_active_promotions"
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_icon_promotion"
+                    android:text="Active Promotions"
+                    android:textSize="15sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_status_active"
+                    fontPath="fonts/penoftruth.ttf"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="Active"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_add_promo_gift_code"
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:padding="5dip"
+                android:text="Add Promo/Gift code"
+                android:textColor="@color/doneTextColor"
+                android:textSize="17sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:visibility="gone"
+                android:layout_weight="1"
+                android:id="@+id/rl_promo_view"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="50dip"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dip"
+                    android:layout_weight="0.70"
+                    android:background="@drawable/back_promo"
+                    android:gravity="center">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/et_promo"
+                        fontPath="fonts/sf_ui_text_light.otf"
+                        android:textColor="@color/search_heading_color"
+                        android:layout_marginLeft="5dip"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/siren" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.30">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dip"
+                        android:layout_gravity="center"
+                        android:id="@+id/tv_add_promo"
+                        android:background="@drawable/add_promo"
+                        android:gravity="center"
+                        android:textSize="15sp"
+                        android:paddingBottom="7dip"
+                        fontPath="fonts/sf_ui_text_light.otf"
+                        android:text="Add"
+                        android:textColor="@color/colorWhite" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/dialog_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/base"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_message"
+                fontPath="fonts/roboto_medium.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="21dp"
+                android:gravity="left"
+                android:text="Ops"
+                android:textColor="#4D4D4E"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:alpha="0.50"
+            android:src="@mipmap/lineaddress" />
+
+        <TextView
+
+            android:id="@+id/tv_unable_arive_time"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Hey, You cannot amend  the description for mobile services"
+            android:textColor="#FF118FEB"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.50"
+            android:src="@mipmap/lineaddress" />
+        <TextView
+            android:layout_marginTop="100dp"
+            android:id="@+id/tv_cancel"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="end"
+            android:gravity="center"
+            android:text="Ok"
+            android:textColor="#FFF94444"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

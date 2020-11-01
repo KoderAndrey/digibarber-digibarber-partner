@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.digibarber.app.activities.PaymentCardActivity"
+    tools:ignore="MissingPrefix">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:orientation="horizontal"
+            android:id="@+id/rl_header"
+            android:paddingLeft="8dip"
+            android:paddingRight="8dip">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:src="@mipmap/back" />
+
+            <TextView
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Payment"
+                android:layout_centerVertical="true"
+                android:textColor="@color/search_heading_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:text="Cancel"
+                android:textColor="@color/loginTextColor"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dip"
+            android:id="@+id/ll_first"
+            android:layout_below="@+id/rl_header"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dip"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="30dip"
+                android:layout_marginRight="30dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expiry Date"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:textSize="12sp"
+                    android:textColor="@color/loginTextColor" />
+                <EditText
+                    android:id="@+id/et_expiry_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:singleLine="true"
+                    android:inputType="date"
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:background="@drawable/paymenteditback"
+                    android:hint="MM/YY"
+                    android:paddingLeft="8dip"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="30dip"
+                android:layout_marginRight="30dip"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CVV code"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:textSize="12sp"
+                    android:textColor="@color/loginTextColor" />
+                <EditText
+                    android:id="@+id/et_cvvcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:background="@drawable/paymenteditback"
+                    android:hint="CVV code"
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:paddingLeft="8dip"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dip"
+            android:orientation="horizontal"
+            android:layout_below="@+id/ll_first"
+            android:id="@+id/ll_second"
+            android:layout_marginTop="10dip"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="30dip"
+                android:layout_marginRight="30dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Postcode"
+                    android:textAllCaps="true"
+
+                    android:textSize="12sp"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:textColor="@color/loginTextColor" />
+                <EditText
+                    android:id="@+id/et_postcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:singleLine="true"
+                    android:imeActionLabel="Done"
+                    android:imeActionId="@+id/et_click"
+                    android:background="@drawable/paymenteditback"
+                    android:hint="Postcode"
+                    android:textAllCaps="true"
+
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:paddingLeft="8dip"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl_scan_card"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/ll_second"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip">
+
+            <ImageView
+                android:id="@+id/iv_scan_card"
+                android:layout_width="30dip"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dip"
+                android:src="@drawable/scan_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_scan_card"
+                android:text="Scan your card"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:textColor="@color/lightheadingColor"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="30dip"
+            android:layout_marginRight="30dip"
+            android:id="@+id/ll_pay"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="30dip"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/blue_rounded_button"
+            android:orientation="horizontal"
+            android:layout_height="50dip">
+            <ImageView
+                android:layout_width="30dip"
+                android:src="@drawable/check"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dip"
+                android:layout_height="30dip" />
+            <TextView
+                android:layout_width="wrap_content"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:textSize="18sp"
+                android:id="@+id/tv_pay"
+                android:textColor="@color/colorWhite"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

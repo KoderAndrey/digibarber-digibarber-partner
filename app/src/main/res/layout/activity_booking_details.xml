@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:orientation="horizontal"
+            android:paddingLeft="8dip"
+            android:paddingRight="8dip">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:clickable="true"
+                android:layout_marginTop="@dimen/arrow_back_margin_top"
+                android:padding="@dimen/arrow_back_padding"                android:src="@mipmap/back" />
+
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:text="Cancel"
+                android:textColor="@color/loginTextColor"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="167dp"-->
+                    <!--android:background="@color/lessRoundedGrey"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/booking_detail"-->
+                        <!--fontPath="fonts/avenir_font.ttf"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="15dip"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="Booking Details"-->
+                        <!--android:textColor="@color/headingColor"-->
+                        <!--android:textSize="20sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_service_name"-->
+                        <!--fontPath="fonts/avenir_font.ttf"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_below="@+id/booking_detail"-->
+                        <!--android:layout_marginTop="10dip"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="Hair Cut &amp; Shave"-->
+                        <!--android:textColor="@color/headingColor"-->
+                        <!--android:textSize="15sp" />-->
+
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:weightSum="1">-->
+
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="0dip"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:layout_weight="0.37"-->
+                            <!--android:gravity="right"-->
+                            <!--android:orientation="vertical">-->
+
+                            <!--<RelativeLayout-->
+                                <!--android:layout_width="120dp"-->
+                                <!--android:layout_height="120dp">-->
+
+                                <!--<FrameLayout-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:layout_alignParentBottom="true"-->
+                                    <!--android:layout_alignParentRight="true"-->
+                                    <!--android:layout_marginBottom="25dip"-->
+                                    <!--android:layout_marginRight="7dp">-->
+
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="90dp"-->
+                                        <!--android:layout_height="90dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:src="@mipmap/thick_search_default_pic" />-->
+
+                                    <!--<de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                                        <!--android:id="@+id/barber_profile_image"-->
+                                        <!--android:layout_width="80dp"-->
+                                        <!--android:layout_height="80dp"-->
+                                        <!--android:layout_gravity="center"-->
+                                        <!--android:layout_marginBottom="5dip"-->
+                                        <!--android:src="@color/colorGrey" />-->
+                                <!--</FrameLayout>-->
+
+
+                            <!--</RelativeLayout>-->
+                        <!--</LinearLayout>-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="0dip"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:layout_weight="0.63"-->
+                            <!--android:gravity="left"-->
+                            <!--android:orientation="vertical">-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tv_with"-->
+                                <!--fontPath="fonts/avenir_font.ttf"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_below="@+id/tv_service_name"-->
+                                <!--android:layout_marginLeft="30dip"-->
+                                <!--android:layout_marginTop="15dip"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="with"-->
+                                <!--android:textColor="@color/headingColor"-->
+                                <!--android:textSize="12sp" />-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/tv_barber_name"-->
+                                <!--fontPath="fonts/sf_ui_display_light.otf"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_below="@+id/tv_with"-->
+                                <!--android:layout_marginTop="15dip"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="Barber Name"-->
+                                <!--android:textColor="@color/headingColor"-->
+                                <!--android:textSize="17sp" />-->
+
+
+                        <!--</LinearLayout>-->
+
+
+                    <!--</LinearLayout>-->
+
+
+                <!--</LinearLayout>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF8F8F9"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/booking_detail"
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center"
+                        android:text="Booking Details"
+                        android:textColor="#FF1D1D26"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tv_service_name"
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/booking_detail"
+                        android:layout_marginTop="5dip"
+                        android:gravity="center"
+                        android:text="Hair Cut &amp; Shave"
+                        android:textColor="#FF31363B"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_with"
+                        fontPath="fonts/avenir_light.ttf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="9dp"
+                        android:gravity="center"
+                        android:text="with"
+                        android:textColor="#FF31363B"
+                        android:textSize="12sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!--   <LinearLayout
+                               android:id="@+id/ImageLayout"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginLeft="50dp"
+                               android:gravity="center"
+                               android:orientation="vertical">-->
+
+                        <RelativeLayout
+                            android:id="@+id/ImageLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="77dp">
+
+                            <FrameLayout
+                                android:id="@+id/barber_profile_image_container"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="7dp">
+
+                                <ImageView
+                                    android:layout_width="67dp"
+                                    android:layout_height="67dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@mipmap/thick_search_default_pic" />
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/barber_profile_image"
+                                    android:layout_width="62dp"
+                                    android:layout_height="62dp"
+                                    android:layout_gravity="center"
+                                    android:src="@color/colorGrey" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/barberNameLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/barber_profile_image_container"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/tv_barber_name"
+                                    fontPath="fonts/sf_ui_display_regular.otf"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="7dip"
+                                    android:gravity="center"
+                                    android:text="Barber Name"
+                                    android:textColor="#FF31363B"
+                                    android:textSize="20sp" />
+
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+                        <!-- </LinearLayout>-->
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dip"
+                        android:layout_weight="0.9"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            fontPath="fonts/Avenir-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="5dp"
+                            android:alpha="0.5"
+                            android:clickable="true"
+                            android:text="Date"
+                            android:textColor="#FF1D1D26"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_date"
+                            fontPath="fonts/avenir_light.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="5dp"
+                            android:clickable="true"
+                            android:text="Tuesday, February 16,2015"
+                            android:textColor="#FF1D1D26"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/booking_date"
+                        fontPath="fonts/sf_ui_text_light.otf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="19dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0.1"
+                        android:src="@mipmap/booking_date"
+                        android:textColor="@color/loginTextColor"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="70dip"-->
+                    <!--android:layout_marginLeft="20dip"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<TextView-->
+                        <!--fontPath="fonts/avenir_font.otf"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:clickable="true"-->
+                        <!--android:text="Date"-->
+                        <!--android:textColor="@color/loginTextColor"-->
+                        <!--android:textSize="15sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_date"-->
+                        <!--fontPath="fonts/avenir_font.otf"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:clickable="true"-->
+                        <!--android:text="Tuesday, February 16,2015"-->
+                        <!--android:textColor="@color/headingColor"-->
+                        <!--android:textSize="17sp" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/booking_date"-->
+                        <!--fontPath="fonts/sf_ui_text_light.otf"-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginRight="19dp"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:layout_weight="0.1"-->
+                        <!--android:src="@mipmap/booking_date"-->
+                        <!--android:textColor="@color/loginTextColor"-->
+                        <!--android:textSize="20sp" />-->
+
+                <!--</LinearLayout>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/loginTextColor" />
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="70dip"-->
+                    <!--android:layout_marginLeft="20dip"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<TextView-->
+                        <!--fontPath="fonts/avenir_font.otf"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:clickable="true"-->
+                        <!--android:text="Time"-->
+                        <!--android:textColor="@color/loginTextColor"-->
+                        <!--android:textSize="15sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_time"-->
+                        <!--fontPath="fonts/avenir_font.otf"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:clickable="true"-->
+                        <!--android:text="9:00 AM"-->
+                        <!--android:textColor="@color/headingColor"-->
+                        <!--android:textSize="17sp" />-->
+                <!--</LinearLayout>-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dip"
+                        android:layout_weight="0.9"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            fontPath="fonts/Avenir-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="5dp"
+                            android:alpha="0.5"
+                            android:clickable="true"
+                            android:text="Time"
+                            android:textColor="#FF1D1D26"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_time"
+                            fontPath="fonts/avenir_light.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="5dp"
+                            android:clickable="true"
+                            android:text=""
+                            android:textColor="#FF1D1D26"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/booking_time"
+                        fontPath="fonts/sf_ui_text_light.otf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="19dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="0.1"
+                        android:src="@mipmap/booking_time"
+                        android:textColor="@color/loginTextColor"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/loginTextColor" />
+                <LinearLayout
+                    android:id="@+id/location_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dip"
+                        android:layout_weight="0.9"
+                        android:orientation="vertical">
+
+                        <TextView
+                            fontPath="fonts/Avenir-Medium.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="5dp"
+                            android:alpha="0.5"
+                            android:clickable="true"
+                            android:text="Location"
+                            android:textColor="#FF1D1D26"
+                            android:textSize="14sp" />
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:id="@+id/tv_location"
+                                fontPath="fonts/avenir_light.ttf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginRight="5dp"
+
+                                android:clickable="true"
+                                android:ellipsize="end"
+                                android:gravity="top"
+                                android:maxHeight="50dp"
+                                android:maxLines="3"
+                                android:text="Soho Hair Salon"
+                                android:textColor="@color/com_facebook_button_send_background_color"
+                                android:textSize="15sp" />
+
+                            <!--<TextView-->
+                            <!--android:id="@+id/tv_more"-->
+                            <!--fontPath="fonts/Avenir-Medium.ttf"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_marginRight="20dp"-->
+                            <!--android:layout_marginTop="-20dp"-->
+                            <!--android:alpha="0.5"-->
+                            <!--android:layout_below="@+id/tv_location"-->
+                            <!--android:clickable="true"-->
+                            <!--android:text="more..."-->
+                            <!--android:textColor="#FF118FEB"-->
+                            <!--android:textSize="13sp" />-->
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/booking_location"
+                        fontPath="fonts/sf_ui_text_light.otf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="19dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0.1"
+                        android:src="@mipmap/booking_location"
+                        android:textColor="@color/loginTextColor"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="70dip"-->
+                    <!--android:layout_marginLeft="20dip"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<TextView-->
+                        <!--fontPath="fonts/avenir_font.otf"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:clickable="true"-->
+                        <!--android:text="Location"-->
+                        <!--android:textColor="@color/loginTextColor"-->
+                        <!--android:textSize="15sp" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/tv_location"-->
+                        <!--fontPath="fonts/avenir_font.otf"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:clickable="true"-->
+                        <!--android:text="Soho Hair Salon"-->
+                        <!--android:textColor="@color/com_facebook_messenger_blue"-->
+                        <!--android:textSize="17sp" />-->
+                <!--</LinearLayout>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:background="@color/loginTextColor" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginRight="20dip"
+                    android:layout_marginTop="10dip"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/rl_promo_code"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--fontPath="fonts/avenir_font.otf"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:clickable="true"-->
+                    <!--android:text="Promo code"-->
+                    <!--android:textColor="@color/seekbarColor"-->
+                    <!--android:textSize="14sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_promo_code"-->
+                    <!--fontPath="fonts/avenir_font.otf"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:clickable="true"-->
+                    <!--android:text="0.00"-->
+                    <!--android:textColor="@color/seekbarColor"-->
+                    <!--android:textSize="14sp" />-->
+
+                    <!--</RelativeLayout>-->
+
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/rl_wallet_credit"-->
+                    <!--android:layout_marginTop="4dip">-->
+
+                    <!--<TextView-->
+                    <!--fontPath="fonts/avenir_font.otf"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:clickable="true"-->
+                    <!--android:text="Wallet Credit"-->
+                    <!--android:textColor="@color/loginTextColor"-->
+                    <!--android:textSize="14sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_wallet_credit"-->
+                    <!--fontPath="fonts/avenir_font.otf"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:clickable="true"-->
+                    <!--android:text="5.00"-->
+                    <!--android:textColor="@color/loginTextColor"-->
+                    <!--android:textSize="14sp" />-->
+                    <!--</RelativeLayout>-->
+
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/rl_premium"-->
+                    <!--android:visibility="gone"-->
+                    <!--android:layout_marginTop="4dip">-->
+
+                    <!--<TextView-->
+                    <!--fontPath="fonts/avenir_font.otf"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:clickable="true"-->
+                    <!--android:text="Premium"-->
+                    <!--android:textColor="@color/light_yellow"-->
+                    <!--android:textSize="14sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_premium"-->
+                    <!--fontPath="fonts/avenir_font.otf"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:clickable="true"-->
+                    <!--android:text="5.00"-->
+                    <!--android:textColor="@color/light_yellow"-->
+                    <!--android:textSize="14sp" />-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="4dip">-->
+
+                    <!--<TextView-->
+                    <!--fontPath="fonts/avenir_font.otf"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:clickable="true"-->
+                    <!--android:text="Total"-->
+                    <!--android:textColor="@color/loginTextColor"-->
+                    <!--android:textSize="17sp" />-->
+
+                    <!--<TextView-->
+                    <!--fontPath="fonts/avenir_font.otf"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/tv_total"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:clickable="true"-->
+                    <!--android:text="5.00"-->
+                    <!--android:textColor="@color/headingColor"-->
+                    <!--android:textSize="17sp" />-->
+                    <!--</RelativeLayout>-->
+                </LinearLayout>
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dip"-->
+                <!--android:background="@color/loginTextColor" />-->
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_default_card"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dip"-->
+                <!--android:layout_marginLeft="30dip"-->
+                <!--android:background="@drawable/selected_card_bg"-->
+                <!--android:layout_marginRight="30dip"-->
+                <!--android:layout_marginTop="20dip"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/iv_card_type"-->
+                <!--android:layout_width="40dip"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_height="40dip"-->
+                <!--android:layout_marginLeft="10dip"-->
+                <!--android:src="@drawable/visa_card" />-->
+
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:password="true"-->
+                <!--android:text="4154"-->
+                <!--android:textColor="@color/headingColor"-->
+                <!--android:textSize="17sp" />-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_marginLeft="5dip"-->
+                <!--android:password="true"-->
+                <!--android:text="4154"-->
+                <!--android:textColor="@color/headingColor"-->
+                <!--android:textSize="17sp" />-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_marginLeft="5dip"-->
+                <!--android:password="true"-->
+                <!--android:text="4154"-->
+                <!--android:textColor="@color/headingColor"-->
+                <!--android:textSize="17sp" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_card_number"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_marginLeft="5dip"-->
+                <!--android:text="4154"-->
+                <!--android:textColor="@color/headingColor"-->
+                <!--android:textSize="17sp" />-->
+                <!--</LinearLayout>-->
+
+                <!--<ImageView-->
+                <!--android:id="@+id/iv_next"-->
+                <!--android:layout_width="40dip"-->
+                <!--android:layout_height="40dip"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:padding="12dip"-->
+                <!--android:src="@mipmap/btn_bg_next_month" />-->
+                <!--</RelativeLayout>-->
+
+                <!--<Button-->
+                <!--android:id="@+id/btn_paynow"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="50dip"-->
+                <!--android:layout_marginLeft="35dip"-->
+                <!--android:layout_marginRight="35dip"-->
+                <!--android:layout_marginBottom="10dip"-->
+                <!--android:layout_marginTop="20dip"-->
+                <!--android:background="@drawable/blue_rounded_button"-->
+                <!--android:text="Pay Now"-->
+                <!--android:textColor="@color/colorWhite"-->
+                <!--android:textSize="20sp" />-->
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

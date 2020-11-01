@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_main"
+    android:background="@color/colorWhite"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/reviewsLayout"
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/client_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left"
+                android:src="@mipmap/home_default_profile_pic" />
+
+            <TextView
+                fontPath="fonts/SF-UI-Text-MediumItalic.otf"
+                android:id="@+id/client_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_toRightOf="@+id/client_image"
+                android:text="Molinex"
+                android:textColor="#FF3F454A"
+                android:textSize="17sp" />
+
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/client_name"
+                android:layout_toRightOf="@+id/client_image"
+                android:text="11:31 AM"
+                android:layout_marginLeft="7dp"
+                fontPath="fonts/SF-UI-Text-Medium.otf"
+                android:textColor="#FF3F454A"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp">
+
+                <RatingBar
+                    android:id="@+id/rating_stars"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="false"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:rating="0.0"
+                    android:stepSize="1.0" />
+
+                <TextView
+                    android:id="@+id/text_total_ratings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/rating_stars"
+                    android:text="4.1"
+                    android:alpha="0.5"
+                    android:textColor="#FF3C4F5E"
+                    android:textSize="11sp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_service"
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_layout"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="7dp"
+            android:text="Service"
+            android:textColor="#FF118FEB"
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/reviews_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_service"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dip"
+            android:layout_marginBottom="16dip"
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:text="fndjfndjnjk"
+            android:alpha="0.6"
+            android:textColor="#FF111111"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/reviewLineColor"
+        android:layout_height="0.1dp"/>
+</LinearLayout>

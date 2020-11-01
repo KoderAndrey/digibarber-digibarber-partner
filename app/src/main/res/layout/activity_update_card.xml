@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.digibarber.app.activities.UpdateCardActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:orientation="horizontal"
+            android:paddingLeft="8dip"
+            android:paddingRight="8dip">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:clickable="true"
+                android:padding="@dimen/arrow_back_padding"
+                android:src="@mipmap/back" />
+
+            <TextView
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Card Information"
+                android:textColor="@color/search_heading_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_done"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:padding="5dip"
+                android:visibility="gone"
+                android:text="Done"
+                android:textColor="@color/doneTextColor"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:orientation="vertical">
+
+            <TextView
+                fontPath="fonts/avenir_font.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Card Number"
+                android:textColor="@color/loginTextColor"
+                android:textSize="12sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_marginTop="2dip"
+                android:background="@drawable/paymenteditback"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_card_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:background="@null"
+                    android:hint="Card Number"
+                    android:imeActionId="@+id/done"
+                    android:imeActionLabel="Done"
+                    android:inputType="number"
+                    android:paddingLeft="8dip"
+                    android:singleLine="true"
+                    android:textSize="15sp"
+
+                    />
+
+                <ImageView
+                    android:layout_width="40dip"
+                    android:layout_height="match_parent"
+                    android:id="@+id/iv_card_type"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="10dip"
+                    android:src="@drawable/icon_visa" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_first"
+            android:layout_width="match_parent"
+            android:layout_height="70dip"
+            android:layout_below="@+id/rl_header"
+            android:layout_marginTop="10dip"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_weight="0.50"
+                android:orientation="vertical">
+
+                <TextView
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expiry Date"
+                    android:textColor="@color/loginTextColor"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/et_expiry_date"
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="2dip"
+                    android:background="@drawable/paymenteditback"
+                    android:hint="MM/YY"
+                    android:inputType="date"
+                    android:paddingLeft="8dip"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_weight="0.50"
+                android:orientation="vertical">
+
+                <TextView
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CVV code"
+                    android:textColor="@color/loginTextColor"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/et_cvvcode"
+                    fontPath="fonts/sf_ui_text_light.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dip"
+                    android:layout_marginTop="2dip"
+                    android:background="@drawable/paymenteditback"
+                    android:hint="CVV code"
+                    android:inputType="number"
+                    android:paddingLeft="8dip"
+                    android:singleLine="true"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+        <ImageView
+            android:layout_width="130dip"
+            android:src="@drawable/remove_card"
+            android:layout_marginTop="40dip"
+            android:layout_gravity="center"
+            android:id="@+id/iv_remove_card"
+            android:layout_height="50dip" />
+    </LinearLayout>
+
+</RelativeLayout>

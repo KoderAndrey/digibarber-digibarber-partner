@@ -1,0 +1,97 @@
+<resources>
+
+
+    <integer-array name="google_colors">
+        <item>@color/signupButtonColor</item>
+    </integer-array>
+    <string name="font_family_body_1_material">sans-serif</string>
+    <string name="app_name">DigiPartner</string>
+
+    <string name="your_loading_text">Loading..</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="loading">Loading...</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="gps_network_not_enabled">Please enable the GPS location services</string>
+    <string name="open_location_settings">Want to open Settings to enable location services?</string>
+    <string name="previous">Go to previous</string>
+    <string name="next">Go to next</string>
+    <string name="calendar">Calendar</string>
+    <!-- Error Messages -->
+
+    <string name="user_email_exists">User already exist</string>
+    <string name="empty_email">Please enter email</string>
+    <string name="email_valid">Please use a valid email address</string>
+
+    <string name="empty_password">Please enter password</string>
+    <string name="empty_cardname">Please enter card name</string>
+    <string name="empty_cardnumber">Please enter card number</string>
+    <string name="minimum_password">Password should be at least 6 character</string>
+
+    <string name="minimum_number">Passwords must contain at least 2 numbers</string>
+
+    <string name="password_valid">Please enter a valid password</string>
+
+    <string name="empty_first_name">Please enter first name</string>
+    <string name="empty_last_name">Please enter last name</string>
+
+    <string name="minimum_first_name">Please enter valid first name</string>
+    <string name="minimum_last_name">Please enter valid last name</string>
+
+    <string name="empty_phone">Please enter mobile number</string>
+    <string name="minimum_phone">Mobile number should be 10 digits long</string>
+
+    <string name="empty_your_password">Please enter your current password</string>
+
+    <string name="empty_new_password">Please enter your new password</string>
+
+
+    <string name="empty_new_not_match_password">Passwords do not match! - Please try again</string>
+    <string name="password_must_six">Passwords must be 6 characters with 1 numerical</string>
+    <string name="empty_password_change_successful">Password changed successfully</string>
+
+    <!-- Strings related to login & Sigup -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_first_name">First Name</string>
+    <string name="prompt_last_name">Last Name</string>
+    <string name="prompt_surname">Surname</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_phone">Phone</string>
+    <string name="prompt_mobile_number">Mobile number</string>
+    <string name="prompt_bank_details">Bank details</string>
+    <string name="connect_with">Or connect with</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="contact_us">Contact us</string>
+    <string name="signup">Sign up</string>
+    <string name="uk_code">+44</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="signup_text">Sign Up</string>
+    <!-- Facebook app id -->
+    <string name="app_id">1737777783202470</string>
+
+    <!-- Enable Location layout -->
+    <string name="live_availability_text">POPPING OUT FOR LUNCH?</string>
+    <string name="live_availability_text2">TURN LIGHT OFF MAKE YOUR SELF UNAVAILABLE</string>
+    <string name="on_location_services">Turn On Location Services</string>
+    <string name="off_location_services">Location Services Turned Off</string>
+    <string name="current_location">We want to use your current location to be sure we can provide you the best service</string>
+
+    <!-- Enable Notification layout -->
+
+    <string name="title_activity_home_maps">Map</string>
+
+    <!-- GCM messages -->
+    <string name="server_unregistered">device is unregister from the server</string>
+    <string name="gcm_SenderId"></string>
+
+
+    <!-- Edit Profile text -->
+    <string name="change_profile_text">Change your name, and work place address.</string>
+</resources>

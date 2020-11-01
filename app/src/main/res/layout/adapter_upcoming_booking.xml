@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="135dip"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_roller"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/up_roller_blue" />
+
+        <LinearLayout
+            android:id="@+id/ll_background_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dip"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="7dip"
+            android:background="@drawable/upcoming_rec_blue"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0.70"
+                android:padding="5dip"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:text="tv_date"
+                    android:textColor="@color/red_light"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_service_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hair Cut"
+                        android:singleLine="true"
+                        android:textColor="@color/search_heading_color"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_service_name_with"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:text="With"
+                        android:singleLine="true"
+                        android:textColor="@color/loginTextColor"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_barber_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:singleLine="true"
+                        android:text="Stepen"
+                        android:textColor="@color/doneTextColor"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:id="@+id/time_icon"
+                        android:layout_width="18sp"
+                        android:layout_height="20sp"
+                        android:src="@mipmap/home_time_icon" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dip"
+                        android:text="08:00 - 10:00"
+                        android:textColor="@color/loginTextColor"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/address_icon"
+                        android:layout_width="20sp"
+                        android:layout_height="25sp"
+                        android:layout_marginLeft="7dip"
+                        android:layout_marginRight="7dip"
+                        android:src="@mipmap/home_address_icon" />
+
+                    <TextView
+                        android:id="@+id/tv_barber_shop_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="Soho"
+                        android:textColor="@color/loginTextColor"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="0.30"
+                android:padding="5dip"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_width="110dp"
+                        android:layout_marginTop="10dip"
+                        android:layout_height="110dp"
+                        android:src="@mipmap/thick_search_default_pic" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/barber_profile_image"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_centerInParent="true"
+                        android:src="@color/colorGrey" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.emilsjolander:StickyListHeaders:v2.7.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/66840ba8bd56c41147c68bcd24ceb38b/jetified-StickyListHeaders-v2.7.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/66840ba8bd56c41147c68bcd24ceb38b/jetified-StickyListHeaders-v2.7.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.emilsjolander/StickyListHeaders/v2.7.0/31ce0ec709b8fcf0db17e889a48170560194b22f/StickyListHeaders-v2.7.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.emilsjolander/StickyListHeaders/v2.7.0/38c8c22d64ef445198d574027d8c0a9363229710/StickyListHeaders-v2.7.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

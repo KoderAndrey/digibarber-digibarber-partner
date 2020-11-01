@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/base"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+
+    <TextView
+        fontPath="fonts/roboto_medium.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="22dp"
+        android:text="Select Address"
+        android:textColor="#4D4D4E"
+        android:textSize="25sp" />
+
+
+    <ListView
+        android:id="@+id/lv_address"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_marginTop="22dp"
+        android:divider="@mipmap/lineaddress"
+        android:dividerHeight="0.1dp">
+
+    </ListView>
+
+
+</LinearLayout>
+

@@ -1,0 +1,288 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LoginMainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".activities.LoginActivity"
+    tools:ignore="MissingPrefix">
+
+
+    <!-- Login progress -->
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom"
+        android:background="@color/colorWhite"
+        android:fillViewport="true"
+        android:paddingBottom="20dp">
+
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="8dp"
+                android:src="@mipmap/logo_login" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:id="@+id/email_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/email" />
+
+                <EditText
+                    android:id="@+id/email"
+                    fontPath="fonts/sf_ui_text_regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="21dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/email_icon"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:hint="@string/prompt_email"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/login_text_color"
+                    android:textColorHint="@color/loginTextColor"
+                    android:textSize="18sp" />
+
+                <requestFocus />
+
+                <ImageView
+                    android:id="@+id/iv_line_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/email"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@+id/email_icon"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/line_grey_login_signup" />
+
+                <TextView
+                    android:id="@+id/tv_text_error_eamil"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_line_email"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toRightOf="@+id/email_icon"
+                    android:text="Please enter email"
+                    android:textColor="@color/color_red_text_error"
+                    android:textSize="12sp"
+                    android:visibility="invisible" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/password_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/password" />
+
+                <EditText
+                    android:id="@+id/password"
+                    fontPath="fonts/sf_ui_text_regular.otf"
+                    android:layout_width="match_parent"
+                    android:layout_height="21dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/password_icon"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:hint="@string/prompt_password"
+                    android:imeActionId="@+id/login"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/login_text_color"
+                    android:textColorHint="@color/loginTextColor"
+                    android:textSize="18sp" />
+
+
+                <ImageView
+                    android:id="@+id/iv_line_pass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/password"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toRightOf="@+id/password_icon"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/line_grey_login_signup" />
+
+                <TextView
+                    android:id="@+id/tv_text_error_password"
+                    fontPath="fonts/avenir_font.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_line_pass"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_toRightOf="@+id/password_icon"
+                    android:text="Please enter password"
+                    android:textColor="@color/color_red_text_error"
+                    android:textSize="12sp"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+
+            <FrameLayout
+                android:id="@+id/email_sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:onClick="signInButtonClick">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/signin_btn" />
+
+            </FrameLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:id="@+id/iv_forget_pass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+
+                    android:onClick="forgotPasswordClick"
+                    android:padding="14dp"
+                    android:src="@mipmap/forgot_yourpassword" />
+
+                <ImageView
+                    android:id="@+id/iv_conatct_us"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+                    android:padding="14dp"
+                    android:src="@mipmap/contact_us" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_connect_with"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/or_connectwith" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="20dp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:visibility="gone"
+                        android:id="@+id/fb_icon"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_marginLeft="6dp"
+                        android:src="@mipmap/fb_icon" />
+
+                    <ImageView
+                        android:id="@+id/google_icon"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_toRightOf="@+id/fb_icon"
+                        android:clickable="true"
+                        android:src="@mipmap/google_icon" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/listingLineColor" />
+
+        <ImageView
+            android:id="@+id/do_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:onClick="signUpClick"
+            android:padding="8dp"
+            android:src="@mipmap/donot_account" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,89 @@
+ tools:ignore="MissingPrefix"
+
+    fontPath="fonts/avenir_font.ttf"
+
+    fontPath="fonts/sf_ui_display_light.otf"
+
+    fontPath="fonts/penoftruth.ttf"
+
+    fontPath="fonts/sf_ui_text_light.otf"
+
+    fontPath="fonts/Bnt.ttf"
+
+    fontPath="fonts/sf_ui_text_semibold.otf"
+
+    fontPath="fonts/sf_ui_text_regular.otf"
+
+    fontPath="fonts/sf_ui_display_regular.otf"
+
+    fontPath="fonts/avenir_light.ttf"
+
+    fontPath="fonts/roboto_light.ttf"
+
+    fontPath="fonts/roboto_regular.ttf"
+
+    fontPath="fonts/HelveticaNeue.ttf"
+
+    fontPath="fonts/SF-UI-Display-Medium.otf"
+
+    fontPath="fonts/SF-UI-Text-Medium.otf"
+
+    fontPath="fonts/sf_ui_display_semibold.otf"
+
+    fontPath="fonts/SF-UI-Display-Bold.otf"
+
+    fontPath="fonts/Roboto-Medium.ttf"
+
+    fontPath="fonts/SF-UI-Text-Bold.otf"
+
+    fontPath="fonts/AvenirLTStd-Book.otf"
+
+    fontPath="fonts/Avenir-Medium.ttf"
+
+    fontPath="fonts/Lucida_Grande.ttf"
+/*if (alBookingLists.get(pos).date.equalsIgnoreCase(datel)) {
+                callStartCloseBooking(alBookingLists.get(pos).booking_id, "4", time);
+            }*/
+
+
+
+Barber side notification's type
+
+Notification list side                          Push notification
+=================================
+
+confirm_reschedule                          reschedule_confirm
+cancel_reschedule                           reschedule_cancel
+addIn_whitelist                             activate
+activate_soon
+questions
+auto_cancel                                 auto_cancel
+new_barber_uncon_booking                    book_barber
+new_user
+first_review_barber                         first_review_barber
+view_profile
+customer_cancel                             cancel_by_user
+                                            book_barber
+                                            customer_review
+
+Customers side notification's type
+
+Notification list side                          Push notification
+=================================
+
+barber_confirm                             confirm_by_barber
+barber_cancel                              cancel_by_barber
+new_user
+first_review_customer                      review_customerside
+new_user_profile
+barber_reschedule                          reschedule
+barber_confirm_reschedule                  barber_reschedule_confirm
+signup_complete
+new_customer_uncon_booking
+today_booking                              today_booking
+add_favourite
+signup_customer
+
+
+
+    {"data":"3HqPlFutoDFNG4POzHjI-GzfbKSXtQCLWNl6-Un2ENDQI26LlILThbH-vCNEaHE_7qGR3aNxrLUiPbx-Z--VxQ","accessKeyRef":"1X0m87dmM2LiwFgxPLBJ","cardNumber":"4706750000000033","cardExpirationDate":"0122","cardCvx":"203"}

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_bottom"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="8dip"
+            android:paddingRight="12dip">
+
+            <ImageView
+                android:id="@+id/back_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:clickable="true"
+                android:onClick="backClick"
+
+                android:padding="@dimen/arrow_back_padding"                android:src="@mipmap/back" />
+
+            <com.digibarber.app.CustomClasses.CustomAvenirTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Services"
+                android:layout_marginTop="@dimen/arrow_back_margin_top"
+                android:padding="@dimen/arrow_back_padding"
+                android:textColor="@color/search_heading_color"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_done"
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+
+                android:text="Done"
+                android:padding="@dimen/arrow_back_padding"                android:textColor="@color/doneTextColor"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/serviceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <Button
+                    android:id="@+id/haircut_button"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_weight="1"
+                    android:background="@mipmap/unselected_filter_service"
+                    android:text="Hair Cut"
+                    android:textAllCaps="false"
+                    android:textColor="@color/headingColor"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/beard_button"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_weight="1"
+                    android:background="@mipmap/unselected_filter_service"
+                    android:text="Beard\nServices"
+                    android:textAllCaps="false"
+                    android:textColor="@color/headingColor"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/pamper_button"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_weight="1"
+                    android:background="@mipmap/unselected_filter_service"
+                    android:text="Pamper\nTreatment"
+                    android:textAllCaps="false"
+                    android:textColor="@color/headingColor"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/misc_button"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_weight="1"
+                    android:background="@mipmap/unselected_filter_service"
+                    android:text="Misc"
+                    android:textAllCaps="false"
+                    android:textColor="@color/headingColor"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/serviceLayout"
+                android:scrollbars="vertical"></androidx.recyclerview.widget.RecyclerView>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGrey"></View>
+
+        <TextView
+            android:id="@+id/tv_booking"
+            fontPath="fonts/penoftruth.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="10dip"
+            android:text="This booking will last approx 0 mintues"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

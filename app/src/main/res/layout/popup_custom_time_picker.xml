@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aigestudio="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/base"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="30dip"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip">
+
+            <com.aigestudio.wheelpicker.WheelPicker
+                android:id="@+id/nv_hours"
+                android:layout_width="80dp"
+                android:layout_height="120dip"
+                android:background="@color/colorWhite"
+                aigestudio:wheel_atmospheric="true"
+                aigestudio:wheel_curved="true"
+                aigestudio:wheel_cyclic="true"
+                aigestudio:wheel_item_align="center"
+                aigestudio:wheel_item_text_color="@color/colorAccent"
+                aigestudio:wheel_item_text_size="24sp"
+                aigestudio:wheel_selected_item_text_color="@color/black"
+                aigestudio:wheel_visible_item_count="4" />
+
+            <com.aigestudio.wheelpicker.WheelPicker
+                android:id="@+id/nv_mintues"
+                android:layout_width="80dp"
+                android:layout_height="120dip"
+                android:background="@color/colorWhite"
+                aigestudio:wheel_atmospheric="true"
+                aigestudio:wheel_curved="true"
+                aigestudio:wheel_cyclic="true"
+                aigestudio:wheel_indicator_size="10dp"
+                aigestudio:wheel_item_align="center"
+                aigestudio:wheel_item_text_color="@color/colorAccent"
+                aigestudio:wheel_item_text_size="24sp"
+                aigestudio:wheel_selected_item_text_color="@color/black"
+                aigestudio:wheel_visible_item_count="4" />
+
+            <com.aigestudio.wheelpicker.WheelPicker
+                android:id="@+id/nv_am_pm"
+                android:layout_width="80dp"
+                android:layout_height="120dip"
+                android:background="@color/colorWhite"
+                aigestudio:wheel_atmospheric="true"
+                aigestudio:wheel_curved="true"
+                aigestudio:wheel_indicator_size="10dp"
+                aigestudio:wheel_item_align="center"
+                aigestudio:wheel_item_text_color="@color/colorAccent"
+                aigestudio:wheel_item_text_size="24sp"
+                aigestudio:wheel_selected_item_text_color="@color/black"
+                aigestudio:wheel_visible_item_count="4" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="23dp"
+            android:layout_marginRight="30dp"
+            android:layout_toLeftOf="@+id/tv_ok"
+            android:padding="5dp"
+            android:text="CANCEL"
+            android:textSize="19sp" />
+
+        <TextView
+            android:id="@+id/tv_ok"
+            fontPath="fonts/roboto_medium.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="23dp"
+            android:layout_marginRight="20dp"
+            android:padding="5dp"
+            android:text="OK"
+            android:textSize="19sp" />
+    </LinearLayout>
+
+
+</FrameLayout>

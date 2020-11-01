@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingPrefix"
+    tools:context="com.digibarber.app.activities.PaymentCompletedActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:src="@drawable/stars"
+        android:layout_marginTop="15dip"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layoutAnimation="@anim/layout_animation_bboking_complete"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="200dip"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/iv_icon1"
+            android:layout_marginTop="10dip"
+            android:src="@drawable/brush"
+            android:layout_height="200dip" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Thank You"
+            android:id="@+id/tv_thankyou"
+            android:layout_marginTop="30dip"
+            android:gravity="center"
+            android:textColor="@color/settingsColor"
+            fontPath="fonts/avenir_font.ttf"
+            android:textSize="25sp"
+            android:layout_below="@+id/iv_icon1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:text="We’ve sent you an email with all the details of\n your booking."
+            android:id="@+id/tv_des"
+            android:gravity="center"
+            fontPath="fonts/avenir_font.ttf"
+            android:layout_marginTop="25dp"
+            android:textSize="17sp"
+            android:layout_below="@+id/tv_thankyou"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:text="and the fun doesn’t stop here!"
+            android:gravity="center"
+            fontPath="fonts/penoftruth.ttf"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/settingsColor"
+            android:textSize="18sp"
+            android:layout_below="@+id/tv_des"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/done_booking"
+            android:id="@+id/iv_done"
+            android:layout_marginBottom="20dip"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

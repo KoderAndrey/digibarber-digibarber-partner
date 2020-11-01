@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent"
+    tools:context="com.digibarber.app.activities.SettingsActivity"
+    tools:ignore="MissingPrefix">
+
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/arrow_back_margin_left"
+android:layout_centerVertical="true"            android:clickable="true"
+            android:onClick="backClick"
+            android:padding="@dimen/arrow_back_padding"
+            android:src="@mipmap/close_review" />
+
+        <ImageView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+android:layout_centerVertical="true"            android:src="@mipmap/settings_text" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/Booking_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:layout_below="@+id/topLayout"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Booking approval time"
+            android:textColor="#FF030303"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/iv_booking_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="7dp"
+            android:src="@mipmap/arrow_right_setting" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/booking_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Booking_layout"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:src="@mipmap/line_setting" />
+
+
+    <RelativeLayout
+        android:id="@+id/notification_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:layout_below="@+id/booking_line"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp">
+
+        <TextView
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Notifications"
+            android:textColor="#FF030303"
+            android:textSize="17sp" />
+
+        <Switch
+            android:id="@+id/tb_noitifaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:checked="true"
+            android:text=""
+            android:theme="@style/SwitchCompatTheme"
+            android:textOff=""
+            android:textOn=""
+            />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/notification_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/notification_layout"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:src="@mipmap/line_setting" />
+
+
+    <RelativeLayout
+        android:id="@+id/password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/notification_line"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp"
+        android:clickable="true"
+        android:onClick="changePasswordClick">
+
+        <TextView
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Change password"
+            android:textColor="#FF030303"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="7dp"
+            android:src="@mipmap/arrow_right_setting" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/password_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password_layout"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:src="@mipmap/line_setting" />
+
+
+    <RelativeLayout
+        android:id="@+id/rating_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/password_line"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp">
+
+        <TextView
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Rate on play store"
+            android:textColor="#FF030303"
+            android:textSize="17sp" />
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/rating_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_layout"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:src="@mipmap/line_setting" />
+
+
+    <RelativeLayout
+        android:id="@+id/help_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/rating_line"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp">
+
+        <TextView
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Help"
+            android:textColor="#FF030303"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/help_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/help_layout"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:src="@mipmap/line_setting" />
+
+
+    <RelativeLayout
+        android:id="@+id/terms_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/help_line"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp">
+
+        <TextView
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Terms and conditions"
+            android:textColor="#FF030303"
+            android:textSize="17sp" />
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/terms_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/terms_layout"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:src="@mipmap/line_setting" />
+
+
+    <RelativeLayout
+        android:id="@+id/privacy_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/terms_line"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp">
+
+        <TextView
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="Privacy policy"
+            android:textColor="#FF030303"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/privacy_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/privacy_layout"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:src="@mipmap/line_setting" />
+
+
+</RelativeLayout>

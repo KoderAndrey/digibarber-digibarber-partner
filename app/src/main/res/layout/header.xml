@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFFFF">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/tv_deucted"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/linebackhome" />
+
+        <TextView
+            android:id="@+id/text"
+            fontPath="fonts/penoftruth.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="13dp"
+            android:text="week 1"
+            android:textColor="#FF53B2FB"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

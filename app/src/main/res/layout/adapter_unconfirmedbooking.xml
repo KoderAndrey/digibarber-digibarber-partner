@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="19dp"
+        android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_dates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="9dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_date"
+                fontPath="fonts/sf_ui_text_semibold.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.75"
+                android:gravity="left"
+                android:text="WednedDaydddd"
+                android:textColor="#FFE17072"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_today"
+                fontPath="fonts/sf_ui_text_regular.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:alpha="0.4"
+                android:text="(today)" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_serviceprovide"
+            android:layout_width="wrap_content"
+            fontPath="fonts/sf_ui_text_regular.otf"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="Hair Cut"
+            android:textColor="#FF1D1D26"
+            android:textSize="17sp" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/time_icon"
+                android:layout_width="18sp"
+                android:layout_height="20sp"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/home_time_icon" />
+
+
+            <TextView
+                android:id="@+id/tv_time"
+                fontPath="fonts/sf_ui_text_regular.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:alpha="0.50"
+                android:text="08:00 - 10:00"
+                android:textColor="#FF1D1D26"
+                android:textSize="16sp" />
+
+            <TextView
+                fontPath="fonts/sf_ui_text_light.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:alpha="0.50"
+                android:text="w/"
+                android:textColor="#FF1D1D26"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_client_name"
+                fontPath="fonts/sf_ui_text_regular.otf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:alpha="0.50"
+                android:singleLine="true"
+                android:text="Eddie Fernandez"
+                android:textColor="#FF1D1D26"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/linebackhome" />
+
+</LinearLayout>

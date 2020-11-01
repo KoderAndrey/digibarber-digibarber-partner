@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:id="@+id/filterLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/sub_category_button"
+            android:layout_width="160dp"
+            android:layout_height="35dp"
+            android:text=""
+            android:paddingBottom="5dip"
+            fontPath="fonts/sf_ui_text_light.otf"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:textColor="@color/headingColor"
+            android:textAllCaps="false"
+            android:background="@mipmap/unselected_sub_filter"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

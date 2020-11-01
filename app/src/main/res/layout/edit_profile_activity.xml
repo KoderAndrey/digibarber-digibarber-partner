@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context="com.digibarber.app.activities.EditProfileActivity"
+    tools:ignore="MissingPrefix">
+
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="backClick"
+
+            android:layout_marginLeft="@dimen/arrow_back_margin_left"
+android:layout_centerVertical="true"
+            android:padding="@dimen/arrow_back_padding"
+            android:src="@mipmap/back" />
+
+        <ImageView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+android:layout_centerVertical="true"            android:src="@mipmap/edit_profile" />
+
+
+        <ImageView
+            android:id="@+id/view_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/text_right_margin_right"
+            android:padding="@dimen/arrow_back_padding"
+            android:src="@mipmap/viewtext" />
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/private_info" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:src="@mipmap/private_information" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="17dp"
+                android:src="@mipmap/change_yourname" />
+
+            <ImageView
+                android:id="@+id/btn_change_private_info"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:src="@mipmap/change_private_info_btn"
+               />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginTop="20sp"
+                android:background="@color/listingLineColor" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/service_icon" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/services"
+                android:layout_marginTop="24dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/tell_usmore_about_w"
+                android:layout_marginTop="17dp"
+                />
+
+            <ImageView
+                android:id="@+id/btn_edit_Services"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="24dp"
+                android:src="@mipmap/edit_service_btn"
+            />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginTop="20sp"
+                android:background="@color/listingLineColor" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/gallery_image" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/gallery_images"
+                android:layout_marginTop="24dp"
+                 />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/its_importan"
+                android:layout_marginTop="17dp"
+                android:layout_gravity="center"
+                 />
+
+            <ImageView
+                android:id="@+id/btn_gallery_images"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_gravity="center"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:src="@mipmap/chanhe_gall_btn"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginTop="20sp"
+                android:background="@color/listingLineColor" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/open_hour" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/open_hours"
+                android:layout_gravity="center"
+                android:layout_marginTop="24sp"
+               />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:src="@mipmap/when_doyou"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="17dp"
+                />
+
+            <ImageView
+                android:id="@+id/btn_change_open_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_gravity="center"
+
+                android:layout_marginRight="9dp"
+                android:layout_marginTop="24dp"
+                android:src="@mipmap/change_open_btn"
+               />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:layout_marginTop="20sp"
+                android:background="@color/listingLineColor" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

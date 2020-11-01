@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:tag="cards main container">
+
+    <!-- -->
+    <!--  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="@mipmap/home_card_rectangle"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@mipmap/thick_search_default_pic" />
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/barber_profile_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:src="@color/colorGrey" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <com.digibarber.app.CustomClasses.CustomFontTextView
+                    android:id="@+id/textViewName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="Stefan Molinex"
+                    android:textColor="@color/barberProfileColor"
+                    android:textSize="17sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <RatingBar
+                        android:id="@+id/rating_stars"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="false"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:rating="0.0"
+                        android:stepSize="1.0" />
+
+                    <TextView
+                        android:id="@+id/text_total_reviews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/rating_stars"
+                        android:text="(43 reviews)"
+                        android:textColor="@color/transparentProfileColor"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <com.digibarber.app.CustomClasses.CustomSfTextTextView
+                    android:id="@+id/text_miles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:text="0.5 miles"
+                    android:textColor="@color/forgotPasswordColor" />
+
+                <RelativeLayout
+                    android:id="@+id/address_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_horizontal"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/address_icon"
+                        android:layout_width="15sp"
+                        android:layout_height="30sp"
+                        android:src="@mipmap/home_address_icon" />
+
+                    <com.digibarber.app.CustomClasses.CustomSfTextTextView
+                        android:id="@+id/address_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10sp"
+                        android:ellipsize="end"
+                        android:layout_marginRight="10sp"
+                        android:layout_toRightOf="@+id/address_icon"
+                        android:minLines="2"
+                        android:text="jjljljlk"
+                        android:textColor="@color/barberAddressColor"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/time_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_horizontal"
+                    >
+
+                    <ImageView
+                        android:id="@+id/time_icon"
+                        android:layout_width="18sp"
+                        android:layout_height="20sp"
+                        android:src="@mipmap/home_time_icon" />
+
+                    <com.digibarber.app.CustomClasses.CustomSfTextTextView
+                        android:id="@+id/timing_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10sp"
+                        android:layout_toRightOf="@+id/time_icon"
+                        android:text="08:00 - 10:00"
+                        android:textColor="@color/barberAddressColor"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:id="@+id/favorite_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/timing_text"
+                        android:layout_gravity="right"
+                        android:padding="5dip"
+                        android:layout_marginBottom="10dip"
+                        android:layout_marginRight="20sp"
+                        android:clickable="true"
+                        android:src="@drawable/favorite_selector" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

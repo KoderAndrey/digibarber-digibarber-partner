@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_view_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="5dip">
+
+        <com.digibarber.app.CustomClasses.CustomSfTextTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dip"
+            android:layout_marginTop="10dip"
+            android:text="Hair Cut Shave"
+            android:textColor="@color/editProfile2"
+            android:textSize="13sp" />
+
+        <com.digibarber.app.CustomClasses.CustomSfTextTextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dip"
+            android:layout_marginTop="4dip"
+            android:text="$4"
+            android:textColor="@color/red"
+            android:textSize="14sp" />
+
+        <com.digibarber.app.CustomClasses.CustomSfTextTextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_price"
+            android:layout_gravity="left"
+            android:layout_marginBottom="13dip"
+            android:layout_marginLeft="15dip"
+            android:layout_marginTop="4dip"
+            android:text="gettiing married"
+            android:textColor="@color/bottonOutlineColor"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/iv_tick"
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dip"
+            android:layout_below="@+id/tv_name"
+            android:src="@drawable/checkmark"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:id="@+id/view_v"
+        android:layout_marginLeft="15dip"
+        android:background="@color/colorGrey"></View>
+</LinearLayout>

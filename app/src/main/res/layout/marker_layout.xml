@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/custom_pin_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:visibility="visible"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <ImageView
+            android:id="@+id/barber_location_marker"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:foregroundGravity="center"
+            android:src="@mipmap/custom_map_marker" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/barber_profile_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@color/forgotPasswordColor" />
+
+        <ImageView
+            android:id="@+id/pin_point"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/barber_location_marker"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-10dp"
+            android:src="@mipmap/point_pin" />
+
+
+    </RelativeLayout>
