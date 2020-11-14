@@ -56,10 +56,10 @@
             android:name="com.digibarber.app.activities.SplashActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|adjustPan">
-                        <intent-filter>
-                            <action android:name="android.intent.action.MAIN" />
-                            <category android:name="android.intent.category.LAUNCHER" />
-                        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <!-- Branch init -->
@@ -181,7 +181,12 @@
         <activity
             android:name="com.digibarber.app.activities.AddWorkPlaceLocationActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
+        </activity>
         <activity
             android:name="com.digibarber.app.activities.LocationOnMapActivity"
             android:screenOrientation="portrait" />
@@ -206,12 +211,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.digibarber.app.activities.CustomCameraGalleryActivity"
-            android:screenOrientation="portrait">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.digibarber.app.activities.AddGalleryImagesActivity"
             android:screenOrientation="portrait" />

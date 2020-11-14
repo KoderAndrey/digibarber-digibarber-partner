@@ -3,6 +3,7 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/71c9f9162fe91183d7017d58b1e23b57/jetified-stripe-3ds2-android-3.0.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/71c9f9162fe91183d7017d58b1e23b57/jetified-stripe-3ds2-android-3.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/71c9f9162fe91183d7017d58b1e23b57/jetified-stripe-3ds2-android-3.0.2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

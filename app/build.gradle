@@ -27,8 +27,8 @@ android {
         applicationId "com.digibarber.app"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 34
-        versionName "1.34"
+        versionCode 36
+        versionName "1.36"
         multiDexEnabled true
 
     }
@@ -85,7 +85,7 @@ dependencies {
 
     implementation "androidx.core:core-ktx:1.3.2"
    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'org.florescu.android.rangeseekbar:rangeseekbar-library:0.3.0'
     implementation 'uk.co.chrisjenx:calligraphy:2.3.0'

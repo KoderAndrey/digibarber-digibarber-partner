@@ -22,13 +22,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyLog;
 import com.android.volley.error.VolleyError;
-import com.android.volley.misc.AsyncTask;
 import com.android.volley.request.StringRequest;
 import com.digibarber.app.CustomClasses.AppController;
 import com.digibarber.app.CustomClasses.BaseActivity;
@@ -45,12 +42,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -74,6 +65,7 @@ public class VerificationActivity extends BaseActivity {
     EditText et1, et2, et3, et4, et5, et6;
     TextView tv_header;
     String phone = "";
+    boolean isSuccessTask = false;
     String countryName = "";
     private String firstname;
     private String lastName;
@@ -102,7 +94,7 @@ public class VerificationActivity extends BaseActivity {
             countryName = bd.getString("country_name");
             From = bd.getString("From");
             verificationId = bd.getString("verificationId");
-            Log.i("loginParams",verificationId + "- - -- - ");
+            Log.i("loginParams", verificationId + "- - -- - ");
             //   forceResendToken = getIntent().getSerializableExtra("forceResendingToken");
 
             if (From.equalsIgnoreCase("SocialLogin")) {
@@ -322,10 +314,12 @@ public class VerificationActivity extends BaseActivity {
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
+
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
+
             @Override
             public void afterTextChanged(Editable editable) {
 
@@ -355,6 +349,7 @@ public class VerificationActivity extends BaseActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
             }
+
             @Override
             public void afterTextChanged(Editable editable) {
 
@@ -376,14 +371,16 @@ public class VerificationActivity extends BaseActivity {
         });
 
     }
+
     void setTextCodeVerified() {
         tv_header.setText("We've sent you a code to verify your mobile\n number");
         tv_header.setTextColor(Color.parseColor("#FF454545"));
     }
+
     private void sendVerificationCode(String number) {
         // progressBar.setVisibility(View.VISIBLE);
-        Log.i("loginParams",number);
-        number = "+44"+number;
+        Log.i("loginParams", number);
+        number = "+44" + number;
         PhoneAuthProvider.getInstance().verifyPhoneNumber(number, 0,
                 TimeUnit.SECONDS,
                 TaskExecutors.MAIN_THREAD,
@@ -391,6 +388,7 @@ public class VerificationActivity extends BaseActivity {
         );
 
     }
+
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
             mCallBack = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
@@ -410,9 +408,10 @@ public class VerificationActivity extends BaseActivity {
         public void onVerificationFailed(FirebaseException e) {
             Log.e(VerificationActivity.class.getCanonicalName(), "firebase", e);
             Toast.makeText(VerificationActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
-            Log.d("loginParams",e.getMessage());
+            Log.d("loginParams", e.getMessage());
         }
     };
+
     private void verifyCode(String code) {
         PhoneAuthCredential credential = null;
         if (verificationId != null) {
@@ -426,6 +425,7 @@ public class VerificationActivity extends BaseActivity {
             Toast.makeText(VerificationActivity.this, "failed to verify code", Toast.LENGTH_LONG).show();
         }
     }
+
     private void signInWithCredential(PhoneAuthCredential credential) {
 
         mAuth.signInWithCredential(credential)
@@ -433,7 +433,7 @@ public class VerificationActivity extends BaseActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
+                            isSuccessTask = true;
                             et1.setBackgroundResource(R.mipmap.edit_verfi_green);
                             et2.setBackgroundResource(R.mipmap.edit_verfi_green);
                             et3.setBackgroundResource(R.mipmap.edit_verfi_green);
@@ -448,6 +448,7 @@ public class VerificationActivity extends BaseActivity {
                             callSignUp();
 
                         } else {
+                            isSuccessTask = false;
                             et1.setBackgroundResource(R.mipmap.edit_verfi_red);
                             et2.setBackgroundResource(R.mipmap.edit_verfi_red);
                             et3.setBackgroundResource(R.mipmap.edit_verfi_red);
@@ -497,22 +498,33 @@ public class VerificationActivity extends BaseActivity {
                     }
                 });
     }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if (isSuccessTask){
+            locationServicesCheck();
+        }
+    }
+
     private void callSignUp() {
         signUpService();
     }
+
     private void signUpService() {
         boolean con_result = ConnectivityReceiver.isConnected();
         if (con_result == true) {
 
             Constants.showPorgess(this);
-            Log.e("Deep", "BirthDay Url:" + Constants.Register);
+            Log.i(TESTING_TAG, "BirthDay Url:" + Constants.Register);
 
-            Log.d("api call post",Constants.Register);
+            Log.i(TESTING_TAG, Constants.Register);
             StringRequest req = new StringRequest(Request.Method.POST, Constants.Register,
                     new Response.Listener<String>() {
+
                         @Override
                         public void onResponse(String response) {
-                            Log.e("Deep", "BirthDay response:" + response);
+                            Log.i(TESTING_TAG, "BirthDay response:" + response);
                             try {
                                 JSONObject jsonobj = new JSONObject(response);
                                 String response_values = jsonobj.getString("success");
@@ -578,6 +590,14 @@ public class VerificationActivity extends BaseActivity {
                     finish();
                 }
             }) {
+
+//                @Override
+//                public Map<String, String> getHeaders() {
+//                    Map<String, String> params = new HashMap<>();
+//                    params.put("Content-type", "application/json; charset=UTF-8");
+//                    return params;
+//                }
+
                 @Override
                 protected Map<String, String> getParams() {
 
@@ -599,12 +619,13 @@ public class VerificationActivity extends BaseActivity {
                     params.put("device_type", Constants.APP_PLATFORM);
                     params.put("device_id", prefs.getString(Constants.KEY_DEVICE_ID, ""));
                     params.put("user_type", Constants.USER_TYPE);
-                    if (From.equalsIgnoreCase("SocialLogin")){
-                        params.put("social_id",socialId);
+                    if (From.equalsIgnoreCase("SocialLogin")) {
+                        params.put("social_id", socialId);
                     }
                     params.put("login_type", (!From.equalsIgnoreCase("SocialLogin")) ? "normal" : "social");// Need to ask the type
                     params.put("uniqueId ", Settings.Secure.getString(getContentResolver(),
                             Settings.Secure.ANDROID_ID));
+                    Log.i(TESTING_TAG, "params " + params);
                     return params;
                 }
             };
@@ -617,6 +638,7 @@ public class VerificationActivity extends BaseActivity {
             //System.out.println(" ** PLease connect to Internet **");
         }
     }
+
     private void locationServicesCheck() {
 
         LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -636,8 +658,8 @@ public class VerificationActivity extends BaseActivity {
             it.putExtra("email", email);
             it.putExtra("password", password);
             it.putExtra("phone", phone);
+            it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(it);
-            finish();
         } else {
             Intent it = new Intent(VerificationActivity.this, EnableLocationActivity.class);
             it.putExtra("From", "SignUp");
@@ -646,8 +668,8 @@ public class VerificationActivity extends BaseActivity {
             it.putExtra("email", email);
             it.putExtra("password", password);
             it.putExtra("phone", phone);
+            it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(it);
-            finish();
         }
 
     }

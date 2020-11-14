@@ -85,9 +85,6 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up_activity);
-
-
-        Toast.makeText(getApplicationContext(), "Signup Screen", Toast.LENGTH_LONG).show();
         iv_eye_icon = findViewById(R.id.iv_eye_icon);
         fl_lets_go = findViewById(R.id.fl_lets_go);
         tv_text_error_l_name = findViewById(R.id.tv_text_error_l_name);
@@ -258,14 +255,14 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Log.v("loginParams", requestCode + " !");
+        Log.i(TESTING_TAG, requestCode + " !");
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
 
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             int statusCode = result.getStatus().getStatusCode();
-            Log.v("SSSSSS", statusCode + " !");
-            Log.v("loginParams", statusCode + " !");
+            Log.i(TESTING_TAG, statusCode + " !");
+            Log.i(TESTING_TAG, statusCode + " !");
             // System.out.println(" ** Google Sign In ** "+statusCode);
 
             handleSignInResult(result);
@@ -273,14 +270,14 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
     }
 
     private void handleSignInResult(GoogleSignInResult result) {
-        Log.e("TAG", "handleSignInResult:" + result.isSuccess());
-        Log.v("loginParams", "handleSignInResult:" + result.isSuccess());
+        Log.i(TESTING_TAG, "handleSignInResult:" + result.isSuccess());
+        Log.i(TESTING_TAG, "handleSignInResult:" + result.isSuccess());
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
 
 
             GoogleSignInAccount acct = result.getSignInAccount();
-            Log.v("loginParams", acct.getEmail() + " ---- " + acct.getDisplayName() + " ---- " + acct.getId() + " ---- " + acct.getIdToken());
+            Log.i(TESTING_TAG, acct.getEmail() + " ---- " + acct.getDisplayName() + " ---- " + acct.getId() + " ---- " + acct.getIdToken());
             String personPhotoUrl = "", googleid = "";
             if (acct != null) {
                 if (acct.getPhotoUrl() != null)
@@ -297,7 +294,7 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
 
                     last_namestr = acct.getFamilyName();
                 SocialLogin("" + googleid);
-                Log.e("TAG", "Name: " + first_name + ", email: " + email
+                Log.i(TESTING_TAG, "Name: " + first_name + ", email: " + email
                         + ", Image: " + personPhotoUrl);
             }
         }
@@ -321,17 +318,17 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
         if (con_result) {
             Constants.showPorgess(SignUpActivity.this);
 
-            Log.d("api call post", Constants.Social_Login);
-            Log.d("loginParams", "-----------------");
-            Log.d("loginParams", Constants.Social_Login);
+            Log.i(TESTING_TAG, Constants.Social_Login);
+            Log.i(TESTING_TAG, "-----------------");
+            Log.i(TESTING_TAG, Constants.Social_Login);
             StringRequest req = new StringRequest(Request.Method.POST, Constants.Social_Login,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Log.e("TestRes", "** Url **" + Constants.Social_Login);
-                            Log.e("TestRes", "** RESPONSE **" + response);
-                            Log.d("loginParams", "** RESPONSE **" + response);
-                            Log.d("loginParams", "-----------------");
+                            Log.i(TESTING_TAG, "** Url **" + Constants.Social_Login);
+                            Log.i(TESTING_TAG, "** RESPONSE **" + response);
+                            Log.i(TESTING_TAG, "** RESPONSE **" + response);
+                            Log.i(TESTING_TAG, "-----------------");
                             Constants.dismissProgress();
                             //   {"user_email":"sukhyoyo@gmail.com","birthdate":"12 December 1993","user_name":"sukh","is_freezed":"0","last_name":"yoyo","bank_detail":"","message":"Login Successfully","token":"fe2014c8-a2fb-4920-aebd-b06e6a637d7e","profile_status":"register","profile_image":"","balance":"£ 0.0","blocked":"0","user_id":"35","phone":"09530959517","success":"true","mangopayId":"39112014"}
                             try {
@@ -370,22 +367,22 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
                                             workplace = jsonobj.getString("workplace");
 
                                         } catch (Exception e) {
-                                            Log.e("TestRes", "** Exception **" + e);
+                                            Log.i(TESTING_TAG, "** Exception **" + e);
                                         }
                                         try {
                                             address = jsonobj.getString("address");
                                         } catch (Exception e) {
-                                            Log.e("TestRes", "** Exception **" + e);
+                                            Log.i(TESTING_TAG, "** Exception **" + e);
                                         }
                                         try {
                                             strlon = jsonobj.getString("lon");
                                         } catch (Exception e) {
-                                            Log.e("TestRes", "** Exception **" + e);
+                                            Log.i(TESTING_TAG, "** Exception **" + e);
                                         }
                                         try {
                                             strlat = jsonobj.getString("lat");
                                         } catch (Exception e) {
-                                            Log.e("TestRes", "** Exception **" + e);
+                                            Log.i(TESTING_TAG, "** Exception **" + e);
                                         }
 
 
@@ -393,7 +390,7 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
                                         try {
                                             profile_status = jsonobj.getString("profile_status");
                                         } catch (Exception e) {
-                                            Log.e("TestRes", "** Exception **" + e);
+                                            Log.i(TESTING_TAG, "** Exception **" + e);
 
                                         }
 
@@ -470,9 +467,9 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    VolleyLog.e("** ERROR **", "Error: " + error.getMessage());
-                    Log.d("loginParams", "Error: " + error.getMessage());
-                    Log.d("loginParams", "-----------------");
+                    Log.i(TESTING_TAG, "Error: " + error.getMessage());
+                    Log.i(TESTING_TAG, "Error: " + error.getMessage());
+                    Log.i(TESTING_TAG, "-----------------");
                     Constants.dismissProgress();
                     Constants.showPopupServer(activity);
                 }
@@ -494,7 +491,7 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
                     params.put("user_type", "" + Constants.USER_TYPE);
                     params.put("social_id", socialId);
                     params.put("uniqueId", "" + android_id.trim());
-                    Log.e("TestRes", "here params:" + params);
+                    Log.i("TestRes", "here params:" + params);
                     return params;
                 }
             };
@@ -601,7 +598,7 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         // An unresolvable error has occurred and Google APIs (including Sign-In) will not
         // be available.
-        Log.d("TAG", "onConnectionFailed:" + connectionResult);
+        Log.i("TAG", "onConnectionFailed:" + connectionResult);
     }
 
     private void callValidation() {
@@ -778,13 +775,13 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
         boolean con_result = ConnectivityReceiver.isConnected();
         if (con_result) {
             Constants.showPorgess(SignUpActivity.this);
-            Log.e("Url", Constants.User_Exist_Validation);
-            Log.d("api call post", Constants.User_Exist_Validation);
+            Log.i(TESTING_TAG, Constants.User_Exist_Validation);
+            Log.i(TESTING_TAG, Constants.User_Exist_Validation);
             StringRequest req = new StringRequest(Request.Method.POST, Constants.User_Exist_Validation,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Log.e(" User_Exist_Validation", response);
+                            Log.i(TESTING_TAG, response);
                             Constants.dismissProgress();
                             try {
                                 JSONObject jsonobj = new JSONObject(response);
@@ -810,7 +807,7 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    VolleyLog.e("** ERROR **", "Error: " + error.getMessage());
+                    Log.i(TESTING_TAG, "Error: " + error.getMessage());
                     Constants.dismissProgress();
                     Constants.showPopupServer(activity);
                 }
@@ -819,7 +816,7 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
                 protected Map<String, String> getParams() {
                     Map<String, String> params = new HashMap<String, String>();
                     params.put("email", "" + stremail.trim());
-                    Log.e(" User_Exist_Validation", params + "");
+                    Log.i(TESTING_TAG, params + "");
 
                     return params;
                 }
@@ -867,7 +864,6 @@ public class SignUpActivity extends BaseActivity implements GoogleApiClient.OnCo
         @Override
         public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
             String code = phoneAuthCredential.getSmsCode();
-            Log.i("test_test", "code " + code);
         }
 
         @Override

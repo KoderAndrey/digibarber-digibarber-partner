@@ -2685,6 +2685,7 @@ public class AddOpenHoursActivity extends BaseActivity implements WheelPicker.On
                                             prefs.edit().putString(Constants.KEY_IS_SIGNUP_ON, "no").apply();
                                             String message = jsonobj.getString("message");
                                             Intent it = new Intent(AddOpenHoursActivity.this, HomeActivity.class);
+                                            it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(it);
                                         }
                                     }

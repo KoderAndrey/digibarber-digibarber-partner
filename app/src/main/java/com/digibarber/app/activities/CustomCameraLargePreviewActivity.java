@@ -49,6 +49,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import static com.digibarber.app.CustomClasses.BaseActivity.TESTING_TAG;
+
 public class CustomCameraLargePreviewActivity extends FragmentActivity {
     private static final String TAG = "CustomCamera";
     private static final int GALLERY_REQUEST = 237;
@@ -129,6 +131,7 @@ public class CustomCameraLargePreviewActivity extends FragmentActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
             final Uri resultUri = UCrop.getOutput(data);
             Bundle mCropOptionsBundle = new Bundle();

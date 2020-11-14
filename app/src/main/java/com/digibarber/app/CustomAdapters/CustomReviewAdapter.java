@@ -71,7 +71,7 @@ public class CustomReviewAdapter extends BaseAdapter {
             }
             else
             {
-                Picasso.with(context).load(hm.get("profile_image")).placeholder(R.mipmap.placeholder_image)
+                Picasso.get().load(hm.get("profile_image")).placeholder(R.mipmap.placeholder_image)
                         .fit().into(holder.client_image);
             }
 

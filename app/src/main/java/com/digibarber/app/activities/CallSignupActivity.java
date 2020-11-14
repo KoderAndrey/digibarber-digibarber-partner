@@ -87,7 +87,6 @@ public class CallSignupActivity extends BaseActivity  {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Log.i("test_test", " response:" + response);
                             try {
                                 JSONObject jsonobj = new JSONObject(response);
                                 String response_values = jsonobj.getString("success");

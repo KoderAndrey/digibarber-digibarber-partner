@@ -2,10 +2,14 @@
   <library name="Gradle: com.sch.calendar:easy-calendar:1.0.1@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d94c7762152d54c427715b3f88cfcfd2/jetified-easy-calendar-1.0.1/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5eb3de2392eebec08d47ef55c310d96/jetified-easy-calendar-1.0.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d94c7762152d54c427715b3f88cfcfd2/jetified-easy-calendar-1.0.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d94c7762152d54c427715b3f88cfcfd2/jetified-easy-calendar-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5eb3de2392eebec08d47ef55c310d96/jetified-easy-calendar-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5eb3de2392eebec08d47ef55c310d96/jetified-easy-calendar-1.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b5eb3de2392eebec08d47ef55c310d96/jetified-easy-calendar-1.0.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sch.calendar/easy-calendar/1.0.1/f029a0d7e730b7c684b55f7f981628a7045795fb/easy-calendar-1.0.1-javadoc.jar!/" />

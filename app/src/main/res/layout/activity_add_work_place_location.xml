@@ -172,15 +172,16 @@
                         fontPath="fonts/avenir_light.ttf"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+
                         android:background="@color/transaprent"
                         android:cursorVisible="false"
                         android:gravity="center"
                         android:hint="Postcode"
 
                         android:inputType="textCapCharacters"
+                        android:maxLines="1"
 
 
-                        android:singleLine="true"
                         android:textAllCaps="true"
                         android:textColor="#31363B"
                         android:textColorHint="#6A6E71"

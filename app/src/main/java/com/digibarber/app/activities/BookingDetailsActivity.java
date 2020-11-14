@@ -46,7 +46,7 @@ public class BookingDetailsActivity extends AppCompatActivity {
         tv_location.setText(upcomingBookingNotification.address);
 
         if (upcomingBookingNotification.image != null && !upcomingBookingNotification.image.equalsIgnoreCase("")) {
-            Picasso.with(this).load(upcomingBookingNotification.image).placeholder(R.color.colorGrey)
+            Picasso.get().load(upcomingBookingNotification.image).placeholder(R.color.colorGrey)
                     .fit().into(barber_profile_image);
         }
 

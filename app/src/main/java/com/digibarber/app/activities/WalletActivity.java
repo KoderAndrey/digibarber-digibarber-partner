@@ -45,10 +45,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Map;
 
 public class WalletActivity extends BaseActivity implements CallBackWalletSubList {
@@ -56,14 +53,14 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
     TextView tv_wallet_amount;
     ImageView im_back_icon, im_wallet_icon, im_cross_icon;
 
-    RecyclerView recyclerListingView,rv_sub_list;
+    RecyclerView recyclerListingView, rv_sub_list;
 
-    LinearLayout menuLayoot,firstRowLinear, secondRowLinear, thirdRowLinear,middleLinearLayout;
+    LinearLayout menuLayoot, firstRowLinear, secondRowLinear, thirdRowLinear, middleLinearLayout;
     RelativeLayout listLayout;
     CardView cardView;
 
-    ArrayList<WalletHistory> current       = new ArrayList<>();
-    ArrayList<Payout> previous      = new ArrayList<>();
+    ArrayList<WalletHistory> current = new ArrayList<>();
+    ArrayList<Payout> previous = new ArrayList<>();
 
     ArrayList<transactionDetails> childPrevious = new ArrayList<>();
 
@@ -97,14 +94,14 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
         im_back_icon = (ImageView) findViewById(R.id.im_back_icon);
         im_wallet_icon = (ImageView) findViewById(R.id.im_wallet_icon);
 
-        listLayout    = (RelativeLayout) findViewById(R.id.listLayout);
+        listLayout = (RelativeLayout) findViewById(R.id.listLayout);
         rv_sub_list = (RecyclerView) findViewById(R.id.rv_sub_list);
         recyclerListingView = (RecyclerView) findViewById(R.id.recyclerListingView);
-        cardView  =  (CardView) findViewById(R.id.childcard);
+        cardView = (CardView) findViewById(R.id.childcard);
 
         homeSetup();
-        previousChild = new WalletRecyclerAdapter(new ArrayList<transactionDetails>(),this,this);
-        rv_sub_list.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        previousChild = new WalletRecyclerAdapter(new ArrayList<transactionDetails>(), this, this);
+        rv_sub_list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rv_sub_list.setAdapter(previousChild);
 
         rv_sub_list.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +110,7 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+                        recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
                     }
                 });
             }
@@ -124,7 +121,7 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+                        recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
                     }
                 });
             }
@@ -167,7 +164,8 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
         });
 
     }
-    private void homeSetup(){
+
+    private void homeSetup() {
 
         runOnUiThread(new Runnable() {
             @Override
@@ -175,23 +173,24 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                 menuLayoot.setVisibility(View.VISIBLE);
                 middleLinearLayout.setVisibility(View.GONE);
                 listLayout.setVisibility(View.GONE);
-                recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+                recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
             }
         });
-        if (totalAmount == ""){
+        if (totalAmount == "") {
             balanceInfo();
         }
-        if (previousAdapter != null){
+        if (previousAdapter != null) {
             previousAdapter.clearData();
         }
-        if (currentAdapter != null){
+        if (currentAdapter != null) {
             currentAdapter.clearData();
         }
-        if (previousChild != null){
+        if (previousChild != null) {
             previousChild.clearData();
         }
     }
-    private void showListData(){
+
+    private void showListData() {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -201,6 +200,7 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
             }
         });
     }
+
     private void CallPreviousStatement() {
         boolean con_result = ConnectivityReceiver.isConnected();
         if (con_result) {
@@ -213,40 +213,38 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                             Constants.dismissProgress();
                             try {
 
-                                JSONObject mainobject=new JSONObject(response);
-                                JSONObject getdataobj=mainobject.getJSONObject("data");
+                                JSONObject mainobject = new JSONObject(response);
+                                JSONObject getdataobj = mainobject.getJSONObject("data");
 
                                 JSONArray pArray = getdataobj.getJSONArray("payouts");
                                 previous = new ArrayList<>();
                                 childPrevious = new ArrayList<>();
-                                for (int i=0;i<pArray.length();i++)
-                                {
-                                    String payoutprice=pArray.getJSONObject(i).getString("amount");
-                                    String payoutcreated=pArray.getJSONObject(i).getString("created");
-                                    String id=pArray.getJSONObject(i).getString("id");
-                                    String status=pArray.getJSONObject(i).getString("status");
-                                    String arrivalDate=pArray.getJSONObject(i).getString("arrivalDate");
-                                    JSONArray transaction=pArray.getJSONObject(i).getJSONArray("transactionDetails");
-                                    Payout payout=new Payout();
-                                    ArrayList<transactionDetails> transactionDetailsArrayList=new ArrayList<>();
-                                    for (int j=0;j<transaction.length();j++)
-                                     {
-                                         String service=transaction.getJSONObject(j).getString("services");
-                                         String price=transaction.getJSONObject(j).getString("price");
-                                         String bookingDate=transaction.getJSONObject(j).getString("bookingDate");
-                                         String created=transaction.getJSONObject(j).getString("created");
-                                         String transactionId=transaction.getJSONObject(j).getString("transactionId");
-                                         transactionDetails transactionDetails=new transactionDetails();
-                                         transactionDetails.setServices(service);
-                                         transactionDetails.setBookingDate(bookingDate);
-                                         transactionDetails.setCreated(created);
-                                         transactionDetails.setPrice(price);
-                                         transactionDetails.setTransactionId(transactionId);
-                                         transactionDetailsArrayList.add(transactionDetails);
-                                     }
-                                     Double priceindouble= Double.valueOf(payoutprice);
-                                     payout.setPrice(priceindouble);
-                                    long payoutcreateddouble= Long.parseLong(payoutcreated);
+                                for (int i = 0; i < pArray.length(); i++) {
+                                    String payoutprice = pArray.getJSONObject(i).getString("amount");
+                                    String payoutcreated = pArray.getJSONObject(i).getString("created");
+                                    String id = pArray.getJSONObject(i).getString("id");
+                                    String status = pArray.getJSONObject(i).getString("status");
+                                    String arrivalDate = pArray.getJSONObject(i).getString("arrivalDate");
+                                    JSONArray transaction = pArray.getJSONObject(i).getJSONArray("transactionDetails");
+                                    Payout payout = new Payout();
+                                    ArrayList<transactionDetails> transactionDetailsArrayList = new ArrayList<>();
+                                    for (int j = 0; j < transaction.length(); j++) {
+                                        String service = transaction.getJSONObject(j).getString("services");
+                                        String price = transaction.getJSONObject(j).getString("price");
+                                        String bookingDate = transaction.getJSONObject(j).getString("bookingDate");
+                                        String created = transaction.getJSONObject(j).getString("created");
+                                        String transactionId = transaction.getJSONObject(j).getString("transactionId");
+                                        transactionDetails transactionDetails = new transactionDetails();
+                                        transactionDetails.setServices(service);
+                                        transactionDetails.setBookingDate(bookingDate);
+                                        transactionDetails.setCreated(created);
+                                        transactionDetails.setPrice(price);
+                                        transactionDetails.setTransactionId(transactionId);
+                                        transactionDetailsArrayList.add(transactionDetails);
+                                    }
+                                    Double priceindouble = Double.valueOf(payoutprice);
+                                    payout.setPrice(priceindouble);
+                                    long payoutcreateddouble = Long.parseLong(payoutcreated);
 
                                     payout.setPrice(priceindouble);
                                     payout.setCreated(payoutcreateddouble);
@@ -261,13 +259,9 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                                 recyclerListingView.setAdapter(previousAdapter);
                                 previousAdapter.notifyDataSetChanged();
 
-                            }
-                            catch (JSONException ex)
-                            {
+                            } catch (JSONException ex) {
                                 ex.fillInStackTrace();
-                            }
-                            catch (Exception ex)
-                            {
+                            } catch (Exception ex) {
                                 ex.fillInStackTrace();
                             }
 
@@ -277,11 +271,13 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     VolleyLog.e("** ERROR **", "Error: " + error.getMessage());
+                    Log.i(TESTING_TAG, "onErrorResponse " + error.getMessage());
+                    Constants.dismissProgress();
                     Constants.showPopupServer(activity);
                 }
             }) {
                 @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
+                public Map<String, String> getHeaders() {
                     return getApiHeaders();
                 }
 
@@ -292,6 +288,7 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
             Constants.showPopupInternet(activity);
         }
     }
+
     private void CallHistoryStatement(final String url) {
 
         boolean con_result = ConnectivityReceiver.isConnected();
@@ -306,10 +303,10 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                             Constants.dismissProgress();
                             try {
 
-                                response = response.replace("\\","");
-                                response = response.replace("\"[","[");
-                                response = response.replace("]\"","]");
-                                Log.d("loginParams", response);
+                                response = response.replace("\\", "");
+                                response = response.replace("\"[", "[");
+                                response = response.replace("]\"", "]");
+                                Log.i(TESTING_TAG, response);
 
                                 JSONObject jsonObj = new JSONObject(response);
                                 JSONArray array = jsonObj.getJSONArray("data");
@@ -317,47 +314,59 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                                 current = new ArrayList<>();
                                 for (int i = 0; i < array.length(); i++) {
                                     String week = array.getJSONObject(i).getString("bookingDate");
-                                    String service=array.getJSONObject(i).getString("services");
-                                    String price=array.getJSONObject(i).getString("price");
-                                    String created =array.getJSONObject(i).getString("created");
-                                    String transactionId=array.getJSONObject(i).getString("transactionId");
+                                    String service = array.getJSONObject(i).getString("services");
+                                    String price = array.getJSONObject(i).getString("price");
+                                    String created = array.getJSONObject(i).getString("created");
+                                    String transactionId = array.getJSONObject(i).getString("transactionId");
                                     ArrayList<walletHistoryItems> items = new ArrayList<>();
-                                    walletHistoryItems historyItems=new walletHistoryItems();
+                                    walletHistoryItems historyItems = new walletHistoryItems();
                                     historyItems.setServices(service);
                                     historyItems.setPrice(price);
                                     historyItems.setBooking_id(transactionId);
                                     items.add(historyItems);
-                                     current.add(new WalletHistory(week,"",items));
+                                    current.add(new WalletHistory(week, "", items));
                                 }
-                                if (url == Constants.WalletHistory){
+                                if (url == Constants.WalletHistory) {
                                     current = getSortByDate(current);
                                 }
-                                currentAdapter  = new WalletHostoryAdapter( WalletActivity.this,current,url.equalsIgnoreCase(Constants.WalletHistory));
+                                currentAdapter = new WalletHostoryAdapter(WalletActivity.this, current, url.equalsIgnoreCase(Constants.WalletHistory));
                                 recyclerListingView.setLayoutManager(new LinearLayoutManagerWithSmoothScroller(getApplicationContext()));
                                 recyclerListingView.setAdapter(currentAdapter);
                                 currentAdapter.notifyDataSetChanged();
-                            }
-                            catch (JSONException ex)
-                            {
-                                Log.d("loginParams", "error "+ex.getLocalizedMessage());
+                            } catch (JSONException ex) {
+                                Log.i(TESTING_TAG, "JSONException " + ex);
                                 ex.fillInStackTrace();
-                            }
-                            catch (Exception ex)
-                            {
+                            } catch (Exception ex) {
+                                Log.i(TESTING_TAG, "Exception " + ex);
                                 ex.fillInStackTrace();
                             }
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    VolleyLog.e("** ERROR **", "Error: " + error.getMessage());
+                    Log.i(TESTING_TAG, "Error: " + error.getMessage());
+                    Log.i(TESTING_TAG, "Error: " + error);
+                    Log.i(TESTING_TAG, "Error: " + error.getCause());
+                    Constants.dismissProgress();
                 }
             }) {
                 @Override
-                public Map<String, String> getHeaders() throws AuthFailureError {
+                public Map<String, String> getHeaders() {
                     return getApiHeaders();
                 }
             };
+            Log.i(TESTING_TAG, "req " + req);
+            try {
+                Log.i(TESTING_TAG, "req params" + req.getEncodedUrlParams());
+            } catch (AuthFailureError authFailureError) {
+                authFailureError.printStackTrace();
+            }
+            Log.i(TESTING_TAG, "req url " + req.getUrl());
+            try {
+                Log.i(TESTING_TAG, "req body" + req.getBody());
+            } catch (AuthFailureError authFailureError) {
+                authFailureError.printStackTrace();
+            }
             req.setRetryPolicy(ApiClient.getInstance().getRetryPolicy());
             AppController.getInstance().addToRequestQueue(req, "First Wallet Api");
         } else {
@@ -365,16 +374,18 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
         }
 
     }
-    private ArrayList<WalletHistory> getSortByDate(ArrayList<WalletHistory> data){
+
+    private ArrayList<WalletHistory> getSortByDate(ArrayList<WalletHistory> data) {
 
         ArrayList<WalletHistory> newData = new ArrayList();
-        for (WalletHistory obj : data){
-            WalletHistory walletHistory  = obj;
-            walletHistory.month = obj.week.split(",")[1].replaceAll("[0123456789 ]","");
+        for (WalletHistory obj : data) {
+            WalletHistory walletHistory = obj;
+            walletHistory.month = obj.week.split(",")[1].replaceAll("[0123456789 ]", "");
             newData.add(walletHistory);
         }
         return newData;
     }
+
     private void balanceInfo() {
         boolean con_result = ConnectivityReceiver.isConnected();
         if (con_result) {
@@ -386,19 +397,17 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                             Constants.dismissProgress();
                             try {
 
-                                JSONObject object=new JSONObject(response);
-                                JSONObject getdataobj=object.getJSONObject("data");
-                                Double amount=getdataobj.getDouble("totalAmount")/100;
+                                JSONObject object = new JSONObject(response);
+                                JSONObject getdataobj = object.getJSONObject("data");
+                                Double amount = getdataobj.getDouble("totalAmount") / 100;
                                 DecimalFormat format = new DecimalFormat("0.00");
-                                if(amount<0){
+                                if (amount < 0) {
                                     tv_wallet_amount.setText("£ 0.00");
-                                }else{
-                                    tv_wallet_amount.setText("£"+format.format(amount));
-                                    totalAmount = "£"+format.format(amount);
+                                } else {
+                                    tv_wallet_amount.setText("£" + format.format(amount));
+                                    totalAmount = "£" + format.format(amount);
                                 }
-                            }
-                            catch (Exception ex)
-                            {
+                            } catch (Exception ex) {
                                 ex.fillInStackTrace();
                             }
 
@@ -406,6 +415,7 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
+                    Constants.dismissProgress();
                     Constants.showPopupServer(activity);
                 }
             }) {
@@ -422,25 +432,26 @@ public class WalletActivity extends BaseActivity implements CallBackWalletSubLis
         }
 
     }
+
     @Override
     public void sonItemClick(final int pos, ArrayList<transactionDetails> transactionDetails) {
 
         childPrevious.clear();
         childPrevious.addAll(transactionDetails);
 
-        if (recyclerListingView.getLayoutParams().height == 200){
+        if (recyclerListingView.getLayoutParams().height == 200) {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
+                    recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
                 }
             });
-        }else{
-            if (childPrevious.size() > 0){
+        } else {
+            if (childPrevious.size() > 0) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,200));
+                        recyclerListingView.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 200));
                         recyclerListingView.scrollToPosition(pos);
                         previousChild.setData(childPrevious);
                     }

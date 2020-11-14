@@ -227,7 +227,7 @@ public class LocationOnMapActivity extends BaseActivity implements OnMapReadyCal
                     HttpResponse response;
                     try {
                         String url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address.replace(" ", "%20") + "&key=AIzaSyCv0nOTO1Ii489Zc4VTmWBNyc3-7qLlVeI";
-                        Log.e("Here Url", "" + url);
+                        Log.i("Here Url", "" + url);
                         HttpGet get = new HttpGet(url);
                         response = client.execute(get);
                         /*Checking response */
@@ -236,7 +236,7 @@ public class LocationOnMapActivity extends BaseActivity implements OnMapReadyCal
                             temp = EntityUtils.toString(response.getEntity());
                         } else {
                             Constants.dismissProgress();
-                            Log.e("NUll", "response " + response);
+                            Log.i("NUll", "response " + response);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -248,7 +248,7 @@ public class LocationOnMapActivity extends BaseActivity implements OnMapReadyCal
                 @Override
                 protected void onPostExecute(String Resposne) {
                     super.onPostExecute(Resposne);
-                    Log.e("Resposne googleapis", "" + Resposne);
+                    Log.i("Resposne googleapis", "" + Resposne);
                     Constants.dismissProgress();
                     try {
                         if (Resposne != null && !Resposne.equalsIgnoreCase("Empty")) {
@@ -280,7 +280,7 @@ public class LocationOnMapActivity extends BaseActivity implements OnMapReadyCal
                         googleMap.addMarker(new MarkerOptions().title("Your Location").position(coordinate).icon(BitmapDescriptorFactory.fromResource(R.mipmap.pin)));
                         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(coordinate, 14.0f));
                         googleMap.animateCamera(location);
-                        Log.e("getDefaultCardDetail", Resposne);
+                        Log.i("getDefaultCardDetail", Resposne);
                     } catch (JSONException e) {
                         e.printStackTrace();
                         Latitude = "0.0";
@@ -299,14 +299,14 @@ public class LocationOnMapActivity extends BaseActivity implements OnMapReadyCal
         boolean con_result = ConnectivityReceiver.isConnected();
         if (con_result) {
             Constants.showPorgess(LocationOnMapActivity.this);
-            Log.e("Deep", "AddBarberProfile url:" + Constants.AddBarberProfile);
+            Log.i(TESTING_TAG, "AddBarberProfile url:" + Constants.AddBarberProfile);
 
-            Log.d("api call post",Constants.AddBarberProfile);
+            Log.d(TESTING_TAG,Constants.AddBarberProfile);
             StringRequest req = new StringRequest(Request.Method.POST, Constants.AddBarberProfile,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Log.e("Deep", "AddBarberProfile response:" + response);
+                            Log.i(TESTING_TAG, "AddBarberProfile response:" + response);
                             Constants.dismissProgress();
                             try {
                                 JSONObject jsonobj = new JSONObject(response);
@@ -330,7 +330,7 @@ public class LocationOnMapActivity extends BaseActivity implements OnMapReadyCal
                                         it.putExtra("phone", phone);
                                         it.putExtra("From", From);
                                         startActivity(it);
-                                        finish();
+                                     //   finish();
                                         prefs.edit().putString(Constants.KEY_IS_SIGNUP_MISSED, "location_map").apply();
                                     }
                                     prefs.edit().putString(Constants.KEY_WORKPLACE, workplaces).apply();
@@ -349,7 +349,7 @@ public class LocationOnMapActivity extends BaseActivity implements OnMapReadyCal
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    VolleyLog.e("** ERROR **", "Error: " + error.getMessage());
+                    Log.i(TESTING_TAG, "Error: " + error.getMessage());
                     Constants.dismissProgress();
                     Constants.showPopupServer(activity);
                 }
@@ -361,7 +361,7 @@ public class LocationOnMapActivity extends BaseActivity implements OnMapReadyCal
                     HashMap<String, String> headers = new HashMap<String, String>();
                     headers.put("authenticate", prefs.getString("token_value", ""));
                     headers.put("user_id", prefs.getString("user_id", ""));
-                    Log.e("Deep", "AddBarberProfile headers:" + headers);
+                    Log.i(TESTING_TAG, "AddBarberProfile headers:" + headers);
 
                     return headers;
                 }
@@ -376,7 +376,7 @@ public class LocationOnMapActivity extends BaseActivity implements OnMapReadyCal
                     params.put("workplace", workplaces);
                     params.put("phone", "");
                     params.put("open_hours", "");
-                    Log.e("Deep", "AddBarberProfile params:" + params);
+                    Log.i(TESTING_TAG, "AddBarberProfile params:" + params);
 
                     return params;
                 }

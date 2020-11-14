@@ -7,11 +7,11 @@ import java.io.Serializable;
  */
 public class CustomGalleryImages implements Serializable {
 
-    public   String images;
+    public String images;
+    public boolean isChoosed = false;
 
 
-    public CustomGalleryImages()
-    {
+    public CustomGalleryImages() {
 
     }
 

@@ -21,6 +21,6 @@
         android:layout_gravity="right"
         android:layout_marginTop="1.5dip"
         android:src="@mipmap/cell_tick"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
 </FrameLayout>

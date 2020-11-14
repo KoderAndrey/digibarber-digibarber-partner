@@ -106,7 +106,7 @@ public class PhotoFullPopupWindow extends PopupWindow {
 
                     .into(photoView);*/
 
-            Picasso.with(ctx).load(imageUrl).placeholder(R.mipmap.thick_search_default_pic).error(R.mipmap.thick_search_default_pic).into(photoView);
+            Picasso.get().load(imageUrl).placeholder(R.mipmap.thick_search_default_pic).error(R.mipmap.thick_search_default_pic).into(photoView);
 
 
             showAtLocation(v, Gravity.CENTER, 0, 0);

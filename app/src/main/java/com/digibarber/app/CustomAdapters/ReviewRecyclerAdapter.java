@@ -82,7 +82,7 @@ public class ReviewRecyclerAdapter extends RecyclerView.Adapter<ReviewRecyclerAd
         holder.date.setText(parseDate(hm.get("date_of_review")));
 
           if (hm.get("profile_image") != null && !hm.get("profile_image").equalsIgnoreCase(""))
-            Picasso.with(context).load(hm.get("profile_image")).placeholder(R.mipmap.placeholder_image)
+            Picasso.get().load(hm.get("profile_image")).placeholder(R.mipmap.placeholder_image)
                 .fit().into(holder.client_image);
         holder.tv_service.setText(hm.get("service"));
         if (!hm.get("rating").equalsIgnoreCase("")) {

@@ -51,6 +51,8 @@ import com.digibarber.app.CustomClasses.Constants;
 import com.digibarber.app.CustomClasses.RecyclerItemClickListener;
 import com.digibarber.app.R;
 import com.digibarber.app.apicalls.ApiClient;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
 import com.yalantis.ucrop.UCrop;
 
@@ -91,6 +93,7 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
     static int result;
     ArrayList<String> timestamps = new ArrayList<String>();
     private int cameraId;
+    private int prevPosition = -1;
     static Context context;
     int width_screen = 0;
     int height_screen = 0;
@@ -137,7 +140,9 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
         super.onCreate(bd);
         try {
             bd = getIntent().getExtras();
+            Log.i(TESTING_TAG, "is extras null = " + (bd == null));
             if (bd != null) {
+                Log.i(TESTING_TAG, "extras = " + bd);
                 From = bd.getString("From");
                 Latitude = bd.getString("Latitude");
                 Longitude = bd.getString("Longitude");
@@ -152,8 +157,9 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
                 phone = bd.getString("phone");
 
             }
-            Log.i("test_test", "from " + From);
+            Log.i(TESTING_TAG, "from " + From);
         } catch (NullPointerException e) {
+            Log.i(TESTING_TAG, "exception " + e);
         }
         setContentView(R.layout.activity_custom_camera_gallery);
         iv_placehoder = (ImageView) findViewById(R.id.iv_placehoder);
@@ -194,18 +200,18 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
             @Override
             public void onClick(View view) {
                 if (From != null && From.equalsIgnoreCase("EditPrfoile")) {
-                    Log.i("test_test", "first case");
+                    Log.i(TESTING_TAG, "first case");
                     if (filetoUplaod != null) {
-                        Log.i("test_test", "first case inside");
+                        Log.i(TESTING_TAG, "first case inside");
                         Intent it = new Intent();
                         it.putExtra("image", filetoUplaod.toString());
                         setResult(RESULT_OK, it);
                         finish();
                     }
                 } else {
-                    Log.i("test_test", "first case");
+                    Log.i(TESTING_TAG, "first case");
                     if (filetoUplaod != null) {
-                        Log.i("test_test", "first case inside");
+                        Log.i(TESTING_TAG, "first case inside");
                         callAddBarberProfile();
                     }
                 }
@@ -237,12 +243,12 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
         boolean con_result = ConnectivityReceiver.isConnected();
         if (con_result) {
             Constants.showPorgess(CustomCameraGalleryActivity.this);
-            Log.i("test_test", "AddBarberProfile M url:" + Constants.AddBarberProfile);
+            Log.i(TESTING_TAG, "AddBarberProfile M url:" + Constants.AddBarberProfile);
             SimpleMultiPartRequest req = new SimpleMultiPartRequest(Request.Method.POST, Constants.AddBarberProfile,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Log.i("test_test", "AddBarberProfile M response:" + response);
+                            Log.i(TESTING_TAG, "AddBarberProfile M response:" + response);
                             Constants.dismissProgress();
                             try {
                                 JSONObject jsonobj = new JSONObject(response);
@@ -265,7 +271,7 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     VolleyLog.e("** ERROR **", "Error: " + error.getMessage());
-                    Log.i("test_test", "Error: " + error.getMessage());
+                    Log.i(TESTING_TAG, "Error: " + error.getMessage());
                     Constants.dismissProgress();
                     Constants.showPopupServer(activity);
                 }
@@ -284,7 +290,6 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
             req.addStringParam("workplace", "");
             req.addStringParam("phone", "");
             req.addStringParam("open_hours", "");
-            Log.i("test_test", "AddBarberProfile M req:" + req);
 
             AppController.getInstance().addToRequestQueue(req, "LOGIN");
         } else {
@@ -309,12 +314,11 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
                         null,
                         null,
                         orderBy);
-                Log.i("test_test", "doInBackground");
+                Log.i(TESTING_TAG, "doInBackground");
                 if (cursor.moveToFirst()) {
                     final int dataColumn = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
                     do {
                         final String Photo_path = cursor.getString(dataColumn);
-                     //   Log.i("test_test", "path  " + Photo_path);
                         CustomGalleryImages objGalleryImages = new CustomGalleryImages();
                         objGalleryImages.images = Photo_path;
                         alImages.add(objGalleryImages);
@@ -331,18 +335,25 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
                 Constants.dismissProgress();
-                Log.i("test_test", "size images list "  + alImages.size());
+                Log.i(TESTING_TAG, "size images list " + alImages.size());
                 objGalleryAdapter = new CustomGalleryImagesAdapter(alImages, alSelectImagesTick, CustomCameraGalleryActivity.this, new CustomGalleryImagesAdapter.CustomGalleryListner() {
                     @Override
-                    public void onItemClick(String path) {
+                    public void onItemClick(String path, int position) {
                         try {
                             imageFile = new File((path));
-                            Picasso.with(CustomCameraGalleryActivity.this).load(imageFile).skipMemoryCache().into(iv_preview);
+                            Log.i(TESTING_TAG, "image " + imageFile);
+                            Log.i(TESTING_TAG, "path " + path);
+                            Picasso.get().load(imageFile).into(iv_preview);
                             Uri sourceUri = Uri.fromFile(imageFile);
                             callCropMethod(sourceUri);
-
+                            objGalleryAdapter.notifyItemChanged(position);
+                            if (prevPosition != -1 && prevPosition != position) {
+                                objGalleryAdapter.images.get(prevPosition).isChoosed = false;
+                                objGalleryAdapter.notifyItemChanged(prevPosition);
+                            }
+                            prevPosition = position;
                         } catch (Exception e) {
-                            Log.i("test_test", "Error starting preview: " + e.toString());
+                            Log.i(TESTING_TAG, "Error starting preview: " + e.toString());
                         }
                     }
                 });
@@ -424,6 +435,7 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
+            Log.i(TESTING_TAG, "1");
             final Uri resultUri = UCrop.getOutput(data);
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), resultUri);
@@ -432,10 +444,16 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
                 e.printStackTrace();
             }
             ll_add_image.setVisibility(View.GONE);
-            Picasso.with(CustomCameraGalleryActivity.this).load(resultUri).skipMemoryCache().into(iv_preview);
+            Picasso.get().load(resultUri).memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE).into(iv_preview);
         } else if (resultCode == RESULT_OK && requestCode == LARGER_CAMERA) {
             final Uri resultUri = data.getParcelableExtra("ImageUri");
-            Picasso.with(CustomCameraGalleryActivity.this).load(resultUri).skipMemoryCache().into(iv_preview);
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), resultUri);
+                reCreateFile(bitmap, 500);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Picasso.get().load(resultUri).memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE).into(iv_preview);
             ll_add_image.setVisibility(View.GONE);
         } else if (resultCode == RESULT_OK && requestCode == GALLERY_REQUEST) {
             if (data != null) {
@@ -451,6 +469,7 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
 
     public void reCreateFile(Bitmap _bitmapScaled, int maxImageSize) {
         try {
+            Log.i(TESTING_TAG, "recreate");
             float ratio = Math.min(
                     (float) maxImageSize / _bitmapScaled.getWidth(),
                     (float) maxImageSize / _bitmapScaled.getHeight());
@@ -483,9 +502,11 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
                         Toast.LENGTH_SHORT).show();
                 return;
             }
+            Log.i(TESTING_TAG, "new file " + filetoUplaod);
             FileOutputStream f_out = new FileOutputStream(filetoUplaod);
             newBitmap.compress(Bitmap.CompressFormat.JPEG, 50, f_out);
         } catch (IOException e) {
+            Log.i(TESTING_TAG, "IOException " + e);
             e.printStackTrace();
         }
     }
@@ -796,11 +817,11 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
                 folder = new File(CustomCameraGalleryActivity.this.getExternalFilesDir(null)
                         + "/CustomCam");
                 boolean success = true;
-                Log.i("test_test", "external old " + Environment.getExternalStorageDirectory());
-                Log.i("test_test", "external new " + CustomCameraGalleryActivity.this.getExternalFilesDir(null));
+                Log.i(TESTING_TAG, "external old " + Environment.getExternalStorageDirectory());
+                Log.i(TESTING_TAG, "external new " + CustomCameraGalleryActivity.this.getExternalFilesDir(null));
                 if (!folder.exists()) {
                     success = folder.mkdirs();
-                    Log.i("test_test", "folder not exist. success " + success+ ", " + folder.exists());
+                    Log.i(TESTING_TAG, "folder not exist. success " + success + ", " + folder.exists());
                 }
                 if (success) {
 
@@ -842,13 +863,12 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
             }
 
             try {
-
-                Picasso.with(CustomCameraGalleryActivity.this).load(imageFile).skipMemoryCache().into(iv_preview);
+                Picasso.get().load(imageFile).into(iv_preview);
                 Uri sourceUri = Uri.fromFile(imageFile);
                 callCropMethod(sourceUri);
 
             } catch (Exception e) {
-                Log.i("test_test", "Error starting preview: " + e.toString());
+                Log.i(TESTING_TAG, "Error starting preview: " + e.toString());
             }
         }
     }
@@ -856,12 +876,12 @@ public class CustomCameraGalleryActivity extends BaseActivity implements Recycle
 
     Camera.ShutterCallback shutterCallback = new Camera.ShutterCallback() {
         public void onShutter() {
-            Log.i("test_test", "onShutter'd");
+            Log.i(TESTING_TAG, "onShutter'd");
         }
     };
     Camera.PictureCallback rawCallback = new Camera.PictureCallback() {
         public void onPictureTaken(byte[] data, Camera camera) {
-            Log.i("test_test", "onPictureTaken - raw");
+            Log.i(TESTING_TAG, "onPictureTaken - raw");
             //CameraDemo.this.camera.startPreview();
         }
     };

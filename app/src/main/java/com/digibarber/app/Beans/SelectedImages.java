@@ -1,6 +1,7 @@
 package com.digibarber.app.Beans;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Created by DIGIBARBER LTD on 22/10/17.
@@ -18,5 +19,11 @@ public class SelectedImages implements Serializable {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "SelectedImages{" +
+                "image='" + image + '\'' +
+                ", SelectedTickPos=" + SelectedTickPos +
+                '}';
+    }
 }

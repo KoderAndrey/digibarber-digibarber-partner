@@ -79,7 +79,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -108,7 +107,7 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
     int stillCount = 0;
     int i = 0;
     static int result;
-    ArrayList<String> timestamps = new ArrayList<String>();
+    ArrayList<String> timestamps = new ArrayList<>();
     private int cameraId;
     static Context context;
     int width_screen = 0;
@@ -141,6 +140,7 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
     ArrayList<SelectedImages> alSelectedImages = new ArrayList<>();
 
     int selectedPosTick = -1;
+    private int selPosition = -1;
 
     ArrayList<Boolean> alSelectImagesTick = new ArrayList<>();
     private String From = "AddGalleryImages";
@@ -227,7 +227,7 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
             public void onClick(View view) {
                 if (alSelectedImages.size() > 0) {
                     callAddGalleryImages();
-                }else{
+                } else {
 //                    AlertDialog.Builder builder = new AlertDialog.Builder(AddGalleryImagesActivity.this);
 //                    builder.setMessage("Upload Gallery images now or later");
 //                    builder.setNegativeButton("Now", new DialogInterface.OnClickListener() {
@@ -243,7 +243,7 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
 //                    });
 //                    builder.create().show();
                     Constants.showGalleryPopUp(AddGalleryImagesActivity.this);
-                   // Constants.showPopupWithMsg(AddGalleryImagesActivity.this,"Upload Gallery images now or later","Gallery Images");
+                    // Constants.showPopupWithMsg(AddGalleryImagesActivity.this,"Upload Gallery images now or later","Gallery Images");
                 }
             }
         });
@@ -308,6 +308,10 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
         if (pos != -1) {
             alSelectImagesTick.set(pos, false);
             objGalleryAdapter.notifyDataSetChanged();
+        }
+        if (selectedPosTick != -1) {
+            objGalleryAdapter.images.get(alSelectedImages.get(position).SelectedTickPos).isChoosed = false;
+            objGalleryAdapter.notifyItemChanged(alSelectedImages.get(position).SelectedTickPos);
         }
         alSelectedImages.remove(position);
         adapterSelctedImages.notifyDataSetChanged();
@@ -483,11 +487,12 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
 
                 objGalleryAdapter = new CustomGalleryImagesAdapter(alImages, alSelectImagesTick, AddGalleryImagesActivity.this, new CustomGalleryImagesAdapter.CustomGalleryListner() {
                     @Override
-                    public void onItemClick(String path) {
-
+                    public void onItemClick(String path, int position) {
+                        selectedPosTick = position;
                         userfile = new File(path);
                         Uri imageUri = Uri.fromFile(userfile);
                         callCropMethod(imageUri);
+                        objGalleryAdapter.notifyItemChanged(position);
                     }
                 });
                 rv_gallery.setLayoutManager(new GridLayoutManager(AddGalleryImagesActivity.this, 2, GridLayoutManager.HORIZONTAL, false));
@@ -604,9 +609,9 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
             }
         } else if (resultCode == UCrop.RESULT_ERROR) {
             final Throwable cropError = UCrop.getError(data);
-        }else if (resultCode == RESULT_OK && requestCode == PICK_IMAGE_REQUEST){
+        } else if (resultCode == RESULT_OK && requestCode == PICK_IMAGE_REQUEST) {
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),data.getData());
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
                 reCreateFile(bitmap, 500);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -650,11 +655,11 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
             }
             FileOutputStream f_out = new FileOutputStream(filetoUplaod);
             newBitmap.compress(Bitmap.CompressFormat.JPEG, 50, f_out);
-            if (currentSelectedIndex != -1){
+            if (currentSelectedIndex != -1) {
                 alSelectedImages.remove(currentSelectedIndex);
-                alSelectedImages.add(currentSelectedIndex,new SelectedImages(filetoUplaod.getPath(), selectedPosTick));
+                alSelectedImages.add(currentSelectedIndex, new SelectedImages(filetoUplaod.getPath(), selectedPosTick));
                 currentSelectedIndex = -1;
-            }else{
+            } else {
                 alSelectedImages.add(new SelectedImages(filetoUplaod.getPath(), selectedPosTick));
             }
 
@@ -677,7 +682,6 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
                 ll_message.setVisibility(View.VISIBLE);
                 rv_gallery_selected.setVisibility(View.GONE);
             }
-            selectedPosTick = -1;
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -1195,7 +1199,7 @@ public class AddGalleryImagesActivity extends BaseActivity implements RecyclerIt
         }
     }
 
-    public void navigateToServices(){
+    public void navigateToServices() {
         Intent it = new Intent(AddGalleryImagesActivity.this, PickServiceActivity.class);
         it.putExtra("Latitude", Latitude);
         it.putExtra("Longitude", Longitude);

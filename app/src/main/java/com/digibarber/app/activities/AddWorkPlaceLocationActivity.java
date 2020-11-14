@@ -48,8 +48,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
+
+import static android.view.View.VISIBLE;
 
 public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelPicker.OnItemSelectedListener {
     private EditText et_post_code;
@@ -155,7 +156,7 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
                     String etworkplace = et_place_work.getText().toString();
                     if (etworkplace.isEmpty()) {
                         et_place_work.setBackgroundResource(R.mipmap.location_error);
-                        tv_please_enter_shop_name.setVisibility(View.VISIBLE);
+                        tv_please_enter_shop_name.setVisibility(VISIBLE);
                     } else {
                         et_place_work.setBackgroundResource(R.mipmap.icon_address);
                         tv_please_enter_shop_name.setVisibility(View.GONE);
@@ -177,6 +178,7 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
                 return false;
             }
         });
+
         et_post_code.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -195,11 +197,11 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
                     getAddressList(Postcode);
                 } else if (Postcode.length() <= 0) {
                     ll_postcode_back.setBackgroundResource(R.mipmap.location_error);
-                    tv_please_enter_post_code.setVisibility(View.VISIBLE);
+                    tv_please_enter_post_code.setVisibility(VISIBLE);
                     // ZoomConst.showToast(AddWorkPlaceLocationActivity.this, "Please enter Post code.");
                 } else if (placeWork.length() <= 0) {
                     et_place_work.setBackgroundResource(R.mipmap.location_error);
-                    tv_please_enter_shop_name.setVisibility(View.VISIBLE);
+                    tv_please_enter_shop_name.setVisibility(VISIBLE);
                 }
                 Constants.hideSoftKeyboard(AddWorkPlaceLocationActivity.this);
                 return true;
@@ -233,13 +235,13 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
                 //  String shop_no = et_shop_no.getText().toString();
                 if (placeWork.length() <= 0) {
                     et_place_work.setBackgroundResource(R.mipmap.location_error);
-                    tv_please_enter_shop_name.setVisibility(View.VISIBLE);
+                    tv_please_enter_shop_name.setVisibility(VISIBLE);
                 } else if (Postcode.length() <= 0) {
                     ll_postcode_back.setBackgroundResource(R.mipmap.location_error);
-                    tv_please_enter_post_code.setVisibility(View.VISIBLE);
+                    tv_please_enter_post_code.setVisibility(VISIBLE);
                 } else if (et_text_selected.getText().toString().trim().length() <= 0) {
                     et_text_selected.setBackgroundResource(R.mipmap.location_error);
-                    tv_please_enter_address.setVisibility(View.VISIBLE);
+                    tv_please_enter_address.setVisibility(VISIBLE);
                 } else {
                     ll_postcode_back.setBackgroundResource(R.mipmap.icon_address);
                     tv_please_enter_post_code.setVisibility(View.GONE);
@@ -294,8 +296,7 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
         }
 
         public void afterTextChanged(Editable s) {
-
-            if (mEditText.getText().toString().length() > 0 && tv_errror.getVisibility() == View.VISIBLE) {
+            if (mEditText.getText().toString().length() > 0 && tv_errror.getVisibility() == VISIBLE) {
                 if (mEditText.getId() == R.id.et_text_selected) {
                     mEditText.setBackgroundResource(R.mipmap.location_text);
                     tv_errror.setVisibility(View.INVISIBLE);
@@ -309,7 +310,6 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
                     mEditText.setBackgroundResource(R.mipmap.icon_address);
                 }
             } else {
-
                 if (mEditText.getId() == R.id.et_post_code) {
                     if (mEditText.getText().toString().length() <= 0) {
                         //       et_shop_no.setText("");
@@ -388,13 +388,13 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
                             showListAddress(address);
                             //wv_picker.setData(address);
                         } else {
-                            tv_please_enter_post_code.setVisibility(View.VISIBLE);
+                            tv_please_enter_post_code.setVisibility(VISIBLE);
                             tv_please_enter_post_code.setText("That postcode is not recognised!");
                             et_post_code.setTextColor(Color.parseColor("#F94444"));
                         }
                     } catch (JSONException e) {
 
-                        tv_please_enter_post_code.setVisibility(View.VISIBLE);
+                        tv_please_enter_post_code.setVisibility(VISIBLE);
                         tv_please_enter_post_code.setText("That postcode is not recognised!");
                         et_post_code.setTextColor(Color.parseColor("#F94444"));
                         e.printStackTrace();
@@ -402,7 +402,7 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
                         e.printStackTrace();
                     } catch (NullPointerException e) {
                         e.printStackTrace();
-                        tv_please_enter_post_code.setVisibility(View.VISIBLE);
+                        tv_please_enter_post_code.setVisibility(VISIBLE);
                         tv_please_enter_post_code.setText("That postcode is not recognised!");
                         et_post_code.setTextColor(Color.parseColor("#F94444"));
                     }
@@ -481,7 +481,7 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
                 new ColorDrawable(android.graphics.Color.TRANSPARENT));
         ListView lv_address = (ListView) dialog_first.findViewById(R.id.lv_address);
         ArrayAdapter<String> itemsAdapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, Address);
+                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Address);
         lv_address.setAdapter(itemsAdapter);
 
         lv_address.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -532,7 +532,7 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
 
             Log.e("Deep", "lat lon :" + lat + " " + lon);
             Log.e("Deep", "CheckShopAddress Url:" + url);
-            Log.d("api call post",url);
+            Log.d("api call post", url);
 
             StringRequest req = new StringRequest(Request.Method.POST, url,
                     new Response.Listener<String>() {
@@ -583,9 +583,7 @@ public class AddWorkPlaceLocationActivity extends BaseActivity implements WheelP
                     Constants.dismissProgress();
                     //    Constants.showPopupServer(activity);
                 }
-            })
-
-            {
+            }) {
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
                     return getApiHeaders();

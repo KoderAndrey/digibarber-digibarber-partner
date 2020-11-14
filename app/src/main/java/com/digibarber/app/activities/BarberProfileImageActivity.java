@@ -22,7 +22,7 @@ public class BarberProfileImageActivity extends BaseActivity {
 
         String imagePath = prefs.getString(Constants.KEY_PROFILE_IMAGE, "");
         if (imagePath != null && !imagePath.equalsIgnoreCase("")) {
-            Picasso.with(BarberProfileImageActivity.this).load(imagePath).memoryPolicy(MemoryPolicy.NO_CACHE).skipMemoryCache().into(iv_images);
+            Picasso.get().load(imagePath).memoryPolicy(MemoryPolicy.NO_CACHE).into(iv_images);
         }
         iv_images.setOnClickListener(new View.OnClickListener() {
             @Override

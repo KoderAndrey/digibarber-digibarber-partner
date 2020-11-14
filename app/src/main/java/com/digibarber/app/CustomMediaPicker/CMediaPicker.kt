@@ -5,9 +5,11 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +17,9 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.digibarber.app.CustomClasses.BaseActivity.TESTING_TAG
 import com.digibarber.app.R
+import com.digibarber.app.activities.CustomCameraLargePreviewActivity
 
 
 class CMediaPicker : AppCompatActivity() {
@@ -30,6 +34,7 @@ class CMediaPicker : AppCompatActivity() {
     lateinit var albumView: RelativeLayout
     lateinit var libBtn: Button
     lateinit var photoBtn: Button
+    private val LARGER_CAMERA = 236
 
     val GET_STORAGE_REQ_CODE = 12
 
@@ -182,6 +187,26 @@ class CMediaPicker : AppCompatActivity() {
             allAlbums.removeAt(i)
         }
         setupView()
+    }
+
+    fun clickPhoto(v: View) {
+        Intent(this@CMediaPicker, CustomCameraLargePreviewActivity::class.java).run {
+            startActivityForResult(this, LARGER_CAMERA)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == LARGER_CAMERA) {
+            Intent().apply {
+                data?.getParcelableExtra<Uri>("ImageUri")?.let { notNullUri ->
+                    putExtra("photos", arrayListOf(notNullUri.path))
+                    putExtra("from_camera", true)
+                    setResult(Activity.RESULT_OK, this)
+                }
+                finish()
+            }
+        }
     }
 }
 

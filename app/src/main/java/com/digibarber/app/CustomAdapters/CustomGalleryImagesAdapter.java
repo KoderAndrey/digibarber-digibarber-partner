@@ -25,6 +25,8 @@ import com.digibarber.app.R;
 import java.io.File;
 import java.util.ArrayList;
 
+import static com.digibarber.app.CustomClasses.BaseActivity.TESTING_TAG;
+
 /**
  * Created by DIGIBARBER LTD on 3/17/2017.
  */
@@ -33,13 +35,13 @@ public class CustomGalleryImagesAdapter extends RecyclerView.Adapter<CustomGalle
 
 
     public interface CustomGalleryListner {
-        void onItemClick(String path);
+        void onItemClick(String path, int position);
     }
 
     CustomGalleryListner customGalleryListner;
 
     //private final List<DummyItem> mValues;
-    ArrayList<CustomGalleryImages> images;
+    public ArrayList<CustomGalleryImages> images;
     Context context;
     int pos = -7;
     DisplayMetrics displaymetrics;
@@ -88,8 +90,10 @@ public class CustomGalleryImagesAdapter extends RecyclerView.Adapter<CustomGalle
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                customGalleryListner.onItemClick(images.get(position).images);
+                if (!images.get(position).isChoosed) {
+                    images.get(position).isChoosed = true;
+                    customGalleryListner.onItemClick(images.get(position).images, position);
+                }
             }
         });
 //        if (alSelectImagesTick.get(position)) {
@@ -98,16 +102,20 @@ public class CustomGalleryImagesAdapter extends RecyclerView.Adapter<CustomGalle
 //            holder.iv_tick.setVisibility(View.GONE);
 //        }
         try {
+            if (images.get(position).isChoosed) {
+                holder.iv_tick.setVisibility(View.VISIBLE);
+            } else {
+                holder.iv_tick.setVisibility(View.GONE);
+            }
             File imgFile = new File(images.get(position).images);
             final Uri imageUri = Uri.fromFile(imgFile);
-            Log.i("test_test", "file " + imgFile + ", uri " + imageUri + ", path " + imgFile.getPath());
+            Log.i(TESTING_TAG, "path  " + imgFile.getPath());
             Glide
                     .with(context)
                     .load(imgFile.getPath())
                     .listener(new RequestListener<Drawable>() {
                         @Override
                         public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                            Log.i("test_test", "e " + e );
                             return false;
                         }
 
@@ -119,7 +127,6 @@ public class CustomGalleryImagesAdapter extends RecyclerView.Adapter<CustomGalle
                     .into(holder.iv_image);
             //Picasso.with(context).load(imageUri).fit().centerCrop().into(holder.iv_image);
         } catch (NullPointerException | OutOfMemoryError e) {
-            Log.i("test_test", "error " + e);
             e.printStackTrace();
         }
     }

@@ -19,29 +19,9 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
-
-import com.digibarber.app.apicalls.ApiClient;
-import com.digibarber.app.apicalls.ApiUrls;
-import com.google.android.gms.common.util.Base64Utils;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-
-import androidx.annotation.NonNull;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -54,27 +34,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.DefaultRetryPolicy;
+import androidx.annotation.NonNull;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyLog;
 import com.android.volley.error.AuthFailureError;
 import com.android.volley.error.VolleyError;
 import com.android.volley.request.StringRequest;
 import com.bumptech.glide.Glide;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.dynamiclinks.DynamicLink;
-import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
-import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
-import com.google.firebase.dynamiclinks.ShortDynamicLink;
-import com.joooonho.SelectableRoundedImageView;
-import com.navdrawer.SimpleSideDrawer;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.MemoryPolicy;
-import com.squareup.picasso.Picasso;
 import com.digibarber.app.Beans.BookingList;
 import com.digibarber.app.Beans.NotificationServerSide;
 import com.digibarber.app.Beans.UpcomingBookingNotification;
@@ -87,6 +62,21 @@ import com.digibarber.app.CustomClasses.Constants;
 import com.digibarber.app.Interfaces.BookingListCallbacks;
 import com.digibarber.app.Interfaces.InnerNotificationClickCallback;
 import com.digibarber.app.R;
+import com.digibarber.app.apicalls.ApiClient;
+import com.digibarber.app.apicalls.ApiUrls;
+import com.google.android.gms.common.util.Base64Utils;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.dynamiclinks.DynamicLink;
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
+import com.google.firebase.dynamiclinks.ShortDynamicLink;
+import com.joooonho.SelectableRoundedImageView;
+import com.navdrawer.SimpleSideDrawer;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.Picasso;
 import com.xenione.libs.swipemaker.SwipeLayout;
 
 import org.apache.commons.codec.binary.Base64;
@@ -109,16 +99,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.branch.indexing.BranchUniversalObject;
-import io.branch.referral.Branch;
-import io.branch.referral.BranchError;
-import io.branch.referral.util.ContentMetadata;
-import io.branch.referral.util.LinkProperties;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import uk.co.imallan.jellyrefresh.JellyRefreshLayout;
 import uk.co.imallan.jellyrefresh.PullToRefreshLayout;
 
-import static com.digibarber.app.CustomClasses.Constants.downloadFileFromServer;
+import static com.digibarber.app.CustomClasses.BaseActivity.TESTING_TAG;
 
 public class HomeActivity extends FragmentActivity implements BookingListCallbacks, InnerNotificationClickCallback {
 
@@ -470,6 +455,7 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
     @Override
     public void onStop() {
         super.onStop();
+        Constants.dismissProgress();
         EventBus.getDefault().unregister(this);
     }
 
@@ -509,7 +495,7 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
         super.onResume();
         callGetBooking("Show");
         profileDetail();
-
+        Log.i(TESTING_TAG, "onResume");
     }
 
     public static int dpToPx(int dp) {
@@ -532,7 +518,7 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
 
         String imagePath = prefs.getString(Constants.KEY_PROFILE_IMAGE, "");
         if (imagePath != null && !imagePath.equalsIgnoreCase("")) {
-            Picasso.with(HomeActivity.this).load(imagePath).memoryPolicy(MemoryPolicy.NO_CACHE).skipMemoryCache().error(R.mipmap.thick_search_default_pic).into(expandedImageView, new Callback() {
+            Picasso.get().load(imagePath).memoryPolicy(MemoryPolicy.NO_CACHE).error(R.mipmap.thick_search_default_pic).into(expandedImageView, new Callback() {
                 @Override
                 public void onSuccess() {
                     ViewTreeObserver vto = expandedImageView.getViewTreeObserver();
@@ -562,7 +548,7 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
                 }
 
                 @Override
-                public void onError() {
+                public void onError(Exception e) {
                     expandedimg_container.setVisibility(View.GONE);
                 }
             });
@@ -1653,14 +1639,14 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
         tv_user_name.setText("Hello " + prefs.getString(Constants.KEY_FIRST_NAME, ""));
         String imagePath = prefs.getString(Constants.KEY_PROFILE_IMAGE, "");
         if (imagePath != null && !imagePath.equalsIgnoreCase("")) {
-            Picasso.with(HomeActivity.this).load(imagePath).memoryPolicy(MemoryPolicy.NO_CACHE).skipMemoryCache().placeholder(R.mipmap.thick_search_default_pic).error(R.mipmap.thick_search_default_pic).into(barber_profile_image);
+            Picasso.get().load(imagePath).memoryPolicy(MemoryPolicy.NO_CACHE).placeholder(R.mipmap.thick_search_default_pic).error(R.mipmap.thick_search_default_pic).into(barber_profile_image);
 
 
             final RelativeLayout expandedimg_container = (RelativeLayout) findViewById(R.id.expandedimg_container);
 
             expanded_image.setVisibility(View.VISIBLE);
             expandedimg_container.setVisibility(View.INVISIBLE);
-            Picasso.with(HomeActivity.this)
+            Picasso.get()
                     .load(imagePath)
                     .error(R.mipmap.home_default_profile_pic)
                     .noFade()
@@ -1701,11 +1687,9 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
                         }
 
                         @Override
-                        public void onError() {
+                        public void onError(Exception e) {
                             expandedimg_container.setVisibility(View.GONE);
                         }
-
-
                     });
 
 
@@ -1737,7 +1721,7 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
 
         String imagePath = prefs.getString(Constants.KEY_PROFILE_IMAGE, "");
         if (imagePath != null && !imagePath.equalsIgnoreCase("")) {
-            Picasso.with(HomeActivity.this).load(imagePath).memoryPolicy(MemoryPolicy.NO_CACHE).skipMemoryCache().placeholder(R.mipmap.thick_search_default_pic).error(R.mipmap.thick_search_default_pic).into(babrber_slider_profile_image);
+            Picasso.get().load(imagePath).memoryPolicy(MemoryPolicy.NO_CACHE).placeholder(R.mipmap.thick_search_default_pic).error(R.mipmap.thick_search_default_pic).into(babrber_slider_profile_image);
         }
 
         tv_home.setOnClickListener(new View.OnClickListener() {
@@ -1869,7 +1853,6 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
                                 } else {
                                     System.out.println("** No reviews found ** ");
                                 }
-
                                 shareClick();
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -2133,12 +2116,12 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
             profile_object.put("average_ratings", overallRating);
             profile_object.put("is_follow", "");
             profile_object.put("con_hours", "");
-            profile_object.put("isBarberService","1");
+            profile_object.put("isBarberService", "1");
 
             String barber_profile_details = profile_object.toString();
-            String deepLink         = encodeData(barber_profile_details);
+            String deepLink = encodeData(barber_profile_details);
             FirebaseDynamicLinks.getInstance().createDynamicLink()
-                    .setLink(Uri.parse("https://app.digibarber.com/data="+deepLink))
+                    .setLink(Uri.parse("https://app.digibarber.com/data=" + deepLink))
                     .setDomainUriPrefix("https://digibarber.page.link")
                     .setIosParameters(new DynamicLink.IosParameters.Builder("com.webastral.DIGICLIENT").build())
                     .setAndroidParameters(new DynamicLink.AndroidParameters.Builder("com.digipartner.app").build())
@@ -2146,29 +2129,30 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
                     .addOnCompleteListener(this, new OnCompleteListener<ShortDynamicLink>() {
                         @Override
                         public void onComplete(@NonNull Task<ShortDynamicLink> task) {
+                            Constants.dismissProgress();
                             if (task.isSuccessful()) {
-
                                 Uri shortLink = task.getResult().getShortLink();
-                                shareLink(null,shortLink.toString(),Full_Name,Work_place);
+                                shareLink(null, shortLink.toString(), Full_Name, Work_place);
                             }
                         }
                     });
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Constants.dismissProgress();
             Log.e("Error", e.getMessage());
         }
 
     }
-    public static String encodeData(String stringCondificado){
+
+    public static String encodeData(String stringCondificado) {
         try {
-            return new String(android.util.Base64.encode(stringCondificado.getBytes("UTF-8"),android.util.Base64.DEFAULT)).replace("\n","");
+            return new String(android.util.Base64.encode(stringCondificado.getBytes("UTF-8"), android.util.Base64.DEFAULT)).replace("\n", "");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
             return "";
         }
     }
+
     private void shareLink(File file, String url, String Full_Name, String Work_place) {
         String text = Full_Name + " - " + Work_place
                 + "\n" + "You can now book your haircut with me on the DIGIBARBER app!"
@@ -2791,12 +2775,13 @@ public class HomeActivity extends FragmentActivity implements BookingListCallbac
         objNotificationAdapter.Service_list.get(pos).is_read = "1";
         objNotificationAdapter.notifyDataSetChanged();
     }
-    public byte[] encodeBase64(String encodeMe){
+
+    public byte[] encodeBase64(String encodeMe) {
         byte[] encodedBytes = Base64.encodeBase64(encodeMe.getBytes());
-        return encodedBytes ;
-     }
-    public String bytetostring(byte[] encodedBytes)
-    {
+        return encodedBytes;
+    }
+
+    public String bytetostring(byte[] encodedBytes) {
         String encoded = Base64Utils.encode(encodedBytes);
         return encoded;
     }

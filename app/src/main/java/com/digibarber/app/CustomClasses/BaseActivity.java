@@ -24,13 +24,15 @@ public class BaseActivity extends FragmentActivity   {
     public static final IntentFilter INTENT_FILTER = createIntentFilter();
     public  SharedPreferences prefs;
     public Activity activity;
+    private static final String BASE_ACTIVITY_TAG ="BASE_ACTIVITY_TAG";
+    public static final String TESTING_TAG ="TESTING_TAG";
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // setContentView(R.layout.main);
-
+        Log.i(BASE_ACTIVITY_TAG, "class " + this.getClass().getName());
         activity = BaseActivity.this;
         prefs = getSharedPreferences(Constants.SHARED_PREFRENCE_DB_NAME, MODE_PRIVATE);
         registerBaseActivityReceiver();

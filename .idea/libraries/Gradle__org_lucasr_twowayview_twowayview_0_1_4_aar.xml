@@ -3,6 +3,9 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cf7affd2907cc0a4a9d179ad35c28c56/jetified-twowayview-0.1.4/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cf7affd2907cc0a4a9d179ad35c28c56/jetified-twowayview-0.1.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/288461fab2a1277e65719bf14655bafd/jetified-twowayview-0.1.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/288461fab2a1277e65719bf14655bafd/jetified-twowayview-0.1.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/288461fab2a1277e65719bf14655bafd/jetified-twowayview-0.1.4/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.lucasr.twowayview/twowayview/0.1.4/e7dceaa010572b586539a431a0cb2a93b2a410fd/twowayview-0.1.4-javadoc.jar!/" />

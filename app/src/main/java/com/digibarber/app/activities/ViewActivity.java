@@ -416,7 +416,7 @@ public class ViewActivity extends BaseActivity {
 
 
         if (barber_profile_image != null && !barber_profile_image.equals("")) {
-            Picasso.with(this).load(User_Image).placeholder(R.color.colorGrey)
+            Picasso.get().load(User_Image).placeholder(R.color.colorGrey)
                     .fit().into(barber_profile_image);
         }
 

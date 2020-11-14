@@ -66,6 +66,8 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.digibarber.app.CustomClasses.BaseActivity.TESTING_TAG;
+
 /**
  * Created by DIGIBARBER LTD on 7/11/2016.
  */
@@ -203,8 +205,8 @@ public class Constants {
     //public static String Path = "https://rest-api-dot-ferrous-kayak-209717.appspot.com/"; //sandbox url
     //public static String Path = "https://rest-api-dot-digibarber-production-golive.appspot.com/"; //production
 
-    public static String Path = "https://rest-api-dot-quixotic-galaxy-277322.ue.r.appspot.com/"; //new sandbox url production
-  //  public static String Path = "https://rest-api-dot-stunning-crane-283007.ew.r.appspot.com/"; //new sandbox url production
+    //  public static String Path = "https://rest-api-dot-quixotic-galaxy-277322.ue.r.appspot.com/"; //new sandbox url production
+    public static String Path = "https://rest-api-dot-stunning-crane-283007.ew.r.appspot.com/"; //new sandbox url production
 
     //  public static String Path = "https://rest-api-dot-digibarber-production-golive.appspot.com/"; //new sandbox url production
 
@@ -236,7 +238,7 @@ public class Constants {
 
     public static String ClearNotfication = Path + "read_unread_notification";
 
-    public static String ChangePrivateInfo = Path + "changePrivateInfo?";
+    public static String ChangePrivateInfo = Path + "changePrivateInfo";
 
     public static String PasswordChange = Path + "change_password?";
 
@@ -414,14 +416,12 @@ public class Constants {
         mActivity = activity;
 //
         try {
-
             if (mActivity != null && !mActivity.isFinishing()) {
                 barberLoader = new BarberLoader(mActivity);
                 barberLoader.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-
                 if (barberLoader != null)
                     if (!barberLoader.isShowing()) {
-
+                        Log.i(TESTING_TAG, "showPorgess");
                         barberLoader.setCancelable(false);
                         barberLoader.show();
 
@@ -442,12 +442,14 @@ public class Constants {
         if (pDialog != null) {
             if (mActivity != null && !mActivity.isFinishing())
                 if (pDialog.isShowing()) {
+                    Log.i(TESTING_TAG, "dismissProgress");
                     pDialog.dismiss();
                 }
         }
         if (barberLoader != null) {
             if (mActivity != null && !mActivity.isFinishing()) {
                 if (barberLoader.isShowing()) {
+                    Log.i(TESTING_TAG, "dismissProgress");
                     barberLoader.dismiss();
                 }
             } else {

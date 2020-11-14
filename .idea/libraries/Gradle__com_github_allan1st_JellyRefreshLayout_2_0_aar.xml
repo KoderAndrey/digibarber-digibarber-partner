@@ -3,6 +3,9 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/592f381b45608d426b40daa7d1f47682/jetified-JellyRefreshLayout-2.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/592f381b45608d426b40daa7d1f47682/jetified-JellyRefreshLayout-2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f2e665cac367a14cb9892de383019553/jetified-JellyRefreshLayout-2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f2e665cac367a14cb9892de383019553/jetified-JellyRefreshLayout-2.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f2e665cac367a14cb9892de383019553/jetified-JellyRefreshLayout-2.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

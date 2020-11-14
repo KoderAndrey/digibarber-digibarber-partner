@@ -4,6 +4,10 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/52d27c43659b5f3701e51031d6ec1f40/jetified-stripeterminal-1.0.15/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/52d27c43659b5f3701e51031d6ec1f40/jetified-stripeterminal-1.0.15/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/52d27c43659b5f3701e51031d6ec1f40/jetified-stripeterminal-1.0.15/jars/libs/bbpossdk-1.7-all.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca5ed744888b40759d7cfc7c9f402bc3/jetified-stripeterminal-1.0.15/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca5ed744888b40759d7cfc7c9f402bc3/jetified-stripeterminal-1.0.15/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca5ed744888b40759d7cfc7c9f402bc3/jetified-stripeterminal-1.0.15/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ca5ed744888b40759d7cfc7c9f402bc3/jetified-stripeterminal-1.0.15/jars/libs/bbpossdk-1.7-all.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.stripe/stripeterminal/1.0.15/7891a60a3b5e96d9536bc45644acd10d91738bca/stripeterminal-1.0.15-javadoc.jar!/" />

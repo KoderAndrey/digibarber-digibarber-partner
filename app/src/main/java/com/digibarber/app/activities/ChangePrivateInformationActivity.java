@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -40,8 +41,8 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
+import com.yalantis.ucrop.UCrop;
 
-import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -174,9 +175,9 @@ public class ChangePrivateInformationActivity extends BaseActivity {
         updateProfilePicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent intent = new Intent(ChangePrivateInformationActivity.this,CMediaPicker.class);
-               intent.putExtra("max",1);
-               startActivityForResult(intent,5);
+                Intent intent = new Intent(ChangePrivateInformationActivity.this, CMediaPicker.class);
+                intent.putExtra("max", 1);
+                startActivityForResult(intent, 5);
             }
         });
 
@@ -193,6 +194,7 @@ public class ChangePrivateInformationActivity extends BaseActivity {
         });
         this.loadProfileData();
     }
+
     private class CustomTextWatcher implements TextWatcher {
         private EditText mEditText;
         private TextView tv_errror;
@@ -210,6 +212,7 @@ public class ChangePrivateInformationActivity extends BaseActivity {
 
         public void onTextChanged(CharSequence s, int start, int before, int count) {
         }
+
         public void afterTextChanged(Editable s) {
             if (mEditText.getText().toString().length() > 0 && tv_errror.getVisibility() == View.VISIBLE) {
                 tv_errror.setVisibility(View.INVISIBLE);
@@ -272,7 +275,10 @@ public class ChangePrivateInformationActivity extends BaseActivity {
         }
 
         if (!prefs.getString("profile_image", "").equalsIgnoreCase("")) {
-            Picasso.with(this).load(prefs.getString("profile_image", "")).skipMemoryCache().memoryPolicy(MemoryPolicy.NO_CACHE).fit().into(client_profile_image);
+            Log.i("test_test", "1 " + prefs.getString("profile_image", ""));
+            Picasso.get()
+                    .load(prefs.getString("profile_image", ""))
+                    .memoryPolicy(MemoryPolicy.NO_CACHE).fit().into(client_profile_image);
         }
     }
 
@@ -299,24 +305,62 @@ public class ChangePrivateInformationActivity extends BaseActivity {
                         cameraIntent();
                     else if (userChoosenTask.equals("Choose from Library"))
                         galleryIntent();
-                    } else if (requestCode == 1){
+                } else if (requestCode == 1) {
 
                 }
                 break;
         }
     }
 
+    private void callCropMethod(Uri sourceUri) {
+        UCrop.Options options = new UCrop.Options();
+        options.withAspectRatio(1, 1);
+        options.setStatusBarColor(Color.parseColor("#ffffff"));
+        options.setToolbarColor(Color.parseColor("#4D31353A"));
+        options.setActiveWidgetColor(Color.parseColor("#118FEB"));
+        UCrop.of(sourceUri, sourceUri)
+                .withOptions(options)
+                .start(ChangePrivateInformationActivity.this);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == 5){
-                ArrayList<String> list = data.getStringArrayListExtra("photos");
-                Uri imageUri = Uri.parse(list.get(0));
-                Picasso.with(ChangePrivateInformationActivity.this).load(imageUri).fit().into(client_profile_image);
-                callChangePrivateInfo(imageUri.toString(), phone.getText().toString());
-            }
-            else if (requestCode == SELECT_FILE) {
+            if (requestCode == 5) {
+                boolean isFromCamera = data.getBooleanExtra("from_camera", false);
+                if (isFromCamera) {
+
+                    String url =  data.getStringArrayListExtra("photos").get(0);
+                    File file = new File(url);
+                    Picasso.get().load(file).fit().memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE).into(client_profile_image);
+                    Log.i(TESTING_TAG, "from camera " + Uri.fromFile(file).getPath());
+                    Log.i(TESTING_TAG, "from camera " + url);
+                    Log.i(TESTING_TAG, "from camera size " + file.length());
+                    callChangePrivateInfo(url, phone.getText().toString());
+                } else {
+                    ArrayList<String> list = data.getStringArrayListExtra("photos");
+                    Uri imageUri = Uri.parse(list.get(0));
+                    callCropMethod(imageUri);
+                }
+            } else if (requestCode == UCrop.REQUEST_CROP) {
+                final Uri resultUri = UCrop.getOutput(data);
+                Picasso.get().load(resultUri).fit().memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE).into(client_profile_image);
+                File file = new File(resultUri.getPath());
+                Log.i(TESTING_TAG, "from crop " + Uri.fromFile(file).getPath());
+                Log.i(TESTING_TAG, "from crop size " +file.length());
+                if (file.length() > 1500000){
+                    try {
+                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), resultUri);
+                        reCreateFile(bitmap, 500, file);
+                        Log.i(TESTING_TAG, "after crop size " +file.length());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+                callChangePrivateInfo(Uri.fromFile(file).getPath(), phone.getText().toString());
+            } else if (requestCode == SELECT_FILE) {
                 onSelectFromGalleryResult(data);
             } else if (requestCode == REQUEST_CAMERA) {
                 onCaptureImageResult(data);
@@ -332,6 +376,25 @@ public class ChangePrivateInformationActivity extends BaseActivity {
         }
         if (resultCode == STRIPE_CONNECT) {
             this.loadProfileData();
+        }
+    }
+
+    public void reCreateFile(Bitmap _bitmapScaled, int maxImageSize, File filetoUplaod) {
+        try {
+            Log.i(TESTING_TAG, "recreate");
+            float ratio = Math.min(
+                    (float) maxImageSize / _bitmapScaled.getWidth(),
+                    (float) maxImageSize / _bitmapScaled.getHeight());
+            int width = Math.round(ratio * _bitmapScaled.getWidth());
+            int height = Math.round(ratio * _bitmapScaled.getHeight());
+            Bitmap newBitmap = Bitmap.createScaledBitmap(_bitmapScaled, width,
+                    height, true);
+            Log.i(TESTING_TAG, "new file " + filetoUplaod);
+            FileOutputStream f_out = new FileOutputStream(filetoUplaod);
+            newBitmap.compress(Bitmap.CompressFormat.JPEG, 50, f_out);
+        } catch (IOException e) {
+            Log.i(TESTING_TAG, "IOException " + e);
+            e.printStackTrace();
         }
     }
 
@@ -443,7 +506,7 @@ public class ChangePrivateInformationActivity extends BaseActivity {
             prefs.edit().putBoolean(Constants.ISMOBILEVERIFIED, false).apply();
             Intent it = new Intent(ChangePrivateInformationActivity.this, VerificationActivity.class);
             it.putExtra("From", "changeprivateinfo");
-            it.putExtra("phone", (phone.getText().toString().contains("+44")) ? phone.getText().toString() : ("+44"+phone.getText().toString()));
+            it.putExtra("phone", (phone.getText().toString().contains("+44")) ? phone.getText().toString() : ("+44" + phone.getText().toString()));
             it.putExtra("verificationId", s);
             it.putExtra("forceResendingToken", forceResendingToken);
             startActivityForResult(it, SELECT_PHONE_VERIFICATION);
@@ -487,7 +550,6 @@ public class ChangePrivateInformationActivity extends BaseActivity {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Log.e("Response", response);
                             Constants.dismissProgress();
                             try {
                                 JSONObject jObj = new JSONObject(response);

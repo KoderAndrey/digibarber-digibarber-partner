@@ -19,7 +19,7 @@ import java.util.HashMap;
  */
 public class CustomGalleryAdapter extends BaseAdapter {
 
-    ArrayList<HashMap<String, String>> gallery_image_listing = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> gallery_image_listing;
     Context context;
 
     public CustomGalleryAdapter(Context con, ArrayList<HashMap<String, String>> listing) {
@@ -44,7 +44,7 @@ public class CustomGalleryAdapter extends BaseAdapter {
         if (hm.get("gallery_image").equalsIgnoreCase("") || hm.get("gallery_image").equalsIgnoreCase("null")) {
             if ((position+1)%3==0)
 
-                Picasso.with(context)
+                Picasso.get()
                         .load(R.mipmap.placeholder_image)
                         .resize(512, 512)
                         .error(R.mipmap.placeholder_image)
@@ -54,7 +54,7 @@ public class CustomGalleryAdapter extends BaseAdapter {
         } else {
 
 
-            Picasso.with(context)
+            Picasso.get()
                     .load(hm.get("gallery_image"))
                     .resize(512, 512)
                     .error(R.mipmap.placeholder_image)
